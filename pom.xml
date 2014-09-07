@@ -43,7 +43,7 @@
 
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <javanarior-build-resources.version>2</javanarior-build-resources.version>
+        <javanarior-build-resources.version>3</javanarior-build-resources.version>
     </properties>
 
 
@@ -179,21 +179,21 @@
                 </configuration>
             </plugin>
 
-<!--             <plugin> -->
-<!--                 <artifactId>maven-pmd-plugin</artifactId> -->
-<!--                 <configuration> -->
-<!--                     <linkXref>true</linkXref> -->
-<!--                     <includeTests>true</includeTests> -->
-<!--                     <targetJdk>${java.version.source}</targetJdk> -->
-<!--                     <rulesets> -->
-<!--                         <ruleset>pmd/pmd.xml</ruleset> -->
-<!--                     </rulesets> -->
-<!--                     <excludes> -->
-<!--                         <exclude>**/generated/*</exclude> -->
-<!--                         <exclude>**/generated-sources/*.java</exclude> -->
-<!--                     </excludes> -->
-<!--                 </configuration> -->
-<!--             </plugin> -->
+            <plugin>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <linkXref>true</linkXref>
+                    <includeTests>true</includeTests>
+                    <targetJdk>${java.version.source}</targetJdk>
+                    <rulesets>
+                        <ruleset>pmd/pmd.xml</ruleset>
+                    </rulesets>
+                    <excludes>
+                        <exclude>**/generated/*</exclude>
+                        <exclude>**/generated-sources/*.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
