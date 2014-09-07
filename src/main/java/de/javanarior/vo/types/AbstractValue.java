@@ -26,17 +26,11 @@ import java.math.BigInteger;
  */
 public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
 
-    private final Class<T> metaType;
-
     /**
-     * Create a value type with {@code metaType}.
-     *
-     * @param metaType
-     *            - the value type
+     * Create a value type.
      */
-    protected AbstractValue(Class<T> metaType) {
+    public AbstractValue() {
         super();
-        this.metaType = metaType;
     }
 
     @Override
@@ -47,7 +41,7 @@ public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
 
     @Override
     public int hashCode() {
-        return 107 * metaType.getName().hashCode();
+        return 107 * getClass().hashCode();
     }
 
     @Override
@@ -59,14 +53,6 @@ public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
             return false;
         }
         if (getClass() != object.getClass()) {
-            return false;
-        }
-        AbstractValue<?> other = (AbstractValue<?>)object;
-        if (metaType == null) {
-            if (other.metaType != null) {
-                return false;
-            }
-        } else if (!metaType.equals(other.metaType)) {
             return false;
         }
         return true;
@@ -164,11 +150,7 @@ public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName()+ "=" + getValue();
-    }
-
-    public Class<T> getMetaType() {
-        return metaType;
+        return getClass().getSimpleName() + "=" + getValue();
     }
 
 }

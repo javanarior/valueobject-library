@@ -28,13 +28,11 @@ public abstract class ByteWrapper<T extends Value<T>> extends AbstractValue<T> {
     /**
      * Create Byte Type with byte value.
      *
-     * @param metaType
-     *            - the value type
      * @param value
      *            - value for the object
      */
-    protected ByteWrapper(Class<T> metaType, byte value) {
-        super(metaType);
+    public ByteWrapper(byte value) {
+        super();
         this.value = value;
     }
 

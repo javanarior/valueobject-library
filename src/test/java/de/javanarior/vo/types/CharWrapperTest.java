@@ -22,18 +22,16 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.types.helper.CharValue;
-import de.javanarior.vo.types.helper.CharValueImpl;
 import de.javanarior.vo.types.helper.OtherCharValue;
-import de.javanarior.vo.types.helper.OtherCharValueImpl;
 
 @Test
 public class CharWrapperTest {
 
     private static final Character ONE_VALUE = Character.valueOf('1');
-    private static final CharValue ONE = new CharValueImpl('1');
-    private static final CharValue TWO = new CharValueImpl('2');
-    private static final CharValue ANOTHER_ONE = new CharValueImpl('1');
-    private static final OtherCharValue OTHER_TYPE_ONE = new OtherCharValueImpl('1');
+    private static final CharValue ONE = new CharValue('1');
+    private static final CharValue TWO = new CharValue('2');
+    private static final CharValue ANOTHER_ONE = new CharValue('1');
+    private static final OtherCharValue OTHER_TYPE_ONE = new OtherCharValue('1');
 
     public void testEqualsForDifferentTypes() {
         assertFalse(ONE.equals(OTHER_TYPE_ONE));

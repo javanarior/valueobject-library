@@ -15,8 +15,14 @@
  */
 package de.javanarior.vo.types.helper;
 
-import de.javanarior.vo.types.Value;
+import java.math.BigDecimal;
 
-public interface OtherBigDecimalValue extends Value<OtherBigDecimalValue> {
+import de.javanarior.vo.types.BigDecimalWrapper;
+
+public class OtherBigDecimalValue extends BigDecimalWrapper<OtherBigDecimalValue> {
+
+    public OtherBigDecimalValue(BigDecimal value) {
+        super(value);
+    }
 
 }

@@ -28,13 +28,11 @@ public abstract class ShortWrapper<T extends Value<T>> extends AbstractValue<T> 
     /**
      * Create Short Type with short value.
      *
-     * @param metaType
-     *            - the value type
      * @param value
      *            - value for the object
      */
-    protected ShortWrapper(Class<T> metaType, short value) {
-        super(metaType);
+    public ShortWrapper(short value) {
+        super();
         this.value = value;
     }
 

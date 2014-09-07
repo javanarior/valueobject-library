@@ -15,8 +15,14 @@
  */
 package de.javanarior.vo.types.helper;
 
-import de.javanarior.vo.types.Value;
+import java.math.BigInteger;
 
-public interface BigIntegerValue extends Value<BigIntegerValue> {
+import de.javanarior.vo.types.BigIntegerWrapper;
+
+public class BigIntegerValue extends BigIntegerWrapper<BigIntegerValue> {
+
+    public BigIntegerValue(BigInteger value) {
+        super(value);
+    }
 
 }

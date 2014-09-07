@@ -15,8 +15,12 @@
  */
 package de.javanarior.vo.types.helper;
 
-import de.javanarior.vo.types.Value;
+import de.javanarior.vo.types.BooleanWrapper;
 
-public interface BooleanValue extends Value<BooleanValue> {
+public class BooleanValue extends BooleanWrapper<BooleanValue> {
+
+    public BooleanValue(boolean value) {
+        super(value);
+    }
 
 }

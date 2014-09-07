@@ -28,13 +28,11 @@ public abstract class BooleanWrapper<T extends Value<T>> extends AbstractValue<T
     /**
      * Create Boolean Type with boolean value.
      *
-     * @param metaType
-     *            - the value type
      * @param value
      *            - value for the object
      */
-    protected BooleanWrapper(Class<T> metaType, boolean value) {
-        super(metaType);
+    public BooleanWrapper(boolean value) {
+        super();
         this.value = value;
     }
 

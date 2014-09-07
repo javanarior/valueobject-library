@@ -22,18 +22,16 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.types.helper.OtherShortValue;
-import de.javanarior.vo.types.helper.OtherShortValueImpl;
 import de.javanarior.vo.types.helper.ShortValue;
-import de.javanarior.vo.types.helper.ShortValueImpl;
 
 @Test
 public class ShortWrapperTest {
 
     private static final Short ONE_VALUE = Short.valueOf("1");
-    private static final ShortValue ONE = new ShortValueImpl((short)1);
-    private static final ShortValue TWO = new ShortValueImpl((short)2);
-    private static final ShortValue ANOTHER_ONE = new ShortValueImpl((short)1);
-    private static final OtherShortValue OTHER_TYPE_ONE = new OtherShortValueImpl((short)1);
+    private static final ShortValue ONE = new ShortValue((short)1);
+    private static final ShortValue TWO = new ShortValue((short)2);
+    private static final ShortValue ANOTHER_ONE = new ShortValue((short)1);
+    private static final OtherShortValue OTHER_TYPE_ONE = new OtherShortValue((short)1);
 
     public void testEqualsForDifferentTypes() {
         assertFalse(ONE.equals(OTHER_TYPE_ONE));

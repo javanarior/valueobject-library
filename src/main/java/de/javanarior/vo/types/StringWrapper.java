@@ -28,13 +28,11 @@ public abstract class StringWrapper<T extends Value<T>> extends AbstractValue<T>
     /**
      * Create String Type from String value.
      *
-     * @param metaType
-     *            - the value type
      * @param value
      *            - value for the object
      */
-    protected StringWrapper(Class<T> metaType, String value) {
-        super(metaType);
+    public StringWrapper(String value) {
+        super();
         this.value = value;
     }
 

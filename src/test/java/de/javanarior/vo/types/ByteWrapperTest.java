@@ -22,18 +22,16 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.types.helper.ByteValue;
-import de.javanarior.vo.types.helper.ByteValueImpl;
 import de.javanarior.vo.types.helper.OtherByteValue;
-import de.javanarior.vo.types.helper.OtherByteValueImpl;
 
 @Test
 public class ByteWrapperTest {
 
     private static final Byte ONE_VALUE = Byte.valueOf("1");
-    private static final ByteValue ONE = new ByteValueImpl((byte)1);
-    private static final ByteValue TWO = new ByteValueImpl((byte)2);
-    private static final ByteValue ANOTHER_ONE = new ByteValueImpl((byte)1);
-    private static final OtherByteValue OTHER_TYPE_ONE = new OtherByteValueImpl((byte)1);
+    private static final ByteValue ONE = new ByteValue((byte)1);
+    private static final ByteValue TWO = new ByteValue((byte)2);
+    private static final ByteValue ANOTHER_ONE = new ByteValue((byte)1);
+    private static final OtherByteValue OTHER_TYPE_ONE = new OtherByteValue((byte)1);
 
     public void testEqualsForDifferentTypes() {
         assertFalse(ONE.equals(OTHER_TYPE_ONE));

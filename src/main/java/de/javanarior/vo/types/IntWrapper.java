@@ -28,13 +28,11 @@ public abstract class IntWrapper<T extends Value<T>> extends AbstractValue<T> {
     /**
      * Create Integer Type with int value.
      *
-     * @param metaType
-     *            - the value type
      * @param value
      *            - value for the object
      */
-    protected IntWrapper(Class<T> metaType, int value) {
-        super(metaType);
+    public IntWrapper(int value) {
+        super();
         this.value = value;
     }
 

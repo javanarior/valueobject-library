@@ -22,18 +22,16 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.types.helper.IntValue;
-import de.javanarior.vo.types.helper.IntValueImpl;
 import de.javanarior.vo.types.helper.OtherIntValue;
-import de.javanarior.vo.types.helper.OtherIntValueImpl;
 
 @Test
 public class IntWrapperTest {
 
     private static final Integer ONE_VALUE = Integer.valueOf(1);
-    private static final IntValue ONE = new IntValueImpl(1);
-    private static final IntValue TWO = new IntValueImpl(2);
-    private static final IntValue ANOTHER_ONE = new IntValueImpl(1);
-    private static final OtherIntValue OTHER_TYPE_ONE = new OtherIntValueImpl(1);
+    private static final IntValue ONE = new IntValue(1);
+    private static final IntValue TWO = new IntValue(2);
+    private static final IntValue ANOTHER_ONE = new IntValue(1);
+    private static final OtherIntValue OTHER_TYPE_ONE = new OtherIntValue(1);
 
     public void testEqualsForDifferentTypes() {
         assertFalse(ONE.equals(OTHER_TYPE_ONE));

@@ -25,17 +25,14 @@ public abstract class NullObject<T extends Value<T>> extends AbstractValue<T> {
 
     /**
      * Create a new NullObject instance.
-     *
-     * @param metaType
-     *            - the value type
      */
-    protected NullObject(Class<T> metaType) {
-        super(metaType);
+    public NullObject() {
+        super();
     }
 
     @Override
     public int hashCode() {
-        return 15077 + getMetaType().getName().hashCode();
+        return 15077 + getClass().hashCode();
     }
 
     @Override

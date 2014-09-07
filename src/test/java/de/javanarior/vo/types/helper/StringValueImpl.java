@@ -20,7 +20,7 @@ import de.javanarior.vo.types.StringWrapper;
 public class StringValueImpl extends StringWrapper<StringValue> implements StringValue {
 
     public StringValueImpl(String value) {
-        super(StringValue.class, value);
+        super(value);
     }
 
 }

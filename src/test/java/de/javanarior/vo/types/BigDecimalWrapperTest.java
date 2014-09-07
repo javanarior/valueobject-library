@@ -24,18 +24,16 @@ import java.math.BigDecimal;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.types.helper.BigDecimalValue;
-import de.javanarior.vo.types.helper.BigDecimalValueImpl;
 import de.javanarior.vo.types.helper.OtherBigDecimalValue;
-import de.javanarior.vo.types.helper.OtherBigDecimalValueImpl;
 
 @Test
 public class BigDecimalWrapperTest {
 
     private static final BigDecimal ONE_VALUE = BigDecimal.valueOf(1.1);
-    private static final BigDecimalValue ONE = new BigDecimalValueImpl(ONE_VALUE);
-    private static final BigDecimalValue TWO = new BigDecimalValueImpl(BigDecimal.valueOf(2.2));
-    private static final BigDecimalValue ANOTHER_ONE = new BigDecimalValueImpl(ONE_VALUE);
-    private static final OtherBigDecimalValue OTHER_TYPE_ONE = new OtherBigDecimalValueImpl(ONE_VALUE);
+    private static final BigDecimalValue ONE = new BigDecimalValue(ONE_VALUE);
+    private static final BigDecimalValue TWO = new BigDecimalValue(BigDecimal.valueOf(2.2));
+    private static final BigDecimalValue ANOTHER_ONE = new BigDecimalValue(ONE_VALUE);
+    private static final OtherBigDecimalValue OTHER_TYPE_ONE = new OtherBigDecimalValue(ONE_VALUE);
 
     public void testEqualsForDifferentTypes() {
         assertFalse(ONE.equals(OTHER_TYPE_ONE));

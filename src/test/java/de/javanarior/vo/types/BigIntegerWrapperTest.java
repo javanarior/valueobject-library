@@ -24,18 +24,16 @@ import java.math.BigInteger;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.types.helper.BigIntegerValue;
-import de.javanarior.vo.types.helper.BigIntegerValueImpl;
 import de.javanarior.vo.types.helper.OtherBigIntegerValue;
-import de.javanarior.vo.types.helper.OtherBigIntegerValueImpl;
 
 @Test
 public class BigIntegerWrapperTest {
 
     private static final BigInteger ONE_VALUE = BigInteger.valueOf(1L);
-    private static final BigIntegerValue ONE = new BigIntegerValueImpl(ONE_VALUE);
-    private static final BigIntegerValue TWO = new BigIntegerValueImpl(BigInteger.valueOf(2L));
-    private static final BigIntegerValue ANOTHER_ONE = new BigIntegerValueImpl(ONE_VALUE);
-    private static final OtherBigIntegerValue OTHER_TYPE_ONE = new OtherBigIntegerValueImpl(ONE_VALUE);
+    private static final BigIntegerValue ONE = new BigIntegerValue(ONE_VALUE);
+    private static final BigIntegerValue TWO = new BigIntegerValue(BigInteger.valueOf(2L));
+    private static final BigIntegerValue ANOTHER_ONE = new BigIntegerValue(ONE_VALUE);
+    private static final OtherBigIntegerValue OTHER_TYPE_ONE = new OtherBigIntegerValue(ONE_VALUE);
 
     public void testEqualsForDifferentTypes() {
         assertFalse(ONE.equals(OTHER_TYPE_ONE));

@@ -15,8 +15,12 @@
  */
 package de.javanarior.vo.types.helper;
 
-import de.javanarior.vo.types.Value;
+import de.javanarior.vo.types.ByteWrapper;
 
-public interface ByteValue extends Value<ByteValue> {
+public class ByteValue extends ByteWrapper<ByteValue> {
+
+    public ByteValue(byte value) {
+        super(value);
+    }
 
 }

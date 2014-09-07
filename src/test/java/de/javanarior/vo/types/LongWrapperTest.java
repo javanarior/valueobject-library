@@ -22,18 +22,16 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.types.helper.LongValue;
-import de.javanarior.vo.types.helper.LongValueImpl;
 import de.javanarior.vo.types.helper.OtherLongValue;
-import de.javanarior.vo.types.helper.OtherLongValueImpl;
 
 @Test
 public class LongWrapperTest {
 
     private static final Long ONE_VALUE = Long.valueOf(1);
-    private static final LongValue ONE = new LongValueImpl(1L);
-    private static final LongValue TWO = new LongValueImpl(2);
-    private static final LongValue ANOTHER_ONE = new LongValueImpl(1);
-    private static final OtherLongValue OTHER_TYPE_ONE = new OtherLongValueImpl(1L);
+    private static final LongValue ONE = new LongValue(1L);
+    private static final LongValue TWO = new LongValue(2);
+    private static final LongValue ANOTHER_ONE = new LongValue(1);
+    private static final OtherLongValue OTHER_TYPE_ONE = new OtherLongValue(1L);
 
     public void testEqualsForDifferentTypes() {
         assertFalse(ONE.equals(OTHER_TYPE_ONE));

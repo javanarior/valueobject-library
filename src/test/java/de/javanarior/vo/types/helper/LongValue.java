@@ -15,8 +15,12 @@
  */
 package de.javanarior.vo.types.helper;
 
-import de.javanarior.vo.types.Value;
+import de.javanarior.vo.types.LongWrapper;
 
-public interface LongValue extends Value<LongValue> {
+public class LongValue extends LongWrapper<LongValue> {
+
+    public LongValue(long value) {
+        super(value);
+    }
 
 }

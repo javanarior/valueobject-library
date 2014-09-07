@@ -32,18 +32,18 @@ public class AbstractValueTest {
 
     @BeforeMethod
     public void setUp() {
-        testee = new AbstractValueImpl(AbstractValueImpl.class, "12");
+        testee = new AbstractValueImpl("12");
     }
 
     public void testAsBoolean() {
-        testee = new AbstractValueImpl(AbstractValueImpl.class, "true");
+        testee = new AbstractValueImpl("true");
         Boolean asBoolean = testee.asBoolean();
         assertEquals(asBoolean.getClass(), Boolean.class);
         assertEquals(asBoolean, Boolean.TRUE);
     }
 
     public void testAsPrimitiveBoolean() {
-        testee = new AbstractValueImpl(AbstractValueImpl.class, "true");
+        testee = new AbstractValueImpl("true");
         boolean asBoolean = testee.asPrimitiveBoolean();
         assertEquals(asBoolean, true);
     }
@@ -136,7 +136,7 @@ public class AbstractValueTest {
     }
 
     public void testEquals() {
-        AbstractValueImpl otherValue = new AbstractValueImpl(AbstractValueImpl.class, "12");
+        AbstractValueImpl otherValue = new AbstractValueImpl("12");
         assertTrue(testee.equals(otherValue));
         assertTrue(otherValue.equals(testee));
     }
@@ -146,7 +146,7 @@ public class AbstractValueTest {
     }
 
     public void testEqualsForDifferentTypes() {
-        OtherAbstractValueImpl otherValue = new OtherAbstractValueImpl(OtherAbstractValueImpl.class, "12");
+        OtherAbstractValueImpl otherValue = new OtherAbstractValueImpl("12");
         assertFalse(testee.equals(otherValue));
         assertFalse(otherValue.equals(testee));
     }
@@ -158,8 +158,8 @@ public class AbstractValueTest {
     private static class AbstractValueImpl extends AbstractValue<AbstractValueImpl> {
 
         private Object value;
-        protected AbstractValueImpl(Class<AbstractValueImpl> metaType, Object value) {
-            super(metaType);
+        protected AbstractValueImpl(Object value) {
+            super();
             this.value = value;
         }
 
@@ -177,8 +177,8 @@ public class AbstractValueTest {
     private static class OtherAbstractValueImpl extends AbstractValue<OtherAbstractValueImpl> {
 
         private Object value;
-        protected OtherAbstractValueImpl(Class<OtherAbstractValueImpl> metaType, Object value) {
-            super(metaType);
+        protected OtherAbstractValueImpl(Object value) {
+            super();
             this.value = value;
         }
 

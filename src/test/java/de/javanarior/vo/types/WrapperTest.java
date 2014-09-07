@@ -27,15 +27,15 @@ import java.math.BigInteger;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.types.helper.BigDecimalValueImpl;
-import de.javanarior.vo.types.helper.BigIntegerValueImpl;
-import de.javanarior.vo.types.helper.BooleanValueImpl;
-import de.javanarior.vo.types.helper.ByteValueImpl;
-import de.javanarior.vo.types.helper.CharValueImpl;
-import de.javanarior.vo.types.helper.DoubleValueImpl;
-import de.javanarior.vo.types.helper.IntValueImpl;
-import de.javanarior.vo.types.helper.LongValueImpl;
-import de.javanarior.vo.types.helper.ShortValueImpl;
+import de.javanarior.vo.types.helper.BigDecimalValue;
+import de.javanarior.vo.types.helper.BigIntegerValue;
+import de.javanarior.vo.types.helper.BooleanValue;
+import de.javanarior.vo.types.helper.ByteValue;
+import de.javanarior.vo.types.helper.CharValue;
+import de.javanarior.vo.types.helper.DoubleValue;
+import de.javanarior.vo.types.helper.IntValue;
+import de.javanarior.vo.types.helper.LongValue;
+import de.javanarior.vo.types.helper.ShortValue;
 import de.javanarior.vo.types.helper.StringValueImpl;
 
 @Test
@@ -45,17 +45,17 @@ public class WrapperTest {
     public Object[][] getWrapper() {
 //        @formatter:off
         return new Object[][] {
-            {new BigDecimalValueImpl(BigDecimal.valueOf(1.1)), new BigDecimalValueImpl(BigDecimal.valueOf(1.1)),
-             new BigDecimalValueImpl(BigDecimal.valueOf(2.2))}
-          , {new BigIntegerValueImpl(BigInteger.valueOf(1)), new BigIntegerValueImpl(BigInteger.valueOf(1)),
-             new BigIntegerValueImpl(BigInteger.valueOf(2))}
-          , {new BooleanValueImpl(true), new BooleanValueImpl(true), new BooleanValueImpl(false)}
-          , {new ByteValueImpl((byte)1), new ByteValueImpl((byte)1), new ByteValueImpl((byte)2)}
-          , {new CharValueImpl('1'), new CharValueImpl('1'), new CharValueImpl('2')}
-          , {new DoubleValueImpl(1.1), new DoubleValueImpl(1.1), new DoubleValueImpl(2.2)}
-          , {new IntValueImpl(1), new IntValueImpl(1), new IntValueImpl(2)}
-          , {new LongValueImpl(1L), new LongValueImpl(1L), new LongValueImpl(2L)}
-          , {new ShortValueImpl((short)1), new ShortValueImpl((short)1), new ShortValueImpl((short)2)}
+            {new BigDecimalValue(BigDecimal.valueOf(1.1)), new BigDecimalValue(BigDecimal.valueOf(1.1)),
+             new BigDecimalValue(BigDecimal.valueOf(2.2))}
+          , {new BigIntegerValue(BigInteger.valueOf(1)), new BigIntegerValue(BigInteger.valueOf(1)),
+             new BigIntegerValue(BigInteger.valueOf(2))}
+          , {new BooleanValue(true), new BooleanValue(true), new BooleanValue(false)}
+          , {new ByteValue((byte)1), new ByteValue((byte)1), new ByteValue((byte)2)}
+          , {new CharValue('1'), new CharValue('1'), new CharValue('2')}
+          , {new DoubleValue(1.1), new DoubleValue(1.1), new DoubleValue(2.2)}
+          , {new IntValue(1), new IntValue(1), new IntValue(2)}
+          , {new LongValue(1L), new LongValue(1L), new LongValue(2L)}
+          , {new ShortValue((short)1), new ShortValue((short)1), new ShortValue((short)2)}
           , {new StringValueImpl("one"), new StringValueImpl("one"), new StringValueImpl("two")}
         };
 //        @formatter:on

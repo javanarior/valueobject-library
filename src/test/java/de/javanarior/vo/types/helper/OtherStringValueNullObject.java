@@ -20,7 +20,7 @@ import de.javanarior.vo.types.NullObject;
 public class OtherStringValueNullObject extends NullObject<OtherStringValue> implements OtherStringValue {
 
     public OtherStringValueNullObject() {
-        super(OtherStringValue.class);
+        super();
     }
 
 }

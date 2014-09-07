@@ -30,13 +30,11 @@ public abstract class BigIntegerWrapper<T extends Value<T>> extends AbstractValu
     /**
      * Create BigInteger Type from BigInteger value.
      *
-     * @param metaType
-     *            - the value type
      * @param value
      *            - value for the object
      */
-    protected BigIntegerWrapper(Class<T> metaType, BigInteger value) {
-        super(metaType);
+    public BigIntegerWrapper(BigInteger value) {
+        super();
         this.value = value;
     }
 

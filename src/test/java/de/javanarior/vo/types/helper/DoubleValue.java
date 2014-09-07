@@ -15,8 +15,12 @@
  */
 package de.javanarior.vo.types.helper;
 
-import de.javanarior.vo.types.Value;
+import de.javanarior.vo.types.DoubleWrapper;
 
-public interface DoubleValue extends Value<DoubleValue> {
+public class DoubleValue extends DoubleWrapper<DoubleValue> {
+
+    public DoubleValue(double value) {
+        super(value);
+    }
 
 }

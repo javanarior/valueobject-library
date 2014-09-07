@@ -15,8 +15,12 @@
  */
 package de.javanarior.vo.types.helper;
 
-import de.javanarior.vo.types.Value;
+import de.javanarior.vo.types.IntWrapper;
 
-public interface OtherIntValue extends Value<OtherIntValue> {
+public class OtherIntValue extends IntWrapper<OtherIntValue> {
+
+    public OtherIntValue(int value) {
+        super(value);
+    }
 
 }

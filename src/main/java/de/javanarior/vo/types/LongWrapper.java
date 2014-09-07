@@ -28,13 +28,11 @@ public abstract class LongWrapper<T extends Value<T>> extends AbstractValue<T> {
     /**
      * Create Long Type with long value.
      *
-     * @param metaType
-     *            - the value type
      * @param value
      *            - value for the object
      */
-    protected LongWrapper(Class<T> metaType, long value) {
-        super(metaType);
+    public LongWrapper(long value) {
+        super();
         this.value = value;
     }
 

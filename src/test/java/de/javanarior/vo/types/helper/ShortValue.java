@@ -15,8 +15,12 @@
  */
 package de.javanarior.vo.types.helper;
 
-import de.javanarior.vo.types.Value;
+import de.javanarior.vo.types.ShortWrapper;
 
-public interface ShortValue extends Value<ShortValue> {
+public class ShortValue extends ShortWrapper<ShortValue> {
+
+    public ShortValue(short value) {
+        super(value);
+    }
 
 }

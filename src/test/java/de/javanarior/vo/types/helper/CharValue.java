@@ -15,8 +15,12 @@
  */
 package de.javanarior.vo.types.helper;
 
-import de.javanarior.vo.types.Value;
+import de.javanarior.vo.types.CharWrapper;
 
-public interface CharValue extends Value<CharValue> {
+public class CharValue extends CharWrapper<CharValue> {
+
+    public CharValue(char value) {
+        super(value);
+    }
 
 }
