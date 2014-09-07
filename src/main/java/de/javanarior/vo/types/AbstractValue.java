@@ -162,6 +162,11 @@ public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName()+ "=" + getValue();
+    }
+
     public Class<T> getMetaType() {
         return metaType;
     }

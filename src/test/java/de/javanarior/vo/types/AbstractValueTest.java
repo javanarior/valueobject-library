@@ -151,7 +151,9 @@ public class AbstractValueTest {
         assertFalse(otherValue.equals(testee));
     }
 
-
+    public void testToString() {
+        assertEquals(testee.toString(), "AbstractValueImpl=12");
+    }
 
     private static class AbstractValueImpl extends AbstractValue<AbstractValueImpl> {
 
