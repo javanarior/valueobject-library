@@ -5,23 +5,19 @@
 This library provides some Wrapper classes to create value objects. To avoid re-implementing
 this classes in every project i start to write this library.
 
-The contained Wrapper classes are
+The provided Wrapper classes are
 
-For primitive Types
+* BigDecimalWrapper
+* BigIntegerWrapper
+* BooleanWrapper
+* ByteWrapper
+* CharWrapper
+* DoubleWrapper
+* IntWrapper
+* LongWrapper
+* ShortWrapper
+* StringWrapper
 
-* int
-* long
-* double
-* boolean
-* short
-* byte
-* char
-
-Object Types
-
-* String
-* BigInteger
-* BigDecimal
 
 # Installation/Distribution
 
