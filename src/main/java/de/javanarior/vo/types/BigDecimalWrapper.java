@@ -63,12 +63,10 @@ public abstract class BigDecimalWrapper<T extends Value<T>> extends AbstractValu
             return false;
         }
         BigDecimalWrapper<?> other = (BigDecimalWrapper<?>)obj;
-        if (value == null) {
-            if (other.value != null) {
+        if (value != null) {
+            if (value.compareTo(other.value) != 0) {
                 return false;
             }
-        } else if (!value.equals(other.value)) {
-            return false;
         }
         return true;
     }

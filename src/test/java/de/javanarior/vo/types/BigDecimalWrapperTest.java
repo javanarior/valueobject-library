@@ -29,9 +29,9 @@ import de.javanarior.vo.types.helper.OtherBigDecimalValue;
 @Test
 public class BigDecimalWrapperTest {
 
-    private static final BigDecimal ONE_VALUE = BigDecimal.valueOf(1.1);
+    private static final BigDecimal ONE_VALUE = new BigDecimal("1.1");
     private static final BigDecimalValue ONE = new BigDecimalValue(ONE_VALUE);
-    private static final BigDecimalValue TWO = new BigDecimalValue(BigDecimal.valueOf(2.2));
+    private static final BigDecimalValue TWO = new BigDecimalValue(new BigDecimal("2.2"));
     private static final BigDecimalValue ANOTHER_ONE = new BigDecimalValue(ONE_VALUE);
     private static final OtherBigDecimalValue OTHER_TYPE_ONE = new OtherBigDecimalValue(ONE_VALUE);
 
@@ -43,6 +43,10 @@ public class BigDecimalWrapperTest {
     public void testAsBigDecimal() {
         assertEquals(ONE.asBigDecimal(), ONE_VALUE);
         assertEquals(ONE_VALUE, ONE.asBigDecimal());
+    }
+
+    public void testEqualsWithDifferentScale() {
+        assertEquals(ONE, new BigDecimalValue(new BigDecimal("1.10")));
     }
 
     public void testCompareTo() {
