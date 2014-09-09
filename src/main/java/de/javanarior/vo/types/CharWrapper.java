@@ -21,7 +21,7 @@ package de.javanarior.vo.types;
  * @param <T>
  *            the value type
  */
-public abstract class CharWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class CharWrapper<T extends CharWrapper<T>> extends AbstractValue<T> {
 
     private final char value;
 
@@ -67,12 +67,20 @@ public abstract class CharWrapper<T extends Value<T>> extends AbstractValue<T> {
         return true;
     }
 
-    @Override
+    /**
+     * Returns the value as primitive char.
+     *
+     * @return primitive char
+     */
     public char asChar() {
         return value;
     }
 
-    @Override
+    /**
+     * Return the value as Character object.
+     *
+     * @return Character object
+     */
     public Character asCharacter() {
         return Character.valueOf(value);
     }

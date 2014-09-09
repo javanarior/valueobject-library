@@ -70,16 +70,6 @@ public class AbstractValueTest {
         assertEquals(asShort, (short)12);
     }
 
-    @Test(expectedExceptions = UnsupportedOperationException.class)
-    public void testAsCharacter() {
-        testee.asCharacter();
-    }
-
-    @Test(expectedExceptions = UnsupportedOperationException.class)
-    public void testAsChar() {
-        testee.asChar();
-    }
-
     public void testAsInteger() {
         Integer asInteger = testee.asInteger();
         assertEquals(asInteger.getClass(), Integer.class);

@@ -74,11 +74,6 @@ public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
     }
 
     @Override
-    public char asChar() {
-        throw new UnsupportedOperationException("Method asChar is only supported by CharWrapper.");
-    }
-
-    @Override
     public int asInt() {
         return asInteger().intValue();
     }
@@ -106,11 +101,6 @@ public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
     @Override
     public Short asShort() {
         return Short.valueOf(asString());
-    }
-
-    @Override
-    public Character asCharacter() {
-        throw new UnsupportedOperationException("Method asCharacter is only supported by CharWrapper.");
     }
 
     @Override

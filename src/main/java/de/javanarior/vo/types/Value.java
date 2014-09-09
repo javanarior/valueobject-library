@@ -62,14 +62,6 @@ public interface Value<T extends Value<T>> extends Comparable<T> {
     short asPrimitiveShort();
 
     /**
-     * Returns the value as primitive char.
-     * TODO not supported at all.
-     *
-     * @return primitive char
-     */
-    char asChar();
-
-    /**
      * Returns the value as primitive int.
      *
      * @return primitive int
@@ -110,14 +102,6 @@ public interface Value<T extends Value<T>> extends Comparable<T> {
      * @return Short object
      */
     Short asShort();
-
-    /**
-     * Return the value as Character object.
-     * TODO not supported at all.
-     *
-     * @return Character object
-     */
-    Character asCharacter();
 
     /**
      * Return the value as Integer object.
