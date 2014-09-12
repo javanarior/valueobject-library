@@ -43,10 +43,7 @@ public abstract class LongWrapper<T extends Value<T>> extends AbstractValue<T> {
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = (int)(prime * result + value);
-        return result;
+        return (int)(31 * super.hashCode() + value);
     }
 
     @Override

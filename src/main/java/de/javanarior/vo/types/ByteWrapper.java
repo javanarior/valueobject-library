@@ -43,10 +43,7 @@ public abstract class ByteWrapper<T extends Value<T>> extends AbstractValue<T> {
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = prime * result + value;
-        return result;
+        return 31 * super.hashCode() + value;
     }
 
     @Override

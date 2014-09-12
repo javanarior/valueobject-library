@@ -43,10 +43,7 @@ public abstract class BooleanWrapper<T extends Value<T>> extends AbstractValue<T
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = prime * result + (value ? 1231 : 1237);
-        return result;
+        return 31 * super.hashCode() + (value ? 1231 : 1237);
     }
 
     @Override

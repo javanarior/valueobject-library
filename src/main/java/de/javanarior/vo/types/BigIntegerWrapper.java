@@ -45,10 +45,7 @@ public abstract class BigIntegerWrapper<T extends Value<T>> extends AbstractValu
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = prime * result + ((value == null) ? 0 : value.hashCode());
-        return result;
+        return 31 * super.hashCode() + value.hashCode();
     }
 
     @Override

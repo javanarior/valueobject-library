@@ -43,12 +43,8 @@ public abstract class DoubleWrapper<T extends Value<T>> extends AbstractValue<T>
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(value);
-        result = prime * result + (int)(temp ^ (temp >>> 32));
-        return result;
+        long temp = Double.doubleToLongBits(value);
+        return 31 * super.hashCode() + (int)(temp ^ (temp >>> 32));
     }
 
     @Override
