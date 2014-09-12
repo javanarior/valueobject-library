@@ -26,13 +26,6 @@ import java.math.BigInteger;
  */
 public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
 
-    /**
-     * Create a value type.
-     */
-    public AbstractValue() {
-        super();
-    }
-
     @Override
     public abstract Object getValue();
 

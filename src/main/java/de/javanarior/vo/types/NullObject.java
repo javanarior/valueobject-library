@@ -23,13 +23,6 @@ package de.javanarior.vo.types;
  */
 public abstract class NullObject<T extends Value<T>> extends AbstractValue<T> {
 
-    /**
-     * Create a new NullObject instance.
-     */
-    public NullObject() {
-        super();
-    }
-
     @Override
     public int hashCode() {
         return 15077 + getClass().hashCode();
