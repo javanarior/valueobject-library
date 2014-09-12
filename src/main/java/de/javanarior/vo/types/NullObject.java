@@ -30,20 +30,10 @@ public abstract class NullObject<T extends Value<T>> extends AbstractValue<T> {
 
     @Override
     public boolean equals(Object object) {
-        if (this == object) {
-            return true;
-        }
         if (object == null) {
             return true;
         }
-        if (getClass() != object.getClass()) {
-            return false;
-        }
-        NullObject<?> other = (NullObject<?>)object;
-        if (!super.equals(other)) {
-            return false;
-        }
-        return true;
+        return super.equals(object);
     }
 
     @Override
