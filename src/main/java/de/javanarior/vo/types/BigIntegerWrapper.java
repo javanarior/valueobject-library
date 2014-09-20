@@ -39,7 +39,7 @@ public abstract class BigIntegerWrapper<V extends Value<V, BigInteger>> extends 
     }
 
     @Override
-    public Object getValue() {
+    public BigInteger getValue() {
         return value;
     }
 

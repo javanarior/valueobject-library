@@ -28,7 +28,7 @@ public abstract class AbstractValue<V extends Value<V, T>, T> extends SpeakingCo
                 Value<V, T> {
 
     @Override
-    public abstract Object getValue();
+    public abstract T getValue();
 
     @Override
     public abstract int compareTo(V other);

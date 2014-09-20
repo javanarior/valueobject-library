@@ -39,7 +39,7 @@ public abstract class BigDecimalWrapper<V extends Value<V, BigDecimal>> extends 
     }
 
     @Override
-    public Object getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 

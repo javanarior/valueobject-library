@@ -37,7 +37,7 @@ public abstract class ByteWrapper<V extends Value<V, Byte>> extends AbstractValu
     }
 
     @Override
-    public Object getValue() {
+    public Byte getValue() {
         return asByte();
     }
 

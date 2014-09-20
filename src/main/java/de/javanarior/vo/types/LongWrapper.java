@@ -37,7 +37,7 @@ public abstract class LongWrapper<V extends Value<V, Long>> extends AbstractValu
     }
 
     @Override
-    public Object getValue() {
+    public Long getValue() {
         return asLong();
     }
 
@@ -76,7 +76,7 @@ public abstract class LongWrapper<V extends Value<V, Long>> extends AbstractValu
 
     @Override
     public int compareTo(V other) {
-        return asLong().compareTo((Long)other.getValue());
+        return asLong().compareTo(other.getValue());
     }
 
 }

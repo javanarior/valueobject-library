@@ -37,7 +37,7 @@ public abstract class DoubleWrapper<V extends Value<V, Double>> extends Abstract
     }
 
     @Override
-    public Object getValue() {
+    public Double getValue() {
         return asDouble();
     }
 

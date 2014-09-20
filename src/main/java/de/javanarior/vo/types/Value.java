@@ -31,7 +31,7 @@ public interface Value<V extends Value<V, T>, T> extends SpeakingComparable<V> {
      *
      * @return value as object
      */
-    Object getValue();
+    T getValue();
 
     /**
      * Returns true if the object is a null object.

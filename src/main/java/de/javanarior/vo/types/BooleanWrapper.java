@@ -37,7 +37,7 @@ public abstract class BooleanWrapper<V extends Value<V, Boolean>> extends Abstra
     }
 
     @Override
-    public Object getValue() {
+    public Boolean getValue() {
         return asBoolean();
     }
 

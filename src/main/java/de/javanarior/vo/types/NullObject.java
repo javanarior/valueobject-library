@@ -47,7 +47,7 @@ public abstract class NullObject<V extends Value<V, T>, T> extends AbstractValue
     }
 
     @Override
-    public Object getValue() {
+    public T getValue() {
         return null;
     }
 

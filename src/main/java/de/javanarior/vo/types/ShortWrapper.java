@@ -37,7 +37,7 @@ public abstract class ShortWrapper<V extends Value<V, Short>> extends AbstractVa
     }
 
     @Override
-    public Object getValue() {
+    public Short getValue() {
         return asShort();
     }
 
