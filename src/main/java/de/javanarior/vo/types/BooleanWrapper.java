@@ -21,7 +21,7 @@ package de.javanarior.vo.types;
  * @param <V>
  *            the value type
  */
-public abstract class BooleanWrapper<V extends Value<V>> extends AbstractValue<V> {
+public abstract class BooleanWrapper<V extends Value<V, Boolean>> extends AbstractValue<V, Boolean> {
 
     private final boolean value;
 

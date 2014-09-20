@@ -145,7 +145,7 @@ public class AbstractValueTest {
         assertEquals(testee.toString(), "AbstractValueImpl=12");
     }
 
-    private static class AbstractValueImpl extends AbstractValue<AbstractValueImpl> {
+    private static class AbstractValueImpl extends AbstractValue<AbstractValueImpl, Object> {
 
         private Object value;
         protected AbstractValueImpl(Object value) {
@@ -164,7 +164,7 @@ public class AbstractValueTest {
         }
     }
 
-    private static class OtherAbstractValueImpl extends AbstractValue<OtherAbstractValueImpl> {
+    private static class OtherAbstractValueImpl extends AbstractValue<OtherAbstractValueImpl, Object> {
 
         private Object value;
         protected OtherAbstractValueImpl(Object value) {

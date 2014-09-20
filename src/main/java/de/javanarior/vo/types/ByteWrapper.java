@@ -21,7 +21,7 @@ package de.javanarior.vo.types;
  * @param <V>
  *            the value type
  */
-public abstract class ByteWrapper<V extends Value<V>> extends AbstractValue<V> {
+public abstract class ByteWrapper<V extends Value<V, Byte>> extends AbstractValue<V, Byte> {
 
     private final byte value;
 

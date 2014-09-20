@@ -17,6 +17,6 @@ package de.javanarior.vo.types.helper;
 
 import de.javanarior.vo.types.Value;
 
-public interface StringValue extends Value<StringValue> {
+public interface StringValue extends Value<StringValue, String> {
 
 }

@@ -24,7 +24,7 @@ import java.math.BigInteger;
  * @param <V>
  *            the value type
  */
-public interface Value<V extends Value<V>> extends SpeakingComparable<V> {
+public interface Value<V extends Value<V, T>, T> extends SpeakingComparable<V> {
 
     /**
      * Returns the value as Object.

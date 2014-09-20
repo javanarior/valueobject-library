@@ -23,7 +23,7 @@ import java.math.BigDecimal;
  * @param <V>
  *            the value type
  */
-public abstract class BigDecimalWrapper<V extends Value<V>> extends AbstractValue<V> {
+public abstract class BigDecimalWrapper<V extends Value<V, BigDecimal>> extends AbstractValue<V, BigDecimal> {
 
     private final BigDecimal value;
 

@@ -21,7 +21,7 @@ package de.javanarior.vo.types;
  * @param <V>
  *            the value type
  */
-public abstract class LongWrapper<V extends Value<V>> extends AbstractValue<V> {
+public abstract class LongWrapper<V extends Value<V, Long>> extends AbstractValue<V, Long> {
 
     private final long value;
 

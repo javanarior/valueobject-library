@@ -23,7 +23,7 @@ import java.math.BigInteger;
  * @param <V>
  *            the value type
  */
-public abstract class BigIntegerWrapper<V extends Value<V>> extends AbstractValue<V> {
+public abstract class BigIntegerWrapper<V extends Value<V, BigInteger>> extends AbstractValue<V, BigInteger> {
 
     private final BigInteger value;
 
