@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for Character values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class CharWrapper<T extends CharWrapper<T>> extends AbstractValue<T> {
+public abstract class CharWrapper<V extends CharWrapper<V>> extends AbstractValue<V> {
 
     private final char value;
 
@@ -83,7 +83,7 @@ public abstract class CharWrapper<T extends CharWrapper<T>> extends AbstractValu
     }
 
     @Override
-    public int compareTo(T other) {
+    public int compareTo(V other) {
         return asCharacter().compareTo(other.asCharacter());
     }
 

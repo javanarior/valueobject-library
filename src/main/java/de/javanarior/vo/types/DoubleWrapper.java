@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for Double values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class DoubleWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class DoubleWrapper<V extends Value<V>> extends AbstractValue<V> {
 
     private final double value;
 
@@ -76,7 +76,7 @@ public abstract class DoubleWrapper<T extends Value<T>> extends AbstractValue<T>
     }
 
     @Override
-    public int compareTo(T other) {
+    public int compareTo(V other) {
         return asDouble().compareTo(other.asDouble());
     }
 

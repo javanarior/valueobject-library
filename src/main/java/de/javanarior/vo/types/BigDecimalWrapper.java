@@ -20,10 +20,10 @@ import java.math.BigDecimal;
 /**
  * Wrapper for BigDecimal values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class BigDecimalWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class BigDecimalWrapper<V extends Value<V>> extends AbstractValue<V> {
 
     private final BigDecimal value;
 
@@ -79,7 +79,7 @@ public abstract class BigDecimalWrapper<T extends Value<T>> extends AbstractValu
     }
 
     @Override
-    public int compareTo(T other) {
+    public int compareTo(V other) {
         return value.compareTo(other.asBigDecimal());
     }
 

@@ -21,10 +21,10 @@ import java.math.BigInteger;
 /**
  * Description of value objects.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public interface Value<T extends Value<T>> extends SpeakingComparable<T> {
+public interface Value<V extends Value<V>> extends SpeakingComparable<V> {
 
     /**
      * Returns the value as Object.
@@ -146,7 +146,7 @@ public interface Value<T extends Value<T>> extends SpeakingComparable<T> {
     BigDecimal asBigDecimal();
 
     @Override
-    int compareTo(T other);
+    int compareTo(V other);
 
     @Override
     boolean equals(Object other);

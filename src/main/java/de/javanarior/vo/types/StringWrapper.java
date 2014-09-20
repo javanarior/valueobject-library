@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for String values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class StringWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class StringWrapper<V extends Value<V>> extends AbstractValue<V> {
 
     private final String value;
 
@@ -74,7 +74,7 @@ public abstract class StringWrapper<T extends Value<T>> extends AbstractValue<T>
     }
 
     @Override
-    public int compareTo(T other) {
+    public int compareTo(V other) {
         return value.compareTo((String)other.getValue());
     }
 

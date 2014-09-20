@@ -20,10 +20,10 @@ import java.math.BigInteger;
 /**
  * Wrapper for BigInteger values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class BigIntegerWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class BigIntegerWrapper<V extends Value<V>> extends AbstractValue<V> {
 
     private final BigInteger value;
 
@@ -81,7 +81,7 @@ public abstract class BigIntegerWrapper<T extends Value<T>> extends AbstractValu
     }
 
     @Override
-    public int compareTo(T other) {
+    public int compareTo(V other) {
         return value.compareTo(other.asBigInteger());
     }
 

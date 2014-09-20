@@ -21,16 +21,16 @@ import java.math.BigInteger;
 /**
  * Base class for value objects.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class AbstractValue<T extends Value<T>> extends SpeakingComparableAdapter<T> implements Value<T> {
+public abstract class AbstractValue<V extends Value<V>> extends SpeakingComparableAdapter<V> implements Value<V> {
 
     @Override
     public abstract Object getValue();
 
     @Override
-    public abstract int compareTo(T other);
+    public abstract int compareTo(V other);
 
     @Override
     public int hashCode() {
