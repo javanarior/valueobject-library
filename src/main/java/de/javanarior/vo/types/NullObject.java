@@ -21,7 +21,7 @@ package de.javanarior.vo.types;
  * @param <V>
  *            the value type
  */
-public abstract class NullObject<V extends Value<V, T>, T> extends AbstractValue<V, T> {
+public abstract class NullObject<V extends Value<V, T>, T extends Comparable<T>> extends AbstractValue<V, T> {
 
     @Override
     public int hashCode() {
