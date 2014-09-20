@@ -21,7 +21,7 @@ package de.javanarior.vo.types;
  * @param <V>
  *            the value type
  */
-public abstract class CharWrapper<V extends CharWrapper<V>> extends AbstractValue<V> {
+public abstract class CharWrapper<V extends Value<V>> extends AbstractValue<V> {
 
     private final char value;
 
@@ -84,7 +84,7 @@ public abstract class CharWrapper<V extends CharWrapper<V>> extends AbstractValu
 
     @Override
     public int compareTo(V other) {
-        return asCharacter().compareTo(other.asCharacter());
+        return asCharacter().compareTo((Character)other.getValue());
     }
 
 }
