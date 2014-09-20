@@ -77,7 +77,7 @@ public abstract class DoubleWrapper<V extends Value<V, Double>> extends Abstract
 
     @Override
     public int compareTo(V other) {
-        return asDouble().compareTo(other.asDouble());
+        return getValue().compareTo(other.getValue());
     }
 
 }

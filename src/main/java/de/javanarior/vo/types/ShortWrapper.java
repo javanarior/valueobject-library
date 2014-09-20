@@ -76,7 +76,7 @@ public abstract class ShortWrapper<V extends Value<V, Short>> extends AbstractVa
 
     @Override
     public int compareTo(V other) {
-        return asShort().compareTo(other.asShort());
+        return getValue().compareTo(other.getValue());
     }
 
 }

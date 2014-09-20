@@ -75,7 +75,7 @@ public abstract class StringWrapper<V extends Value<V, String>> extends Abstract
 
     @Override
     public int compareTo(V other) {
-        return value.compareTo(other.getValue());
+        return getValue().compareTo(other.getValue());
     }
 
 }

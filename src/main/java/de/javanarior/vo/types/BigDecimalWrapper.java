@@ -80,7 +80,7 @@ public abstract class BigDecimalWrapper<V extends Value<V, BigDecimal>> extends 
 
     @Override
     public int compareTo(V other) {
-        return value.compareTo(other.asBigDecimal());
+        return getValue().compareTo(other.getValue());
     }
 
 }

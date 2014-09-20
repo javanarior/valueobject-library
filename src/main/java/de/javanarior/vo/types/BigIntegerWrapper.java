@@ -82,7 +82,7 @@ public abstract class BigIntegerWrapper<V extends Value<V, BigInteger>> extends 
 
     @Override
     public int compareTo(V other) {
-        return value.compareTo(other.asBigInteger());
+        return getValue().compareTo(other.getValue());
     }
 
 }

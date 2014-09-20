@@ -76,7 +76,7 @@ public abstract class IntWrapper<V extends Value<V, Integer>> extends AbstractVa
 
     @Override
     public int compareTo(V other) {
-        return asInteger().compareTo(other.getValue());
+        return getValue().compareTo(other.getValue());
     }
 
 }
