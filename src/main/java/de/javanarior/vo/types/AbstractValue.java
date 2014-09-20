@@ -24,7 +24,7 @@ import java.math.BigInteger;
  * @param <T>
  *            the value type
  */
-public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
+public abstract class AbstractValue<T extends Value<T>> extends SpeakingComparableAdapter<T> implements Value<T> {
 
     @Override
     public abstract Object getValue();
