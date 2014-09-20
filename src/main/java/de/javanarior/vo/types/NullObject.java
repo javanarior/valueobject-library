@@ -20,6 +20,8 @@ package de.javanarior.vo.types;
  *
  * @param <V>
  *            the value type
+ * @param <T>
+ *            the technical type to which the value type is mapped
  */
 public abstract class NullObject<V extends Value<V, T>, T extends Comparable<T>> extends AbstractValue<V, T> {
 

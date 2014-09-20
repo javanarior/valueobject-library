@@ -23,6 +23,8 @@ import java.math.BigInteger;
  *
  * @param <V>
  *            the value type
+ * @param <T>
+ *            the technical type to which the value type is mapped
  */
 public interface Value<V extends Value<V, T>, T extends Comparable<T>> extends SpeakingComparable<V> {
 
