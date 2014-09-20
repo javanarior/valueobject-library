@@ -31,9 +31,6 @@ public abstract class AbstractValue<V extends Value<V, T>, T extends Comparable<
     public abstract T getValue();
 
     @Override
-    public abstract int compareTo(V other);
-
-    @Override
     public int hashCode() {
         return 107 * getClass().hashCode();
     }
@@ -135,6 +132,11 @@ public abstract class AbstractValue<V extends Value<V, T>, T extends Comparable<
     @Override
     public String toString() {
         return getClass().getSimpleName() + "=" + getValue();
+    }
+
+    @Override
+    public int compareTo(V other) {
+        return getValue().compareTo(other.getValue());
     }
 
 }

@@ -74,9 +74,4 @@ public abstract class BooleanWrapper<V extends Value<V, Boolean>> extends Abstra
         return value;
     }
 
-    @Override
-    public int compareTo(V other) {
-        return getValue().compareTo(other.getValue());
-    }
-
 }

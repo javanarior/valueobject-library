@@ -78,9 +78,4 @@ public abstract class BigDecimalWrapper<V extends Value<V, BigDecimal>> extends 
         return value.toPlainString();
     }
 
-    @Override
-    public int compareTo(V other) {
-        return getValue().compareTo(other.getValue());
-    }
-
 }

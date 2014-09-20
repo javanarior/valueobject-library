@@ -74,9 +74,4 @@ public abstract class ByteWrapper<V extends Value<V, Byte>> extends AbstractValu
         return value;
     }
 
-    @Override
-    public int compareTo(V other) {
-        return getValue().compareTo(other.getValue());
-    }
-
 }

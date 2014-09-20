@@ -82,9 +82,4 @@ public abstract class CharWrapper<V extends Value<V, Character>> extends Abstrac
         return Character.valueOf(value);
     }
 
-    @Override
-    public int compareTo(V other) {
-        return getValue().compareTo(other.getValue());
-    }
-
 }
