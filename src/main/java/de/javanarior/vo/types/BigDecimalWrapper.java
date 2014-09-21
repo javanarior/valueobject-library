@@ -19,12 +19,17 @@ import java.math.BigDecimal;
 
 /**
  * Wrapper for BigDecimal values.
+ * <p>
+ * Please note that the {@linkplain BigDecimalWrapper#equals(Object)}
+ * implementation of this class differs from the #equals(Object) implementation
+ * of BigDecimal.
  *
  * @param <V>
  *            the value type
  */
 public abstract class BigDecimalWrapper<V extends Value<V, BigDecimal>> extends AbstractValue<V, BigDecimal> {
 
+    private static final int EQUALS = 0;
     private final BigDecimal value;
 
     /**
@@ -48,16 +53,19 @@ public abstract class BigDecimalWrapper<V extends Value<V, BigDecimal>> extends 
         return 31 * super.hashCode() + value.hashCode();
     }
 
+    /**
+     * To compare the value, this implementation uses compareTo of BigDecimal
+     * instead of equals. This means two values of BigDecimalWrapper are equals
+     * even if there have a different scale.
+     */
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)) {
             return false;
         }
         BigDecimalWrapper<?> other = (BigDecimalWrapper<?>)obj;
-        if (value != null) {
-            if (value.compareTo(other.value) != 0) {
-                return false;
-            }
+        if (value.compareTo(other.value) != EQUALS) {
+            return false;
         }
         return true;
     }

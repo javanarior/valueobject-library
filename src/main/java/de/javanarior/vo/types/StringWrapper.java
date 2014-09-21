@@ -52,11 +52,7 @@ public abstract class StringWrapper<V extends Value<V, String>> extends Abstract
             return false;
         }
         StringWrapper<?> other = (StringWrapper<?>)obj;
-        if (value == null) {
-            if (other.value != null) {
-                return false;
-            }
-        } else if (!value.equals(other.value)) {
+        if (!value.equals(other.value)) {
             return false;
         }
         return true;
