@@ -19,8 +19,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.types.speaking.SpeakingComparableAdapter;
-
 @Test
 public class SpeakingComparableAdapterTest {
 
