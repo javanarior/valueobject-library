@@ -13,11 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.javanarior.vo.types;
+package de.javanarior.vo.types.speaking;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import de.javanarior.vo.types.speaking.SpeakingComparableAdapter;
 
 @Test
 public class SpeakingComparableAdapterTest {

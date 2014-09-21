@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.javanarior.vo.types;
+package de.javanarior.vo.types.speaking;
 
 /**
  * Implementation of {@code SpeakingComparable} which rely on

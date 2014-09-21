@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.javanarior.vo.types;
+package de.javanarior.vo.types.speaking;
 
 /**
  * A more speaking Comparable interface.
