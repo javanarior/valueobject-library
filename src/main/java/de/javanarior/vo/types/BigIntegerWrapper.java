@@ -50,13 +50,7 @@ public abstract class BigIntegerWrapper<V extends Value<V, BigInteger>> extends 
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         BigIntegerWrapper<?> other = (BigIntegerWrapper<?>)obj;

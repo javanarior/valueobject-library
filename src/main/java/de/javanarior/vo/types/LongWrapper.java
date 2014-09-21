@@ -48,13 +48,7 @@ public abstract class LongWrapper<V extends Value<V, Long>> extends AbstractValu
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         LongWrapper<?> other = (LongWrapper<?>)obj;

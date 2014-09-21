@@ -50,13 +50,7 @@ public abstract class BigDecimalWrapper<V extends Value<V, BigDecimal>> extends 
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         BigDecimalWrapper<?> other = (BigDecimalWrapper<?>)obj;

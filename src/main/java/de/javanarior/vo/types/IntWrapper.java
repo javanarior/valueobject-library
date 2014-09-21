@@ -48,13 +48,7 @@ public abstract class IntWrapper<V extends Value<V, Integer>> extends AbstractVa
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         IntWrapper<?> other = (IntWrapper<?>)obj;

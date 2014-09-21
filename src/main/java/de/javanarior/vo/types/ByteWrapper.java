@@ -48,13 +48,7 @@ public abstract class ByteWrapper<V extends Value<V, Byte>> extends AbstractValu
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         ByteWrapper<?> other = (ByteWrapper<?>)obj;

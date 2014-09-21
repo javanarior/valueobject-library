@@ -49,13 +49,7 @@ public abstract class DoubleWrapper<V extends Value<V, Double>> extends Abstract
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         DoubleWrapper<?> other = (DoubleWrapper<?>)obj;

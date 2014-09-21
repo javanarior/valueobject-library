@@ -48,13 +48,7 @@ public abstract class StringWrapper<V extends Value<V, String>> extends Abstract
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         StringWrapper<?> other = (StringWrapper<?>)obj;

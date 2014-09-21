@@ -44,7 +44,7 @@ public class BigIntegerWrapperTest {
             fail("Null should not be allowed as value.");
         } catch (IllegalArgumentException exception) {
             assertNotNull(exception.getMessage());
-            assertTrue(!exception.getMessage().isEmpty());
+            assertFalse(exception.getMessage().isEmpty());
         }
     }
 

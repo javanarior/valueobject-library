@@ -31,6 +31,14 @@ import de.javanarior.vo.types.speaking.SpeakingComparableAdapter;
 public abstract class AbstractValue<V extends Value<V, T>, T extends Comparable<T>> extends
                 SpeakingComparableAdapter<V> implements Value<V, T> {
 
+    /**
+     * Assert {@code argument} is not null, if the argument is null a
+     * IllegalArguemntException is thrown.
+     *
+     * @param argument
+     *            - to check
+     * @return argument if not null
+     */
     public static <T> T assertNotNull(T argument) {
         if (argument == null) {
             throw new IllegalArgumentException("Null is not allowed as value");

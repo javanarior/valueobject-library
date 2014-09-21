@@ -48,13 +48,7 @@ public abstract class ShortWrapper<V extends Value<V, Short>> extends AbstractVa
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         ShortWrapper<?> other = (ShortWrapper<?>)obj;
