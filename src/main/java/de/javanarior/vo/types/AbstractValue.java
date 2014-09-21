@@ -31,6 +31,13 @@ import de.javanarior.vo.types.speaking.SpeakingComparableAdapter;
 public abstract class AbstractValue<V extends Value<V, T>, T extends Comparable<T>> extends
                 SpeakingComparableAdapter<V> implements Value<V, T> {
 
+    public static <T> T assertNotNull(T argument) {
+        if (argument == null) {
+            throw new IllegalArgumentException("Null is not allowed as value");
+        }
+        return argument;
+    }
+
     @Override
     public abstract T getValue();
 

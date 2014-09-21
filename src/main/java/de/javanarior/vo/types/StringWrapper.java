@@ -33,7 +33,7 @@ public abstract class StringWrapper<V extends Value<V, String>> extends Abstract
      */
     public StringWrapper(String value) {
         super();
-        this.value = value;
+        this.value = assertNotNull(value);
     }
 
     @Override

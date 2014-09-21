@@ -17,7 +17,9 @@ package de.javanarior.vo.types;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
 
 import java.math.BigDecimal;
 
@@ -34,6 +36,16 @@ public class BigDecimalWrapperTest {
     private static final BigDecimalValue TWO = new BigDecimalValue(new BigDecimal("2.2"));
     private static final BigDecimalValue ANOTHER_ONE = new BigDecimalValue(ONE_VALUE);
     private static final OtherBigDecimalValue OTHER_TYPE_ONE = new OtherBigDecimalValue(ONE_VALUE);
+
+    public void testBigDecimalWrapperNullArgument() {
+        try {
+            new BigDecimalValue(null);
+            fail("Null should not be allowed as value.");
+        } catch (IllegalArgumentException exception) {
+            assertNotNull(exception.getMessage());
+            assertTrue(!exception.getMessage().isEmpty());
+        }
+    }
 
     public void testEqualsForDifferentTypes() {
         assertFalse(ONE.equals(OTHER_TYPE_ONE));

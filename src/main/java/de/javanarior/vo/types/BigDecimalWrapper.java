@@ -35,7 +35,7 @@ public abstract class BigDecimalWrapper<V extends Value<V, BigDecimal>> extends 
      */
     public BigDecimalWrapper(BigDecimal value) {
         super();
-        this.value = value;
+        this.value = assertNotNull(value);
     }
 
     @Override

@@ -35,7 +35,7 @@ public abstract class BigIntegerWrapper<V extends Value<V, BigInteger>> extends 
      */
     public BigIntegerWrapper(BigInteger value) {
         super();
-        this.value = value;
+        this.value = assertNotNull(value);
     }
 
     @Override
