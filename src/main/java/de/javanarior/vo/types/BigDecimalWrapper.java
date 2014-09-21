@@ -54,9 +54,10 @@ public abstract class BigDecimalWrapper<V extends Value<V, BigDecimal>> extends 
     }
 
     /**
-     * To compare the value, this implementation uses compareTo of BigDecimal
-     * instead of equals. This means two values of BigDecimalWrapper are equals
-     * even if there have a different scale.
+     * To compare the value, this implementation uses
+     * {@linkplain BigDecimal#compareTo(BigDecimal)} instead of equals. This
+     * means two values of BigDecimalWrapper are equals even if they have a
+     * different scale.
      */
     @Override
     public boolean equals(Object obj) {
