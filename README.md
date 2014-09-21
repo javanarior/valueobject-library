@@ -29,7 +29,7 @@ with the GAV coordinates:
 
     <groupId>de.javanarior.library</groupId>
     <artifactId>vo-lib</artifactId>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
 
 # Release Notes
 
