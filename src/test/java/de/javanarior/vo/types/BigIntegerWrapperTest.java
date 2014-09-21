@@ -23,7 +23,6 @@ import static org.testng.Assert.fail;
 
 import java.math.BigInteger;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.types.helper.BigIntegerValue;
