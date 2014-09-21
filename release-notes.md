@@ -1,7 +1,7 @@
 # Release Notes
 
 
-## 0.3.0 ()
+## 0.3.0 (2014-09-21)
 - Check argument of object based Wrappers (String, BigInteger, BigDecimal), does not allow null value.
 - Change Value#getValue to return the technical type which is a sub type of Comparable instead of object,
   breaks backward compatibility.
