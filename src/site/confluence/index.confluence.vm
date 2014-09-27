@@ -18,7 +18,19 @@ The artifact are accessible via Maven repository at Bintray:
   http://dl.bintray.com/javanarior/maven
 {code}
 
-Here you will find examples how to [include the artifacts for various build tools|dependency-info.html].
+To add the library to your maven build include the following dependency
+
+{code}
+    <dependency>
+        <groupId>de.javanarior.library</groupId>
+        <artifactId>vo-lib</artifactId>
+        <version>${project.version}</version>
+    <dependency>
+{code}
+
+
+
+Here you will find further examples how to [include the artifacts for various build tools|dependency-info.html].
 
 h1. Usage
 

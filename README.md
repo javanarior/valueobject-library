@@ -1,23 +1,6 @@
-# Value Object Library
+# Value Object Library [![Build Status](https://travis-ci.org/javanarior/vo-lib.svg?branch=master)](https://travis-ci.org/javanarior/vo-lib)
 
-[![Build Status](https://travis-ci.org/javanarior/vo-lib.svg?branch=master)](https://travis-ci.org/javanarior/vo-lib)
-
-This library provides some Wrapper classes to create value objects. To avoid re-implementing
-this classes in every project i start to write this library.
-
-The provided Wrapper classes are
-
-* BigDecimalWrapper
-* BigIntegerWrapper
-* BooleanWrapper
-* ByteWrapper
-* CharWrapper
-* DoubleWrapper
-* IntWrapper
-* LongWrapper
-* ShortWrapper
-* StringWrapper
-
+More Information are on the [Project Page](http://javanarior.github.io/vo-lib).
 
 # Installation/Distribution
 
