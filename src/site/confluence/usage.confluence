@@ -1,0 +1,19 @@
+h1. Usage Example
+
+The Wrapper types are abstract and designed to simplify the implementation of value types.
+The following table list the available wrapper and there corresponding technical type.
+
+||Wrapper             || Technical Type     ||
+| BigDecimalWrapper    | BigDecimal          |
+| BigIntegerWrapper    | BigInteger          |
+| BooleanWrapper       | boolean (primitive) |
+| ByteWrapper          | byte    (primitive) |
+| CharWrapper          | char    (primitive) |
+| DoubleWrapper        | double  (primitive) |
+| IntWrapper           | int     (primitive) |
+| LongWrapper          | long    (primitive) |
+| ShortWrapper         | short   (primitive) |
+| StringWrapper        | String              |
+
+
+

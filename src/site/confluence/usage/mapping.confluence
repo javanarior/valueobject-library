@@ -1,0 +1,21 @@
+h2. Mapping
+
+To create a value object you must first determine the technical type to which you can map your value object.
+The following table list the Java types for which a wrapper exists.
+
+As rule of thumb take the (primitive) java type and append Wrapper, then you will have your class from which you can derive your value object.
+
+The Wrapper types are abstract and designed to simplify the implementation of value types.
+
+|| Java Type           || Wrapper             ||
+| BigDecimal            | BigDecimalWrapper    |
+| BigInteger            | BigIntegerWrapper    |
+| boolean/Boolean       | BooleanWrapper       |
+| byte/Byte             | ByteWrapper          |
+| char/Character        | CharWrapper          |
+| double/Double         | DoubleWrapper        |
+| int/Integer           | IntWrapper           |
+| long/Long             | LongWrapper          |
+| short/Short           | ShortWrapper         |
+| String                | StringWrapper        |
+
