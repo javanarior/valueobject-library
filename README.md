@@ -8,7 +8,7 @@ You will find the artifacts in:
 
     http://dl.bintray.com/javanarior/maven
 
-with the GAV coordinates:
+and add the dependency:
 
     <groupId>de.javanarior.library</groupId>
     <artifactId>vo-lib</artifactId>

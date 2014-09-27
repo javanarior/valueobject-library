@@ -28,8 +28,6 @@ To add the library to your maven build include the following dependency
     <dependency>
 {code}
 
-
-
 Here you will find further examples how to [include the artifacts for various build tools|dependency-info.html].
 
 h1. Usage
