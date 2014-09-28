@@ -1,18 +1,21 @@
-h1. Overview
+h1. Introduction
 
 Working with value object is a great help in daily work of software developer. There are several
 advantages from which you will benefit:
 
-* clearer interfaces, you could see the business objects in the signature
-* easier refactoring, the type information makes refactoring more secure
-* higher quality, the possibility of accidental change of types are eliminated
-* easier maintenance, the technical type is already provided by design
+* Clearer interfaces, you could see the business objects in the signature.
+* Easier refactoring, the type information makes refactoring more secure.
+* Higher quality, the possibility of accidental change of types are eliminated.
+* Easier maintenance, the technical type is already provided by design.
 
-This library should reduce the technical afford to introduce or start with value objects by providing reusable wrapper types. The wrapper are not very complicated and everyone could write his own set, but i doesn't want to do that every time for a new project. So i decided to write this library.
+This library should reduce the technical afford to introduce or start with value objects
+by providing reusable wrapper types. The wrapper is not very complicated and everyone
+could write his own set, but I don’t want to do that every time for a new project. So I
+decided to write this library.
 
 h1. Installation
 
-The artifact are accessible via Maven repository at Bintray:
+Released builds are available from Maven repository at Bintray:
 
 {code}
   http://dl.bintray.com/javanarior/maven
@@ -33,6 +36,10 @@ Here you will find further examples how to [include the artifacts for various bu
 h1. Usage
 
 Examples how to use the Library are on the [Usage|usage/index.html] page under [Examples|usage/example.html].
+
+h1. Changelog
+
+Changes and new features will be noted here [Change Log|changes-report.html]
 
 h1. License
 
