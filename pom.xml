@@ -340,6 +340,47 @@
         </profile>
 
 
+        <profile>
+
+            <id>validate-changelog</id>
+
+            <activation>
+                <property>
+                    <name>build</name>
+                    <value>qa</value>
+                </property>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-changes-plugin</artifactId>
+                        <configuration>
+                            <skipSnapshots>true</skipSnapshots>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>changes-validate</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>changes-validate</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>changes-check</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>changes-check</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
 
         <profile>
             <id>qa-checkstyle</id>

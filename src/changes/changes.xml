@@ -9,24 +9,41 @@
     </properties>
 
     <body>
+        <release version="NEXT" date="inSVN">
+            <action dev="Sven" date="2014-09-28" type="add">Add Project
+                Page and Documentation.</action>
+        </release>
+
         <release version="0.3.0" date="2014-09-21" description="Precise API.">
             <action date="2014-09-21" dev="Sven" type="remove">Moved
                 Value#asChar and Value#asCharacter to CharWrapper,
-                breaks backward compatibility.</action>
-            <action date="2014-09-21" dev="Sven" type="update">Change Value#getValue to return the technical type which is a sub type of Comparable instead of object, breaks           backward compatibility.</action>
+                breaks backward compatibility.
+            </action>
+            <action date="2014-09-21" dev="Sven" type="update">Change
+                Value#getValue to return the technical type which is a
+                sub type of Comparable instead of object, breaks
+                backward compatibility.</action>
             <action date="2014-09-21" dev="Sven" type="update">Prevent
                 NullPoinerException.
-                Check argument of object based Wrappers (String, BigInteger, BigDecimal),
-                does not allow null value.
+                Check argument of object based
+                Wrappers (String, BigInteger, BigDecimal),
+                does not allow
+                null value.
             </action>
         </release>
 
         <release date="2014-09-07" version="0.2.0" description="Clean up.">
-            <action dev="Sven" date="2014-09-07" type="add">In AbstractValue a #toString Method is added. It prints the  implementing class and the value.</action>
-            <action date="2014-09-07" dev="Sven" type="remove">The metaType parameter was removed. It was not necessary and simplifies the API. On the other hand this change breaks backward compatibility.</action>
+            <action dev="Sven" date="2014-09-07" type="add">In
+                AbstractValue a #toString Method is added. It prints the
+                implementing class and the value.</action>
+            <action date="2014-09-07" dev="Sven" type="remove">The
+                metaType parameter was removed. It was not necessary and
+                simplifies the API. On the other hand this change breaks
+                backward compatibility.</action>
         </release>
 
-        <release version="0.1.0" description="Initial release." date="2014-08-17">
+        <release version="0.1.0" description="Initial release."
+            date="2014-08-17">
             <action dev="Sven" date="2014-08-17">Initial release.</action>
         </release>
     </body>
