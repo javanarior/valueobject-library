@@ -3,11 +3,11 @@
 
     <body>
         <breadcrumbs>
-            <item name="Value Object Library" href="http://javanarior.github.io/vo-lib" />
+            <item name="Value Object Library" href="." />
         </breadcrumbs>
 
         <menu name="Value Object Library">
-            <item name="Overview" href="index.html" />
+            <item name="Introduction" href="index.html" />
             <item name="Usage" href="usage/index.html" collapse="true">
                 <item name="Mapping" href="usage/mapping.html" />
 <!--                 <item name="Validation" href="usage/validation.html" /> -->
