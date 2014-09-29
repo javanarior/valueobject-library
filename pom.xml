@@ -1,11 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>de.javanarior</groupId>
         <artifactId>javanarior-oss-pom</artifactId>
-        <version>5</version>
+        <version>6</version>
     </parent>
 
     <groupId>de.javanarior.library</groupId>
@@ -118,7 +119,55 @@
                     <threadCount>10</threadCount>
                 </configuration>
             </plugin>
+
+
         </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <configuration>
+                        <configLocation>checkstyle/checkstyle.xml</configLocation>
+                        <suppressionsLocation>checkstyle/checkstyle-suppress.xml</suppressionsLocation>
+                        <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                        <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
+                        <propertyExpansion>checkstyle.suppressions.file=${checkstyle.suppressions.file}</propertyExpansion>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <configuration>
+                        <linkXref>true</linkXref>
+                        <includeTests>true</includeTests>
+                        <targetJdk>${java.version.source}</targetJdk>
+                        <rulesets>
+                            <ruleset>pmd/pmd.xml</ruleset>
+                        </rulesets>
+                        <excludes>
+                            <exclude>**/generated/*</exclude>
+                            <exclude>**/generated-sources/*.java</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <configuration>
+                        <effort>Max</effort>
+                        <failOnError>false</failOnError>
+                        <includeTests>true</includeTests>
+                        <includeFilterFile>findbugs/findbugs.xml</includeFilterFile>
+                        <xmlOutput>true</xmlOutput>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+
+
     </build>
 
 
@@ -169,41 +218,15 @@
 
             <plugin>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <configuration>
-                    <configLocation>checkstyle/checkstyle.xml</configLocation>
-                    <suppressionsLocation>checkstyle/checkstyle-suppress.xml</suppressionsLocation>
-<!--                     <includeTestSourceDirectory>true</includeTestSourceDirectory> -->
-<!--                     <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression> -->
-                    <propertyExpansion>checkstyle.suppressions.file=${checkstyle.suppressions.location}</propertyExpansion>
-                </configuration>
             </plugin>
 
             <plugin>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <configuration>
-                    <linkXref>true</linkXref>
-                    <includeTests>true</includeTests>
-                    <targetJdk>${java.version.source}</targetJdk>
-                    <rulesets>
-                        <ruleset>pmd/pmd.xml</ruleset>
-                    </rulesets>
-                    <excludes>
-                        <exclude>**/generated/*</exclude>
-                        <exclude>**/generated-sources/*.java</exclude>
-                    </excludes>
-                </configuration>
             </plugin>
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <configuration>
-                    <effort>Max</effort>
-                    <failOnError>false</failOnError>
-                    <includeTests>true</includeTests>
-                    <includeFilterFile>findbugs/findbugs.xml</includeFilterFile>
-                    <xmlOutput>true</xmlOutput>
-                </configuration>
             </plugin>
 
             <plugin>
@@ -450,13 +473,41 @@
 
                     <plugin>
                         <artifactId>maven-checkstyle-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>checkstyle</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>checkstyle</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                     <plugin>
                         <artifactId>maven-pmd-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>pmd/cpd-analysis</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>cpd</goal>
+                                    <goal>pmd</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>findbugs-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>findbugs-analysis</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>findbugs</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
 
                 </plugins>
