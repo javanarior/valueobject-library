@@ -17,7 +17,7 @@ package de.javanarior.vo.types.helper;
 
 import de.javanarior.vo.types.NullObject;
 
-public class StringValueNullObject extends NullObject<StringValue> implements StringValue {
+public class StringValueNullObject extends NullObject<StringValue, String> implements StringValue {
 
     public StringValueNullObject() {
         super();

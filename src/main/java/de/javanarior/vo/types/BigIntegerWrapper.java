@@ -20,10 +20,10 @@ import java.math.BigInteger;
 /**
  * Wrapper for BigInteger values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class BigIntegerWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class BigIntegerWrapper<V extends Value<V, BigInteger>> extends AbstractValue<V, BigInteger> {
 
     private final BigInteger value;
 
@@ -35,11 +35,11 @@ public abstract class BigIntegerWrapper<T extends Value<T>> extends AbstractValu
      */
     public BigIntegerWrapper(BigInteger value) {
         super();
-        this.value = value;
+        this.value = assertNotNull(value);
     }
 
     @Override
-    public Object getValue() {
+    public BigInteger getValue() {
         return value;
     }
 
@@ -50,21 +50,11 @@ public abstract class BigIntegerWrapper<T extends Value<T>> extends AbstractValu
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
         BigIntegerWrapper<?> other = (BigIntegerWrapper<?>)obj;
-        if (value == null) {
-            if (other.value != null) {
-                return false;
-            }
-        } else if (!value.equals(other.value)) {
+        if (!value.equals(other.value)) {
             return false;
         }
         return true;
@@ -78,11 +68,6 @@ public abstract class BigIntegerWrapper<T extends Value<T>> extends AbstractValu
     @Override
     public String asString() {
         return value.toString();
-    }
-
-    @Override
-    public int compareTo(T other) {
-        return value.compareTo(other.asBigInteger());
     }
 
 }

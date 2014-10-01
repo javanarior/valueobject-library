@@ -62,26 +62,26 @@ public class WrapperTest {
     }
 
     @Test(dataProvider = "getValue")
-    public void testHashCodeNotEqualForDifferentValues(Value<?> one, Value<?> anotherOne, Value<?> two) {
+    public void testHashCodeNotEqualForDifferentValues(Value<?, ?> one, Value<?, ?> anotherOne, Value<?, ?> two) {
         assertNotEquals(one.hashCode(), two.hashCode());
         assertNotEquals(anotherOne.hashCode(), two.hashCode());
     }
 
     @Test(dataProvider = "getValue")
-    public void testHashCodeEqualForEqualValues(Value<?> one, Value<?> anotherOne, Value<?> two) {
+    public void testHashCodeEqualForEqualValues(Value<?, ?> one, Value<?, ?> anotherOne, Value<?, ?> two) {
         assertNotSame(one, anotherOne);
         assertEquals(one.hashCode(), anotherOne.hashCode());
         assertEquals(one.hashCode(), one.hashCode());
     }
 
     @Test(dataProvider = "getValue")
-    public void testEqualsForDifferentValues(Value<?> one, Value<?> anotherOne, Value<?> two) {
+    public void testEqualsForDifferentValues(Value<?, ?> one, Value<?, ?> anotherOne, Value<?, ?> two) {
         assertFalse(one.equals(two));
         assertFalse(two.equals(one));
     }
 
     @Test(dataProvider = "getValue")
-    public void testEqualsForEqualValues(Value<?> one, Value<?> anotherOne, Value<?> two) {
+    public void testEqualsForEqualValues(Value<?, ?> one, Value<?, ?> anotherOne, Value<?, ?> two) {
         assertNotSame(one, anotherOne);
         assertTrue(one.equals(anotherOne));
         assertTrue(anotherOne.equals(one));
@@ -89,7 +89,7 @@ public class WrapperTest {
     }
 
     @Test(dataProvider = "getValue")
-    public void testEqualsForNull(Value<?> one, Value<?> anotherOne, Value<?> two) {
+    public void testEqualsForNull(Value<?, ?> one, Value<?, ?> anotherOne, Value<?, ?> two) {
         assertFalse(one.equals(null));
     }
 

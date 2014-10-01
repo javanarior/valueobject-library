@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for Character values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class CharWrapper<T extends CharWrapper<T>> extends AbstractValue<T> {
+public abstract class CharWrapper<V extends Value<V, Character>> extends AbstractValue<V, Character> {
 
     private final char value;
 
@@ -37,7 +37,7 @@ public abstract class CharWrapper<T extends CharWrapper<T>> extends AbstractValu
     }
 
     @Override
-    public Object getValue() {
+    public Character getValue() {
         return asCharacter();
     }
 
@@ -48,13 +48,7 @@ public abstract class CharWrapper<T extends CharWrapper<T>> extends AbstractValu
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         CharWrapper<?> other = (CharWrapper<?>)obj;
@@ -80,11 +74,6 @@ public abstract class CharWrapper<T extends CharWrapper<T>> extends AbstractValu
      */
     public Character asCharacter() {
         return Character.valueOf(value);
-    }
-
-    @Override
-    public int compareTo(T other) {
-        return asCharacter().compareTo(other.asCharacter());
     }
 
 }

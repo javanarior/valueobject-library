@@ -18,19 +18,36 @@ package de.javanarior.vo.types;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import de.javanarior.vo.types.speaking.SpeakingComparableAdapter;
+
 /**
  * Base class for value objects.
  *
- * @param <T>
+ * @param <V>
  *            the value type
+ * @param <T>
+ *            the technical type to which the value type is mapped
  */
-public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
+public abstract class AbstractValue<V extends Value<V, T>, T extends Comparable<T>> extends
+                SpeakingComparableAdapter<V> implements Value<V, T> {
+
+    /**
+     * Assert {@code argument} is not null, if the argument is null a
+     * IllegalArguemntException is thrown.
+     *
+     * @param argument
+     *            - to check
+     * @return argument if not null
+     */
+    public static <T> T assertNotNull(T argument) {
+        if (argument == null) {
+            throw new IllegalArgumentException("Null is not allowed as value");
+        }
+        return argument;
+    }
 
     @Override
-    public abstract Object getValue();
-
-    @Override
-    public abstract int compareTo(T other);
+    public abstract T getValue();
 
     @Override
     public int hashCode() {
@@ -134,6 +151,11 @@ public abstract class AbstractValue<T extends Value<T>> implements Value<T> {
     @Override
     public String toString() {
         return getClass().getSimpleName() + "=" + getValue();
+    }
+
+    @Override
+    public int compareTo(V other) {
+        return getValue().compareTo(other.getValue());
     }
 
 }

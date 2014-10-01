@@ -19,12 +19,17 @@ import java.math.BigDecimal;
 
 /**
  * Wrapper for BigDecimal values.
+ * <p>
+ * Please note that the {@linkplain BigDecimalWrapper#equals(Object)}
+ * implementation of this class differs from the #equals(Object) implementation
+ * of BigDecimal.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class BigDecimalWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class BigDecimalWrapper<V extends Value<V, BigDecimal>> extends AbstractValue<V, BigDecimal> {
 
+    private static final int EQUALS = 0;
     private final BigDecimal value;
 
     /**
@@ -35,11 +40,11 @@ public abstract class BigDecimalWrapper<T extends Value<T>> extends AbstractValu
      */
     public BigDecimalWrapper(BigDecimal value) {
         super();
-        this.value = value;
+        this.value = assertNotNull(value);
     }
 
     @Override
-    public Object getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -48,22 +53,20 @@ public abstract class BigDecimalWrapper<T extends Value<T>> extends AbstractValu
         return 31 * super.hashCode() + value.hashCode();
     }
 
+    /**
+     * To compare the value, this implementation uses
+     * {@linkplain BigDecimal#compareTo(BigDecimal)} instead of equals. This
+     * means two values of BigDecimalWrapper are equals even if they have a
+     * different scale.
+     */
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
         BigDecimalWrapper<?> other = (BigDecimalWrapper<?>)obj;
-        if (value != null) {
-            if (value.compareTo(other.value) != 0) {
-                return false;
-            }
+        if (value.compareTo(other.value) != EQUALS) {
+            return false;
         }
         return true;
     }
@@ -76,11 +79,6 @@ public abstract class BigDecimalWrapper<T extends Value<T>> extends AbstractValu
     @Override
     public String asString() {
         return value.toPlainString();
-    }
-
-    @Override
-    public int compareTo(T other) {
-        return value.compareTo(other.asBigDecimal());
     }
 
 }

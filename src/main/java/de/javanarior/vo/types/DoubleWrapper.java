@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for Double values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class DoubleWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class DoubleWrapper<V extends Value<V, Double>> extends AbstractValue<V, Double> {
 
     private final double value;
 
@@ -37,7 +37,7 @@ public abstract class DoubleWrapper<T extends Value<T>> extends AbstractValue<T>
     }
 
     @Override
-    public Object getValue() {
+    public Double getValue() {
         return asDouble();
     }
 
@@ -49,13 +49,7 @@ public abstract class DoubleWrapper<T extends Value<T>> extends AbstractValue<T>
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         DoubleWrapper<?> other = (DoubleWrapper<?>)obj;
@@ -73,11 +67,6 @@ public abstract class DoubleWrapper<T extends Value<T>> extends AbstractValue<T>
     @Override
     public double asPrimitiveDouble() {
         return value;
-    }
-
-    @Override
-    public int compareTo(T other) {
-        return asDouble().compareTo(other.asDouble());
     }
 
 }

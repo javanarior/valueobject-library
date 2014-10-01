@@ -18,10 +18,12 @@ package de.javanarior.vo.types;
 /**
  * Generic Null Object.
  *
- * @param <T>
+ * @param <V>
  *            the value type
+ * @param <T>
+ *            the technical type to which the value type is mapped
  */
-public abstract class NullObject<T extends Value<T>> extends AbstractValue<T> {
+public abstract class NullObject<V extends Value<V, T>, T extends Comparable<T>> extends AbstractValue<V, T> {
 
     @Override
     public int hashCode() {
@@ -37,7 +39,7 @@ public abstract class NullObject<T extends Value<T>> extends AbstractValue<T> {
     }
 
     @Override
-    public int compareTo(T other) {
+    public int compareTo(V other) {
         throw new UnsupportedOperationException("Null Object are not comparable with other objects.");
     }
 
@@ -47,7 +49,7 @@ public abstract class NullObject<T extends Value<T>> extends AbstractValue<T> {
     }
 
     @Override
-    public Object getValue() {
+    public T getValue() {
         return null;
     }
 

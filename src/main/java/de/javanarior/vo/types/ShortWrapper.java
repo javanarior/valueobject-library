@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for Short values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class ShortWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class ShortWrapper<V extends Value<V, Short>> extends AbstractValue<V, Short> {
 
     private final short value;
 
@@ -37,7 +37,7 @@ public abstract class ShortWrapper<T extends Value<T>> extends AbstractValue<T> 
     }
 
     @Override
-    public Object getValue() {
+    public Short getValue() {
         return asShort();
     }
 
@@ -48,13 +48,7 @@ public abstract class ShortWrapper<T extends Value<T>> extends AbstractValue<T> 
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         ShortWrapper<?> other = (ShortWrapper<?>)obj;
@@ -72,11 +66,6 @@ public abstract class ShortWrapper<T extends Value<T>> extends AbstractValue<T> 
     @Override
     public short asPrimitiveShort() {
         return value;
-    }
-
-    @Override
-    public int compareTo(T other) {
-        return asShort().compareTo(other.asShort());
     }
 
 }

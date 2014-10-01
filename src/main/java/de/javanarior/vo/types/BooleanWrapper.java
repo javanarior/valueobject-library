@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for Boolean values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class BooleanWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class BooleanWrapper<V extends Value<V, Boolean>> extends AbstractValue<V, Boolean> {
 
     private final boolean value;
 
@@ -37,7 +37,7 @@ public abstract class BooleanWrapper<T extends Value<T>> extends AbstractValue<T
     }
 
     @Override
-    public Object getValue() {
+    public Boolean getValue() {
         return asBoolean();
     }
 
@@ -48,13 +48,7 @@ public abstract class BooleanWrapper<T extends Value<T>> extends AbstractValue<T
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         BooleanWrapper<?> other = (BooleanWrapper<?>)obj;
@@ -72,11 +66,6 @@ public abstract class BooleanWrapper<T extends Value<T>> extends AbstractValue<T
     @Override
     public boolean asPrimitiveBoolean() {
         return value;
-    }
-
-    @Override
-    public int compareTo(T other) {
-        return asBoolean().compareTo(other.asBoolean());
     }
 
 }

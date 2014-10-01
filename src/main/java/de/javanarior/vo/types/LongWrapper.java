@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for Long values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class LongWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class LongWrapper<V extends Value<V, Long>> extends AbstractValue<V, Long> {
 
     private final long value;
 
@@ -37,7 +37,7 @@ public abstract class LongWrapper<T extends Value<T>> extends AbstractValue<T> {
     }
 
     @Override
-    public Object getValue() {
+    public Long getValue() {
         return asLong();
     }
 
@@ -48,13 +48,7 @@ public abstract class LongWrapper<T extends Value<T>> extends AbstractValue<T> {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         LongWrapper<?> other = (LongWrapper<?>)obj;
@@ -72,11 +66,6 @@ public abstract class LongWrapper<T extends Value<T>> extends AbstractValue<T> {
     @Override
     public long asPrimitiveLong() {
         return value;
-    }
-
-    @Override
-    public int compareTo(T other) {
-        return asLong().compareTo((Long)other.getValue());
     }
 
 }

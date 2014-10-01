@@ -28,22 +28,22 @@ import org.testng.annotations.Test;
 @Test
 public class AbstractValueTest {
 
-    private AbstractValueImpl testee;
+    private AbstractValueImpl<?> testee;
 
     @BeforeMethod
     public void setUp() {
-        testee = new AbstractValueImpl("12");
+        testee = new AbstractValueImpl<String>("12");
     }
 
     public void testAsBoolean() {
-        testee = new AbstractValueImpl("true");
+        testee = new AbstractValueImpl<String>("true");
         Boolean asBoolean = testee.asBoolean();
         assertEquals(asBoolean.getClass(), Boolean.class);
         assertEquals(asBoolean, Boolean.TRUE);
     }
 
     public void testAsPrimitiveBoolean() {
-        testee = new AbstractValueImpl("true");
+        testee = new AbstractValueImpl<String>("true");
         boolean asBoolean = testee.asPrimitiveBoolean();
         assertEquals(asBoolean, true);
     }
@@ -126,7 +126,7 @@ public class AbstractValueTest {
     }
 
     public void testEquals() {
-        AbstractValueImpl otherValue = new AbstractValueImpl("12");
+        AbstractValueImpl<String> otherValue = new AbstractValueImpl<String>("12");
         assertTrue(testee.equals(otherValue));
         assertTrue(otherValue.equals(testee));
     }
@@ -136,7 +136,7 @@ public class AbstractValueTest {
     }
 
     public void testEqualsForDifferentTypes() {
-        OtherAbstractValueImpl otherValue = new OtherAbstractValueImpl("12");
+        OtherAbstractValueImpl<String> otherValue = new OtherAbstractValueImpl<String>("12");
         assertFalse(testee.equals(otherValue));
         assertFalse(otherValue.equals(testee));
     }
@@ -145,40 +145,43 @@ public class AbstractValueTest {
         assertEquals(testee.toString(), "AbstractValueImpl=12");
     }
 
-    private static class AbstractValueImpl extends AbstractValue<AbstractValueImpl> {
+    private static class AbstractValueImpl<T extends Comparable<T>> extends AbstractValue<AbstractValueImpl<T>, T> {
 
-        private Object value;
-        protected AbstractValueImpl(Object value) {
+        private T value;
+
+        protected AbstractValueImpl(T value) {
             super();
             this.value = value;
         }
 
         @Override
-        public Object getValue() {
+        public T getValue() {
             return value;
         }
 
         @Override
-        public int compareTo(AbstractValueImpl other) {
+        public int compareTo(AbstractValueImpl<T> other) {
             return 0;
         }
     }
 
-    private static class OtherAbstractValueImpl extends AbstractValue<OtherAbstractValueImpl> {
+    private static class OtherAbstractValueImpl<T extends Comparable<T>> extends
+                    AbstractValue<OtherAbstractValueImpl<T>, T> {
 
-        private Object value;
-        protected OtherAbstractValueImpl(Object value) {
+        private T value;
+
+        protected OtherAbstractValueImpl(T value) {
             super();
             this.value = value;
         }
 
         @Override
-        public Object getValue() {
+        public T getValue() {
             return value;
         }
 
         @Override
-        public int compareTo(OtherAbstractValueImpl other) {
+        public int compareTo(OtherAbstractValueImpl<T> other) {
             return 0;
         }
     }

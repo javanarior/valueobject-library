@@ -18,20 +18,24 @@ package de.javanarior.vo.types;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import de.javanarior.vo.types.speaking.SpeakingComparable;
+
 /**
  * Description of value objects.
  *
- * @param <T>
+ * @param <V>
  *            the value type
+ * @param <T>
+ *            the technical type to which the value type is mapped
  */
-public interface Value<T extends Value<T>> extends Comparable<T> {
+public interface Value<V extends Value<V, T>, T extends Comparable<T>> extends SpeakingComparable<V> {
 
     /**
      * Returns the value as Object.
      *
      * @return value as object
      */
-    Object getValue();
+    T getValue();
 
     /**
      * Returns true if the object is a null object.
@@ -146,7 +150,7 @@ public interface Value<T extends Value<T>> extends Comparable<T> {
     BigDecimal asBigDecimal();
 
     @Override
-    int compareTo(T other);
+    int compareTo(V other);
 
     @Override
     boolean equals(Object other);

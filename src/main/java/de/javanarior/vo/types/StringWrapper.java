@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for String values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class StringWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class StringWrapper<V extends Value<V, String>> extends AbstractValue<V, String> {
 
     private final String value;
 
@@ -33,11 +33,11 @@ public abstract class StringWrapper<T extends Value<T>> extends AbstractValue<T>
      */
     public StringWrapper(String value) {
         super();
-        this.value = value;
+        this.value = assertNotNull(value);
     }
 
     @Override
-    public Object getValue() {
+    public String getValue() {
         return value;
     }
 
@@ -48,21 +48,11 @@ public abstract class StringWrapper<T extends Value<T>> extends AbstractValue<T>
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
         StringWrapper<?> other = (StringWrapper<?>)obj;
-        if (value == null) {
-            if (other.value != null) {
-                return false;
-            }
-        } else if (!value.equals(other.value)) {
+        if (!value.equals(other.value)) {
             return false;
         }
         return true;
@@ -71,11 +61,6 @@ public abstract class StringWrapper<T extends Value<T>> extends AbstractValue<T>
     @Override
     public String asString() {
         return value;
-    }
-
-    @Override
-    public int compareTo(T other) {
-        return value.compareTo((String)other.getValue());
     }
 
 }

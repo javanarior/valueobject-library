@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for Integer values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class IntWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class IntWrapper<V extends Value<V, Integer>> extends AbstractValue<V, Integer> {
 
     private final int value;
 
@@ -37,7 +37,7 @@ public abstract class IntWrapper<T extends Value<T>> extends AbstractValue<T> {
     }
 
     @Override
-    public Object getValue() {
+    public Integer getValue() {
         return asInteger();
     }
 
@@ -48,13 +48,7 @@ public abstract class IntWrapper<T extends Value<T>> extends AbstractValue<T> {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         IntWrapper<?> other = (IntWrapper<?>)obj;
@@ -72,11 +66,6 @@ public abstract class IntWrapper<T extends Value<T>> extends AbstractValue<T> {
     @Override
     public int asInt() {
         return value;
-    }
-
-    @Override
-    public int compareTo(T other) {
-        return asInteger().compareTo((Integer)other.getValue());
     }
 
 }

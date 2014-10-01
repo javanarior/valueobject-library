@@ -18,10 +18,10 @@ package de.javanarior.vo.types;
 /**
  * Wrapper for Byte values.
  *
- * @param <T>
+ * @param <V>
  *            the value type
  */
-public abstract class ByteWrapper<T extends Value<T>> extends AbstractValue<T> {
+public abstract class ByteWrapper<V extends Value<V, Byte>> extends AbstractValue<V, Byte> {
 
     private final byte value;
 
@@ -37,7 +37,7 @@ public abstract class ByteWrapper<T extends Value<T>> extends AbstractValue<T> {
     }
 
     @Override
-    public Object getValue() {
+    public Byte getValue() {
         return asByte();
     }
 
@@ -48,13 +48,7 @@ public abstract class ByteWrapper<T extends Value<T>> extends AbstractValue<T> {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!super.equals(obj)) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
             return false;
         }
         ByteWrapper<?> other = (ByteWrapper<?>)obj;
@@ -72,11 +66,6 @@ public abstract class ByteWrapper<T extends Value<T>> extends AbstractValue<T> {
     @Override
     public byte asPrimitiveByte() {
         return value;
-    }
-
-    @Override
-    public int compareTo(T other) {
-        return asByte().compareTo(other.asByte());
     }
 
 }
