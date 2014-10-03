@@ -8,10 +8,10 @@
 
         <menu name="Value Object Library">
             <item name="Introduction" href="index.html" />
-            <item name="Usage" href="usage/index.html" collapse="true">
-                <item name="Mapping" href="usage/mapping.html" />
+            <item name="Usage" href="usage-index.html" collapse="true">
+                <item name="Mapping" href="usage-mapping.html" />
 <!--                 <item name="Validation" href="usage/validation.html" /> -->
-                <item name="Example" href="usage/example.html" />
+                <item name="Example" href="usage-example.html" />
             </item>
         </menu>
         <menu ref="reports" />
