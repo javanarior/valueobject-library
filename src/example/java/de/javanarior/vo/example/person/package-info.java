@@ -13,27 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.javanarior.vo.example.person.string;
-
 /**
- * An example Person without value types.
+ * 
  */
-public class Person {
-
-    private final String firstname;
-    private final String surname;
-
-    public Person(String firstname, String surname) {
-        this.firstname = firstname;
-        this.surname = surname;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-}
+package de.javanarior.vo.example.person;

@@ -150,27 +150,7 @@
                         <artifactId>doxia-module-confluence</artifactId>
                         <version>1.6</version>
                     </dependency>
-                    <dependency>
-                        <groupId>org.tinyjee.dim</groupId>
-                        <artifactId>doxia-include-macro</artifactId>
-                        <version>1.1</version>
-                    </dependency>
                 </dependencies>
-            </plugin>
-
-            <plugin>
-                <groupId>org.tinyjee.dim</groupId>
-                <artifactId>doxia-include-macro</artifactId>
-                <version>1.1</version>
-                <executions>
-                    <execution>
-                        <id>initialize-doxia-include-macro</id>
-                        <phase>pre-site</phase>
-                        <goals>
-                            <goal>initialize</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
             <plugin>
@@ -186,7 +166,8 @@
                 <configuration>
                     <noJekyll>true</noJekyll>
                     <force>true</force>
-                    <message>Creating project site for ${project.version}</message>
+                    <message>Creating project site for
+                        ${project.version}</message>
                     <dryRun>${dryRun}</dryRun>
                 </configuration>
             </plugin>

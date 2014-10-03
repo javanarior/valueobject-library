@@ -17,7 +17,6 @@ package de.javanarior.vo.example.person.typed;
 
 import de.javanarior.vo.types.StringWrapper;
 
-//START SNIPPET: class
 public class Firstname extends StringWrapper<Firstname> {
 
     public Firstname(String value) {
@@ -25,4 +24,3 @@ public class Firstname extends StringWrapper<Firstname> {
     }
 
 }
-//END SNIPPET: class
