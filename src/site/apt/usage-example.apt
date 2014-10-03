@@ -1,0 +1,27 @@
+    ---
+    Example
+    ---
+    ---
+    ---
+
+Example
+
+* Person Example
+
+  This Person example is very simple. The Person consists of first name and surname.
+Without value object your person would look like this
+
+%{include|snippet=class|source=src/example/java/de/javanarior/vo/example/person/string/Person.java}
+
+  Now with value object, you first have to write your value objects.
+
+%{include|snippet=class|source=src/example/java/de/javanarior/vo/example/person/typed/Firstname.java}
+%{include|snippet=class|source=src/example/java/de/javanarior/vo/example/person/typed/Surname.java}
+
+  And with these types our Person would look like this
+
+%{include|snippet=class|source=src/example/java/de/javanarior/vo/example/person/typed/Person.java}
+
+  The change looks very small, but has a great impact. You have to imagine that the type was changed from
+String to e.g. FirstName. Accidentally confuse first name and surname is not possible. The compiler will
+report an error in such cases.

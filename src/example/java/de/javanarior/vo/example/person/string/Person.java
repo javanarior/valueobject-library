@@ -18,6 +18,7 @@ package de.javanarior.vo.example.person.string;
 /**
  * An example Person without value types.
  */
+// START SNIPPET: class
 public class Person {
 
     private final String firstname;
@@ -35,5 +36,5 @@ public class Person {
     public String getSurname() {
         return surname;
     }
-
 }
+// END SNIPPET: class

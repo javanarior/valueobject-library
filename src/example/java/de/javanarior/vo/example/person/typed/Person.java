@@ -18,6 +18,7 @@ package de.javanarior.vo.example.person.typed;
 /**
  * Example Person with value types.
  */
+//START SNIPPET: class
 public class Person {
 
     private final Firstname firstname;
@@ -37,3 +38,4 @@ public class Person {
     }
 
 }
+//END SNIPPET: class
