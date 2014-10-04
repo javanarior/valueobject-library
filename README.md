@@ -8,7 +8,7 @@ Released builds are available from:
 
     http://dl.bintray.com/javanarior/maven
 
-and add the dependency:
+Add the dependency:
 
     <groupId>de.javanarior.library</groupId>
     <artifactId>vo-lib</artifactId>
@@ -16,4 +16,4 @@ and add the dependency:
 
 # Release Notes
 
-[You will find the Release Notes here](release-notes.md)
+[You will find the Release Notes here](http://javanarior.github.io/vo-lib/changes-report.html)
