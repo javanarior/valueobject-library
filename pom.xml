@@ -6,7 +6,7 @@
     <parent>
         <groupId>de.javanarior</groupId>
         <artifactId>javanarior-oss-pom</artifactId>
-        <version>10</version>
+        <version>11</version>
     </parent>
 
     <groupId>de.javanarior.library</groupId>
@@ -44,7 +44,6 @@
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <javanarior-build-resources.version>3</javanarior-build-resources.version>
-        <github.global.server>github-javanarior</github.global.server>
     </properties>
 
 
@@ -181,7 +180,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-scm-publish-plugin</artifactId>
-                <version>1.1</version>
                 <configuration>
                     <scmBranch>gh-pages</scmBranch>
                     <checkinComment>Site checkin for ${project.name} ${project.version}</checkinComment>
