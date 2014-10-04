@@ -14,7 +14,7 @@
                 Page and Documentation.</action>
         </release>
 
-        <release version="0.3.0" date="2014-09-21" description="Precise API.">
+        <release version="0.3.0" date="2014-09-21" description="Define more precisely API.">
             <action date="2014-09-21" dev="Sven" type="remove">Moved
                 Value#asChar and Value#asCharacter to CharWrapper,
                 breaks backward compatibility.
