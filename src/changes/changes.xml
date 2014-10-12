@@ -4,14 +4,15 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
 
     <properties>
-        <title>Change Log vo-lib</title>
+        <title>Change Log ValueObject Library</title>
         <author email="javanarior (a) gmail dot com">Sven</author>
     </properties>
 
     <body>
-        <release version="NEXT" date="inSVN">
-            <action dev="Sven" date="2014-09-28" type="add">Add Project
-                Page and Documentation.</action>
+        <release version="0.4.0" date="2014-10-12">
+            <action dev="Sven" date="2014-10-12" type="change">Rename artifact and repository from vo-lib to valueobject-library.</action>
+            <action dev="Sven" date="2014-10-12" type="delete">Move SpeakingComparable in own project.</action>
+            <action dev="Sven" date="2014-09-28" type="add">Add Project Page and Documentation.</action>
         </release>
 
         <release version="0.3.0" date="2014-09-21" description="Define more precisely API.">

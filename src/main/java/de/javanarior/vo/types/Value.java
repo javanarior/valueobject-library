@@ -18,7 +18,7 @@ package de.javanarior.vo.types;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-import de.javanarior.vo.types.speaking.SpeakingComparable;
+import de.javanarior.utils.compare.SpeakingComparable;
 
 /**
  * Description of value objects.

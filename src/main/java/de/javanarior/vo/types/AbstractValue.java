@@ -18,8 +18,6 @@ package de.javanarior.vo.types;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-import de.javanarior.vo.types.speaking.SpeakingComparableAdapter;
-
 /**
  * Base class for value objects.
  *
@@ -29,7 +27,7 @@ import de.javanarior.vo.types.speaking.SpeakingComparableAdapter;
  *            the technical type to which the value type is mapped
  */
 public abstract class AbstractValue<V extends Value<V, T>, T extends Comparable<T>> extends
-                SpeakingComparableAdapter<V> implements Value<V, T> {
+                de.javanarior.utils.compare.SpeakingComparableAdapter<V> implements Value<V, T> {
 
     /**
      * Assert {@code argument} is not null, if the argument is null a

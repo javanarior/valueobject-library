@@ -11,8 +11,8 @@ Released builds are available from:
 Add the dependency:
 
     <groupId>de.javanarior.library</groupId>
-    <artifactId>vo-lib</artifactId>
-    <version>0.3.0</version>
+    <artifactId>valueobject-library</artifactId>
+    <version>0.4.0</version>
 
 # Release Notes
 
