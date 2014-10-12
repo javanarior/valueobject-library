@@ -9,7 +9,7 @@
     </properties>
 
     <body>
-        <release version="0.4.0" date="2014-10-12">
+        <release version="0.4.0" date="2014-10-12" description="Rename project.">
             <action dev="Sven" date="2014-10-12" type="change">Rename artifact and repository from vo-lib to valueobject-library.</action>
             <action dev="Sven" date="2014-10-12" type="delete">Move SpeakingComparable in own project.</action>
             <action dev="Sven" date="2014-09-28" type="add">Add Project Page and Documentation.</action>
