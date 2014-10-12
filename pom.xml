@@ -10,14 +10,14 @@
     </parent>
 
     <groupId>de.javanarior.library</groupId>
-    <artifactId>vo-lib</artifactId>
+    <artifactId>valueobject-library</artifactId>
     <version>0.3.1-SNAPSHOT</version>
 
 
 
     <name>ValueObject Library</name>
     <description>Provides abstract wrapper classes and interfaces for value objects.</description>
-    <url>http://javanarior.github.io/vo-lib</url>
+    <url>http://javanarior.github.io/${project.artifactId}</url>
 
 
 
@@ -215,6 +215,7 @@
                     <configuration>
                         <linkXref>true</linkXref>
                         <includeTests>true</includeTests>
+                        <skipEmptyReport>false</skipEmptyReport>
                         <targetJdk>${java.version.source}</targetJdk>
                         <rulesets>
                             <ruleset>pmd/pmd.xml</ruleset>
@@ -652,8 +653,8 @@
 
     <distributionManagement>
         <site>
-            <id>javanarior/vo-lib</id>
-            <url>scm:git:git@github.com:javanarior/vo-lib.git</url>
+            <id>javanarior/${project.artifactId}</id>
+            <url>scm:git:git@github.com:javanarior/${project.artifactId}.git</url>
         </site>
         <repository>
             <id>bintray-javanarior-maven</id>
