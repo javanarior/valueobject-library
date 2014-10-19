@@ -9,9 +9,9 @@
 
     <body>
         <release version="0.5.0" date="2014-10-19"
-            description="Add support for java.util.Date and Joda-Time.">
+            description="Add support for java.util.Date.">
             <action dev="Sven" date="2014-10-19" type="add">
-                Add Wrapper for java.util.Date
+                Add Wrapper for java.util.Date.
             </action>
         </release>
 
