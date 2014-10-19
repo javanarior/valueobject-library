@@ -1,0 +1,63 @@
+    ---
+    Mapping
+    ---
+    ---
+    ---
+
+Mapping
+
+  To create a value object you must first determine the technical type to which you can map your value object.
+The following table list the Java types for which a wrapper exists.
+
+  As rule of thumb take the (primitive) java type and append Wrapper, then you will have your class from which you can derive your value object.
+
+  The Wrapper types are abstract and designed to simplify the implementation of value types.
+
+* Mapping of JDK Types
+
+*-----------------------*----------------------------*
+ <<Java Type>>          | <<Wrapper>>
+*-----------------------*----------------------------*
+  BigDecimal            | BigDecimalWrapper
+*-----------------------*----------------------------*
+  BigInteger            | BigIntegerWrapper
+*-----------------------*----------------------------*
+  boolean/Boolean       | BooleanWrapper
+*-----------------------*----------------------------*
+  byte/Byte             | ByteWrapper
+*-----------------------*----------------------------*
+  char/Character        | CharWrapper
+*-----------------------*----------------------------*
+  java.util.Date        | DateWrapper
+*-----------------------*----------------------------*
+  double/Double         | DoubleWrapper
+*-----------------------*----------------------------*
+  int/Integer           | IntWrapper
+*-----------------------*----------------------------*
+  long/Long             | LongWrapper
+*-----------------------*----------------------------*
+  short/Short           | ShortWrapper
+*-----------------------*----------------------------*
+  String                | StringWrapper
+*-----------------------*----------------------------*
+
+* Mapping of Joda-Time Types
+
+  JDK 8 brings a new Date API in. This API includes the classes <<<LocalDate>>>, <<<LocalDateTime>>>, <<<LocalTime>>>. Joda-Time use the same simple names. For this reason, the Wrapper types for Joda-Time are prefixed with <<<Joda>>>
+
+  The Joda-Time jar is not provided by ${project.artifactId}, you have to include it yourself to your dependencies.
+You will get a ClassNotFoundException if you use one of the Joda Wrapper without include joda-time to your build path.
+
+*-----------------------*----------------------------*
+ <<Joda-Time Type>>     | <<Wrapper>>
+*-----------------------*----------------------------*
+  DateTime              | JodaDateTimeWrapper
+*-----------------------*----------------------------*
+  DateMidnight          | JodaDateMidnightWrapper
+*-----------------------*----------------------------*
+  LocalDate             | JodaLocalDateWrapper
+*-----------------------*----------------------------*
+  LocalTime             | JodaLocalTimeWrapper
+*-----------------------*----------------------------*
+  LocalDateTime         | JodaLocalDateTimeWrapper
+*-----------------------*----------------------------*

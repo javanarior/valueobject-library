@@ -1,51 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<document xmlns="http://maven.apache.org/changes/1.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<document xmlns="http://maven.apache.org/changes/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
 
     <properties>
-        <title>Change Log ValueObject Library</title>
+        <title>Change Log</title>
         <author email="javanarior (a) gmail dot com">Sven</author>
     </properties>
 
     <body>
+        <release version="0.5.0" date="2014-10-19"
+            description="Add support for java.util.Date and Joda-Time.">
+            <action dev="Sven" date="2014-10-19" type="add">
+                Add Wrapper for java.util.Date
+            </action>
+        </release>
+
         <release version="0.4.0" date="2014-10-12" description="Rename project.">
-            <action dev="Sven" date="2014-10-12" type="update">Rename artifact and repository from vo-lib to valueobject-library.</action>
-            <action dev="Sven" date="2014-10-12" type="remove">Move SpeakingComparable in own project.</action>
-            <action dev="Sven" date="2014-09-28" type="add">Add Project Page and Documentation.</action>
+            <action dev="Sven" date="2014-10-12" type="update">
+                Rename artifact and repository from vo-lib to valueobject-library.
+            </action>
+            <action dev="Sven" date="2014-10-12" type="remove">
+                Move SpeakingComparable in own project.
+            </action>
+            <action dev="Sven" date="2014-09-28" type="add">
+                Add Project Page and Documentation.
+            </action>
         </release>
 
         <release version="0.3.0" date="2014-09-21" description="Define more precisely API.">
-            <action date="2014-09-21" dev="Sven" type="remove">Moved
-                Value#asChar and Value#asCharacter to CharWrapper,
-                breaks backward compatibility.
+            <action date="2014-09-21" dev="Sven" type="remove">
+                Moved Value#asChar and Value#asCharacter to CharWrapper, breaks backward compatibility.
             </action>
-            <action date="2014-09-21" dev="Sven" type="update">Change
-                Value#getValue to return the technical type which is a
-                sub type of Comparable instead of object, breaks
-                backward compatibility.</action>
-            <action date="2014-09-21" dev="Sven" type="update">Prevent
-                NullPoinerException.
-                Check argument of object based
-                Wrappers (String, BigInteger, BigDecimal),
-                does not allow
-                null value.
+            <action date="2014-09-21" dev="Sven" type="update">
+                Change Value#getValue to return the technical type which is a sub type of Comparable instead
+                of object, breaks backward compatibility.
+            </action>
+            <action date="2014-09-21" dev="Sven" type="update">
+                Prevent NullPoinerException.
+                Check argument of object based  Wrappers (String, BigInteger, BigDecimal),
+                does not allow  null value.
             </action>
         </release>
 
         <release date="2014-09-07" version="0.2.0" description="Clean up.">
-            <action dev="Sven" date="2014-09-07" type="add">In
-                AbstractValue a #toString Method is added. It prints the
-                implementing class and the value.</action>
-            <action date="2014-09-07" dev="Sven" type="remove">The
-                metaType parameter was removed. It was not necessary and
-                simplifies the API. On the other hand this change breaks
-                backward compatibility.</action>
+            <action dev="Sven" date="2014-09-07" type="add">
+                In  AbstractValue a #toString Method is added. It prints the implementing class and the value.
+            </action>
+            <action date="2014-09-07" dev="Sven" type="remove">
+                The metaType parameter was removed. It was not necessary and simplifies the
+                API. On the other hand this change breaks backward compatibility.
+            </action>
         </release>
 
-        <release version="0.1.0" description="Initial release."
-            date="2014-08-17">
-            <action dev="Sven" date="2014-08-17">Initial release.</action>
+        <release version="0.1.0" description="Initial release." date="2014-08-17">
+            <action dev="Sven" date="2014-08-17">
+                Initial release.
+            </action>
         </release>
     </body>
 

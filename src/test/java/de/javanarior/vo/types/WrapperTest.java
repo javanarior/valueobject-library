@@ -15,6 +15,7 @@
  */
 package de.javanarior.vo.types;
 
+import static de.javanarior.vo.types.DateWrapperTest.DATE_FORMATTER;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotEquals;
@@ -32,6 +33,7 @@ import de.javanarior.vo.types.helper.BigIntegerValue;
 import de.javanarior.vo.types.helper.BooleanValue;
 import de.javanarior.vo.types.helper.ByteValue;
 import de.javanarior.vo.types.helper.CharValue;
+import de.javanarior.vo.types.helper.DateValue;
 import de.javanarior.vo.types.helper.DoubleValue;
 import de.javanarior.vo.types.helper.IntValue;
 import de.javanarior.vo.types.helper.LongValue;
@@ -42,13 +44,13 @@ import de.javanarior.vo.types.helper.StringValueImpl;
 public class WrapperTest {
 
     @DataProvider(name = "getValue")
-    public Object[][] getWrapper() {
+    public Object[][] getWrapper() throws Exception {
 //        @formatter:off
         return new Object[][] {
             {new BigDecimalValue(BigDecimal.valueOf(1.1)), new BigDecimalValue(BigDecimal.valueOf(1.1)),
-             new BigDecimalValue(BigDecimal.valueOf(2.2))}
+              new BigDecimalValue(BigDecimal.valueOf(2.2))}
           , {new BigIntegerValue(BigInteger.valueOf(1)), new BigIntegerValue(BigInteger.valueOf(1)),
-             new BigIntegerValue(BigInteger.valueOf(2))}
+              new BigIntegerValue(BigInteger.valueOf(2))}
           , {new BooleanValue(true), new BooleanValue(true), new BooleanValue(false)}
           , {new ByteValue((byte)1), new ByteValue((byte)1), new ByteValue((byte)2)}
           , {new CharValue('1'), new CharValue('1'), new CharValue('2')}
@@ -57,6 +59,8 @@ public class WrapperTest {
           , {new LongValue(1L), new LongValue(1L), new LongValue(2L)}
           , {new ShortValue((short)1), new ShortValue((short)1), new ShortValue((short)2)}
           , {new StringValueImpl("one"), new StringValueImpl("one"), new StringValueImpl("two")}
+          , {new DateValue(DATE_FORMATTER.parse("2014-10-20")), new DateValue(DATE_FORMATTER.parse("2014-10-20")),
+              new DateValue(DATE_FORMATTER.parse("2014-10-21"))}
         };
 //        @formatter:on
     }

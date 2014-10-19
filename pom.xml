@@ -44,6 +44,7 @@
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <javanarior-build-resources.version>3</javanarior-build-resources.version>
+        <joda-time.version>1.6.2</joda-time.version>
     </properties>
 
 
@@ -86,6 +87,14 @@
             <artifactId>java-utils</artifactId>
             <version>0.0.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
