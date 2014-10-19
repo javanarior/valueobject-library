@@ -26,6 +26,9 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
+import org.joda.time.LocalTime;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -38,6 +41,9 @@ import de.javanarior.vo.types.helper.DateValue;
 import de.javanarior.vo.types.helper.DoubleValue;
 import de.javanarior.vo.types.helper.IntValue;
 import de.javanarior.vo.types.helper.JodaDateTimeValue;
+import de.javanarior.vo.types.helper.JodaLocalDateTimeValue;
+import de.javanarior.vo.types.helper.JodaLocalDateValue;
+import de.javanarior.vo.types.helper.JodaLocalTimeValue;
 import de.javanarior.vo.types.helper.LongValue;
 import de.javanarior.vo.types.helper.ShortValue;
 import de.javanarior.vo.types.helper.StringValueImpl;
@@ -65,6 +71,12 @@ public class WrapperTest {
               new DateValue(DATE_FORMATTER.parse("2014-10-21"))}
           , {new JodaDateTimeValue(new DateTime("2014-10-20")), new JodaDateTimeValue(new DateTime("2014-10-20")),
               new JodaDateTimeValue(new DateTime("2014-10-21"))}
+          , {new JodaLocalDateTimeValue(new LocalDateTime("2014-10-20")), new JodaLocalDateTimeValue(
+                          new LocalDateTime("2014-10-20")), new JodaLocalDateTimeValue(new LocalDateTime("2014-10-21"))}
+          , {new JodaLocalDateValue(new LocalDate("2014-10-20")), new JodaLocalDateValue(
+                          new LocalDate("2014-10-20")), new JodaLocalDateValue(new LocalDate("2014-10-21"))}
+          , {new JodaLocalTimeValue(new LocalTime("12:13:14")), new JodaLocalTimeValue(
+                          new LocalTime("12:13:14")), new JodaLocalTimeValue(new LocalTime("14:13:12"))}
         };
 //        @formatter:on
     }

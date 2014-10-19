@@ -28,7 +28,7 @@ import de.javanarior.utils.compare.SpeakingComparable;
  * @param <T>
  *            the technical type to which the value type is mapped
  */
-public interface Value<V extends Value<V, T>, T extends Comparable<?>> extends SpeakingComparable<V> {
+public interface Value<V extends Value<V, T>, T extends Comparable> extends SpeakingComparable<V> {
 
     /**
      * Returns the value as Object.
