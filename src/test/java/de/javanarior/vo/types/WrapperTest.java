@@ -25,6 +25,7 @@ import static org.testng.Assert.assertTrue;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import org.joda.time.DateTime;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -36,6 +37,7 @@ import de.javanarior.vo.types.helper.CharValue;
 import de.javanarior.vo.types.helper.DateValue;
 import de.javanarior.vo.types.helper.DoubleValue;
 import de.javanarior.vo.types.helper.IntValue;
+import de.javanarior.vo.types.helper.JodaDateTimeValue;
 import de.javanarior.vo.types.helper.LongValue;
 import de.javanarior.vo.types.helper.ShortValue;
 import de.javanarior.vo.types.helper.StringValueImpl;
@@ -61,6 +63,8 @@ public class WrapperTest {
           , {new StringValueImpl("one"), new StringValueImpl("one"), new StringValueImpl("two")}
           , {new DateValue(DATE_FORMATTER.parse("2014-10-20")), new DateValue(DATE_FORMATTER.parse("2014-10-20")),
               new DateValue(DATE_FORMATTER.parse("2014-10-21"))}
+          , {new JodaDateTimeValue(new DateTime("2014-10-20")), new JodaDateTimeValue(new DateTime("2014-10-20")),
+              new JodaDateTimeValue(new DateTime("2014-10-21"))}
         };
 //        @formatter:on
     }

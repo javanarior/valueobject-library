@@ -11,7 +11,7 @@
 
     <groupId>de.javanarior.library</groupId>
     <artifactId>valueobject-library</artifactId>
-    <version>0.3.1-SNAPSHOT</version>
+    <version>0.4.1-SNAPSHOT</version>
 
 
 
@@ -44,7 +44,7 @@
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <javanarior-build-resources.version>3</javanarior-build-resources.version>
-        <joda-time.version>1.6.2</joda-time.version>
+        <joda-time.version>2.5</joda-time.version>
     </properties>
 
 
