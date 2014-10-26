@@ -15,31 +15,31 @@
  */
 package de.javanarior.vo.types;
 
-import java.util.Date;
+import org.joda.time.DateTime;
 
 /**
- * Wrapper for java.util.Date values.
+ * Wrapper for Joda DateTime values.
  *
  * @param <V>
  *            the value type
  */
-public abstract class DateWrapper<V extends Value<V, Date>> extends AbstractValue<V, Date> {
+public abstract class JodaDateTimeWrapper<V extends Value<V, DateTime>> extends AbstractValue<V, DateTime> {
 
-    private final Date value;
+    private final DateTime value;
 
     /**
-     * Create Date Type from Date value.
+     * Create DateTime Type from DateTime value.
      *
      * @param value
      *            - value for the object
      */
-    public DateWrapper(Date value) {
+    public JodaDateTimeWrapper(DateTime value) {
         super();
         this.value = assertNotNull(value);
     }
 
     @Override
-    public Date getValue() {
+    public DateTime getValue() {
         return value;
     }
 
@@ -53,7 +53,7 @@ public abstract class DateWrapper<V extends Value<V, Date>> extends AbstractValu
         if (!super.equals(obj)) {
             return false;
         }
-        DateWrapper<?> other = (DateWrapper<?>)obj;
+        JodaDateTimeWrapper<?> other = (JodaDateTimeWrapper<?>)obj;
         if (!value.equals(other.value)) {
             return false;
         }

@@ -15,31 +15,33 @@
  */
 package de.javanarior.vo.types;
 
-import java.util.Date;
+import org.joda.time.LocalDate;
+
 
 /**
- * Wrapper for java.util.Date values.
+ * Wrapper for Joda LocalDate values.
  *
  * @param <V>
  *            the value type
  */
-public abstract class DateWrapper<V extends Value<V, Date>> extends AbstractValue<V, Date> {
+public abstract class JodaLocalDateWrapper<V extends Value<V, LocalDate>> extends
+                AbstractValue<V, LocalDate> {
 
-    private final Date value;
+    private final LocalDate value;
 
     /**
-     * Create Date Type from Date value.
+     * Create LocalDate Type from LocalDate value.
      *
      * @param value
      *            - value for the object
      */
-    public DateWrapper(Date value) {
+    public JodaLocalDateWrapper(LocalDate value) {
         super();
         this.value = assertNotNull(value);
     }
 
     @Override
-    public Date getValue() {
+    public LocalDate getValue() {
         return value;
     }
 
@@ -53,7 +55,7 @@ public abstract class DateWrapper<V extends Value<V, Date>> extends AbstractValu
         if (!super.equals(obj)) {
             return false;
         }
-        DateWrapper<?> other = (DateWrapper<?>)obj;
+        JodaLocalDateWrapper<?> other = (JodaLocalDateWrapper<?>)obj;
         if (!value.equals(other.value)) {
             return false;
         }
