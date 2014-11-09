@@ -21,7 +21,7 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
-import de.javanarior.utils.lang.GeneratedClass;
+import de.javanarior.utils.lang.ByteCodeContainer;
 
 /**
  * Generate a implementation of a value object interface.
@@ -70,7 +70,7 @@ public class ByteCodeGenerator implements Opcodes {
         return "L" + type + ";";
     }
 
-    String addTypeDiscriptor(Class<?> type) {
+    private String addTypeDiscriptor(Class<?> type) {
         return Type.getDescriptor(type);
     }
 
@@ -79,7 +79,7 @@ public class ByteCodeGenerator implements Opcodes {
     }
 
     /* CHECKSTYLE:OFF */
-    public GeneratedClass generate() {
+    public ByteCodeContainer generate() {
 
         ClassWriter classWriter = new ClassWriter(0);
         MethodVisitor methodVisitor;
@@ -109,7 +109,7 @@ public class ByteCodeGenerator implements Opcodes {
         methodVisitor.visitEnd();
         classWriter.visitEnd();
 
-        return new GeneratedClass(binaryClassName(), classWriter.toByteArray());
+        return new ByteCodeContainer(binaryClassName(), classWriter.toByteArray());
     }
     /* CHECKSTYLE:ON */
 }

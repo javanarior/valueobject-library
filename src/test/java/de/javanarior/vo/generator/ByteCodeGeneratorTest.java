@@ -21,7 +21,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import de.javanarior.utils.lang.ByteCodeClassLoader;
-import de.javanarior.utils.lang.GeneratedClass;
+import de.javanarior.utils.lang.ByteCodeContainer;
 import de.javanarior.vo.generator.helper.IntType;
 import de.javanarior.vo.generator.helper.StringType;
 import de.javanarior.vo.types.IntWrapper;
@@ -70,6 +70,11 @@ public class ByteCodeGeneratorTest {
         Assert.assertEquals(generator.methodDescriptor(Integer.TYPE), "(" + Type.getType(Integer.TYPE) + ")V");
     }
 
+    public void testAddTypeSignature() {
+        ByteCodeGenerator generator = new ByteCodeGenerator(IntType.class, Integer.class, IntWrapper.class);
+        Assert.assertEquals(generator.addTypeSignature(Integer.TYPE.toString()), "Lint;");
+    }
+
     @DataProvider(name = "getWrapper")
     public Object[][] getWrapper() throws Exception {
         // @formatter:off
@@ -83,7 +88,7 @@ public class ByteCodeGeneratorTest {
     @Test(dataProvider = "getWrapper")
     public void testGenerate(Class<?> interfaze, Class<?> technicalType, Class<?> superClass) throws Exception {
         ByteCodeGenerator generator = new ByteCodeGenerator(interfaze, technicalType, superClass);
-        GeneratedClass generatedClass = generator.generate();
+        ByteCodeContainer generatedClass = generator.generate();
         ByteCodeClassLoader classLoader = ByteCodeClassLoader.getClassLoader();
         Class<?> load = classLoader.load(generatedClass);
         Assert.assertNotNull(load);
