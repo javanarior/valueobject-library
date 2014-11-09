@@ -28,6 +28,8 @@ import de.javanarior.utils.lang.ByteCodeContainer;
  */
 public class ByteCodeGenerator implements Opcodes {
 
+    private static final int OBJECT_PRIMITIVE_SIZE = 2;
+    private static final int DOUBLE_SIZE = 3;
     private static final String GENERATED_VO_INDICATOR = "$VO$";
     private static final String CONTRUCTOR = "<init>";
 
@@ -70,6 +72,19 @@ public class ByteCodeGenerator implements Opcodes {
         return "L" + type + ";";
     }
 
+    int getILOADOpCode(Class<?> type) {
+        return Type.getType(technicalType).getOpcode(ILOAD);
+    }
+
+    int getStackSize(String desc) {
+        switch (desc.charAt(0)) {
+            case 'D':
+                return DOUBLE_SIZE;
+            default:
+                return OBJECT_PRIMITIVE_SIZE;
+        }
+    }
+
     private String addTypeDiscriptor(Class<?> type) {
         return Type.getDescriptor(type);
     }
@@ -94,7 +109,7 @@ public class ByteCodeGenerator implements Opcodes {
         methodVisitor.visitLabel(l0);
         methodVisitor.visitLineNumber(8, l0);
         methodVisitor.visitVarInsn(ALOAD, 0);
-        methodVisitor.visitVarInsn(ILOAD, 1);
+        methodVisitor.visitVarInsn(getILOADOpCode(technicalType), 1);
         methodVisitor.visitMethodInsn(INVOKESPECIAL, parentClassName(), CONTRUCTOR, methodDescriptor(technicalType),
                         false);
         Label l1 = new Label();
@@ -105,7 +120,8 @@ public class ByteCodeGenerator implements Opcodes {
         methodVisitor.visitLabel(l2);
         methodVisitor.visitLocalVariable("this", addTypeSignature(implementationClassName()), null, l0, l2, 0);
         methodVisitor.visitLocalVariable("value", getType(technicalType), null, l0, l2, 1);
-        methodVisitor.visitMaxs(2, 2);
+        int stackSize = getStackSize(Type.getDescriptor(technicalType));
+        methodVisitor.visitMaxs(stackSize, stackSize);
         methodVisitor.visitEnd();
         classWriter.visitEnd();
 
