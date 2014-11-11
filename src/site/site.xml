@@ -28,13 +28,14 @@
 
     <custom>
         <fluidoSkin>
+            <googleSearch />
+            <ohloh>
+                <projectId>valueobject-library</projectId>
+                <widget>thin-badge</widget>
+            </ohloh>
             <copyrightClass>pull-right</copyrightClass>
             <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
             <breadcrumbDivider>|</breadcrumbDivider>
-<!--             <ohloh> -->
-<!--                 <projectId></projectId> -->
-<!--                 <widget></widget> -->
-<!--             </ohloh> -->
         </fluidoSkin>
     </custom>
 
