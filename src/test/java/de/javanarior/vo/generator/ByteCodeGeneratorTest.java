@@ -85,6 +85,14 @@ public class ByteCodeGeneratorTest {
         Assert.assertTrue(generator.implementationClassName().matches(implementedInterfaceName + "\\$VO\\$[0-9a-f]+"));
     }
 
+    public void testImplementationClassNameIsEqualForEqualTypes() {
+        ByteCodeGenerator generator1 = new ByteCodeGenerator(IntType.class, Integer.class, IntWrapper.class);
+        String implementationClassName1 = generator1.implementationClassName();
+        ByteCodeGenerator generator2 = new ByteCodeGenerator(IntType.class, Integer.class, IntWrapper.class);
+        String implementationClassName2 = generator2.implementationClassName();
+        Assert.assertEquals(implementationClassName1, implementationClassName2);
+    }
+
     public void testInterfaceName() {
         ByteCodeGenerator generator = new ByteCodeGenerator(IntType.class, Integer.class, IntWrapper.class);
         Assert.assertEquals(generator.interfaceName(), IntType.class.getName().replace(".", "/"));
@@ -132,7 +140,7 @@ public class ByteCodeGeneratorTest {
                  new LocalDateTime()},
                 {JodaLocalDateType.class, LocalDate.class, JodaLocalDateWrapper.class , new LocalDate()},
                 {JodaLocalTimeType.class, LocalTime.class, JodaLocalTimeWrapper.class , new LocalTime()},
-                {LongType.class, Long.TYPE, LongWrapper.class , Long.valueOf("21L")},
+                {LongType.class, Long.TYPE, LongWrapper.class , Long.valueOf("21")},
                 {ShortType.class, Short.TYPE, ShortWrapper.class , Short.valueOf("2")},
                 {StringType.class, String.class, StringWrapper.class, "TestMe" }
         };
@@ -140,8 +148,8 @@ public class ByteCodeGeneratorTest {
     }
 
     @Test(dataProvider = "getWrapper")
-    public void testGenerate(Class<?> interfaze, Class<Object> technicalType,
-                    Class<?> superClass, Object value) throws Exception {
+    public void testGenerate(Class<?> interfaze, Class<Object> technicalType, Class<?> superClass, Object value)
+                    throws Exception {
         ByteCodeGenerator generator = new ByteCodeGenerator(interfaze, technicalType, superClass);
         ByteCodeContainer generatedClass = generator.generate();
         ByteCodeClassLoader classLoader = ByteCodeClassLoader.getClassLoader();

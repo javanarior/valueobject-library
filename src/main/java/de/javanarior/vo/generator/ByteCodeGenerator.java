@@ -79,6 +79,7 @@ public class ByteCodeGenerator implements Opcodes {
     int getStackSize(String desc) {
         switch (desc.charAt(0)) {
             case 'D':
+            case 'J':
                 return DOUBLE_SIZE;
             default:
                 return OBJECT_PRIMITIVE_SIZE;
