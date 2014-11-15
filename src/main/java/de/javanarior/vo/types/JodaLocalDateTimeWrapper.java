@@ -23,7 +23,8 @@ import org.joda.time.LocalDateTime;
  * @param <V>
  *            the value type
  */
-public abstract class JodaLocalDateTimeWrapper<V extends Value<V, LocalDateTime>> extends AbstractValue<V, LocalDateTime> {
+public abstract class JodaLocalDateTimeWrapper<V extends Value<V, LocalDateTime>> extends
+                AbstractValue<V, LocalDateTime> {
 
     private final LocalDateTime value;
 
