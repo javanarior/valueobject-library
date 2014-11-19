@@ -25,9 +25,9 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2014</copyright>
     <item>
-      <title>File: 51,
+      <title>File: 71,
              Errors: 0,
-             Warnings: 0,
+             Warnings: 10,
              Infos: 0
       </title>
             <link>http://javanarior.github.io/valueobject-library/checkstyle.html</link>
@@ -46,91 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.StringValueNullObject.java">de/javanarior/vo/types/helper/StringValueNullObject.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.StringValueImpl.java">de/javanarior/vo/types/helper/StringValueImpl.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.IntWrapperTest.java">de/javanarior/vo/types/IntWrapperTest.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.NullObjectTest.java">de/javanarior/vo/types/NullObjectTest.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.BigIntegerValue.java">de/javanarior/vo/types/helper/BigIntegerValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.DoubleWrapper.java">de/javanarior/vo/types/DoubleWrapper.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.StringWrapperTest.java">de/javanarior/vo/types/StringWrapperTest.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaDateTimeWrapper.java">de/javanarior/vo/types/JodaDateTimeWrapper.java</a>
                 </td>
                 <td>
                   0
@@ -158,7 +74,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherBigDecimalValue.java">de/javanarior/vo/types/helper/OtherBigDecimalValue.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BigIntegerWrapper.java">de/javanarior/vo/types/BigIntegerWrapper.java</a>
                 </td>
                 <td>
                   0
@@ -172,27 +88,13 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherShortValue.java">de/javanarior/vo/types/helper/OtherShortValue.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.DateWrapperTest.java">de/javanarior/vo/types/DateWrapperTest.java</a>
                 </td>
                 <td>
                   0
                 </td>
                 <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.LongWrapper.java">de/javanarior/vo/types/LongWrapper.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
+                  1
                 </td>
                 <td>
                   0
@@ -200,91 +102,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherStringValue.java">de/javanarior/vo/types/helper/OtherStringValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.ByteValue.java">de/javanarior/vo/types/helper/ByteValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.ShortWrapper.java">de/javanarior/vo/types/ShortWrapper.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.CharValue.java">de/javanarior/vo/types/helper/CharValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherCharValue.java">de/javanarior/vo/types/helper/OtherCharValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherDoubleValue.java">de/javanarior/vo/types/helper/OtherDoubleValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.BooleanValue.java">de/javanarior/vo/types/helper/BooleanValue.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.StringWrapperTest.java">de/javanarior/vo/types/StringWrapperTest.java</a>
                 </td>
                 <td>
                   0
@@ -312,7 +130,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.package-info.java">de/javanarior/vo/types/package-info.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BigDecimalWrapperTest.java">de/javanarior/vo/types/BigDecimalWrapperTest.java</a>
                 </td>
                 <td>
                   0
@@ -326,189 +144,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.CharWrapperTest.java">de/javanarior/vo/types/CharWrapperTest.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.AbstractValue.java">de/javanarior/vo/types/AbstractValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.DoubleValue.java">de/javanarior/vo/types/helper/DoubleValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.WrapperTest.java">de/javanarior/vo/types/WrapperTest.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.ShortValue.java">de/javanarior/vo/types/helper/ShortValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.StringValue.java">de/javanarior/vo/types/helper/StringValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.NullObject.java">de/javanarior/vo/types/NullObject.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.IntValue.java">de/javanarior/vo/types/helper/IntValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BigIntegerWrapper.java">de/javanarior/vo/types/BigIntegerWrapper.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.StringWrapper.java">de/javanarior/vo/types/StringWrapper.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherBigIntegerValue.java">de/javanarior/vo/types/helper/OtherBigIntegerValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BooleanWrapper.java">de/javanarior/vo/types/BooleanWrapper.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.Value.java">de/javanarior/vo/types/Value.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.ByteWrapper.java">de/javanarior/vo/types/ByteWrapper.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherCharValue.java">de/javanarior/vo/types/helper/OtherCharValue.java</a>
                 </td>
                 <td>
                   0
@@ -536,7 +172,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.ByteWrapperTest.java">de/javanarior/vo/types/ByteWrapperTest.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.CharValue.java">de/javanarior/vo/types/helper/CharValue.java</a>
                 </td>
                 <td>
                   0
@@ -550,105 +186,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BigIntegerWrapperTest.java">de/javanarior/vo/types/BigIntegerWrapperTest.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BigDecimalWrapper.java">de/javanarior/vo/types/BigDecimalWrapper.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.LongValue.java">de/javanarior/vo/types/helper/LongValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BigDecimalWrapperTest.java">de/javanarior/vo/types/BigDecimalWrapperTest.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherStringValueNullObject.java">de/javanarior/vo/types/helper/OtherStringValueNullObject.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.DoubleWrapperTest.java">de/javanarior/vo/types/DoubleWrapperTest.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherLongValue.java">de/javanarior/vo/types/helper/OtherLongValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.LongWrapperTest.java">de/javanarior/vo/types/LongWrapperTest.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherDoubleValue.java">de/javanarior/vo/types/helper/OtherDoubleValue.java</a>
                 </td>
                 <td>
                   0
@@ -676,7 +214,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BooleanWrapperTest.java">de/javanarior/vo/types/BooleanWrapperTest.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BigDecimalWrapper.java">de/javanarior/vo/types/BigDecimalWrapper.java</a>
                 </td>
                 <td>
                   0
@@ -690,7 +228,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherByteValue.java">de/javanarior/vo/types/helper/OtherByteValue.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherShortValue.java">de/javanarior/vo/types/helper/OtherShortValue.java</a>
                 </td>
                 <td>
                   0
@@ -704,7 +242,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherStringValueImpl.java">de/javanarior/vo/types/helper/OtherStringValueImpl.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherBigIntegerValue.java">de/javanarior/vo/types/helper/OtherBigIntegerValue.java</a>
                 </td>
                 <td>
                   0
@@ -718,7 +256,175 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.IntWrapper.java">de/javanarior/vo/types/IntWrapper.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaLocalTimeWrapperTest.java">de/javanarior/vo/types/JodaLocalTimeWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.IntWrapperTest.java">de/javanarior/vo/types/IntWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.JodaLocalDateTimeValue.java">de/javanarior/vo/types/helper/JodaLocalDateTimeValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherDateValue.java">de/javanarior/vo/types/helper/OtherDateValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.DateValue.java">de/javanarior/vo/types/helper/DateValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaLocalDateTimeWrapperTest.java">de/javanarior/vo/types/JodaLocalDateTimeWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaLocalDateWrapper.java">de/javanarior/vo/types/JodaLocalDateWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.DoubleValue.java">de/javanarior/vo/types/helper/DoubleValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherJodaLocalTimeValue.java">de/javanarior/vo/types/helper/OtherJodaLocalTimeValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.DoubleWrapper.java">de/javanarior/vo/types/DoubleWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherLongValue.java">de/javanarior/vo/types/helper/OtherLongValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.JodaDateTimeValue.java">de/javanarior/vo/types/helper/JodaDateTimeValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.LongValue.java">de/javanarior/vo/types/helper/LongValue.java</a>
                 </td>
                 <td>
                   0
@@ -746,7 +452,581 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherJodaDateTimeValue.java">de/javanarior/vo/types/helper/OtherJodaDateTimeValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherBigDecimalValue.java">de/javanarior/vo/types/helper/OtherBigDecimalValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BooleanWrapper.java">de/javanarior/vo/types/BooleanWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherStringValueNullObject.java">de/javanarior/vo/types/helper/OtherStringValueNullObject.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.StringValueNullObject.java">de/javanarior/vo/types/helper/StringValueNullObject.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.WrapperTest.java">de/javanarior/vo/types/WrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.NullObjectTest.java">de/javanarior/vo/types/NullObjectTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.AbstractValueTest.java">de/javanarior/vo/types/AbstractValueTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.ByteWrapper.java">de/javanarior/vo/types/ByteWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaLocalDateTimeWrapper.java">de/javanarior/vo/types/JodaLocalDateTimeWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherStringValueImpl.java">de/javanarior/vo/types/helper/OtherStringValueImpl.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaDateTimeWrapperTest.java">de/javanarior/vo/types/JodaDateTimeWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherStringValue.java">de/javanarior/vo/types/helper/OtherStringValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.IntWrapper.java">de/javanarior/vo/types/IntWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.StringValue.java">de/javanarior/vo/types/helper/StringValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherJodaLocalDateTimeValue.java">de/javanarior/vo/types/helper/OtherJodaLocalDateTimeValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.ShortValue.java">de/javanarior/vo/types/helper/ShortValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.DoubleWrapperTest.java">de/javanarior/vo/types/DoubleWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaLocalTimeWrapper.java">de/javanarior/vo/types/JodaLocalTimeWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherJodaLocalDateValue.java">de/javanarior/vo/types/helper/OtherJodaLocalDateValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.CharWrapperTest.java">de/javanarior/vo/types/CharWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.StringWrapper.java">de/javanarior/vo/types/StringWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.NullObject.java">de/javanarior/vo/types/NullObject.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.AbstractValue.java">de/javanarior/vo/types/AbstractValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.LongWrapper.java">de/javanarior/vo/types/LongWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.Value.java">de/javanarior/vo/types/Value.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.StringValueImpl.java">de/javanarior/vo/types/helper/StringValueImpl.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BooleanWrapperTest.java">de/javanarior/vo/types/BooleanWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.BooleanValue.java">de/javanarior/vo/types/helper/BooleanValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.ByteWrapperTest.java">de/javanarior/vo/types/ByteWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherByteValue.java">de/javanarior/vo/types/helper/OtherByteValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.ShortWrapper.java">de/javanarior/vo/types/ShortWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BigIntegerWrapperTest.java">de/javanarior/vo/types/BigIntegerWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.DateWrapper.java">de/javanarior/vo/types/DateWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.BigIntegerValue.java">de/javanarior/vo/types/helper/BigIntegerValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.ByteValue.java">de/javanarior/vo/types/helper/ByteValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.JodaLocalDateValue.java">de/javanarior/vo/types/helper/JodaLocalDateValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaLocalDateWrapperTest.java">de/javanarior/vo/types/JodaLocalDateWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.package-info.java">de/javanarior/vo/types/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.LongWrapperTest.java">de/javanarior/vo/types/LongWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.IntValue.java">de/javanarior/vo/types/helper/IntValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.JodaLocalTimeValue.java">de/javanarior/vo/types/helper/JodaLocalTimeValue.java</a>
                 </td>
                 <td>
                   0
