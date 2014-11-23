@@ -23,10 +23,32 @@ import de.javanarior.vo.generator.helper.IntType;
 @Test
 public class TypeIntegerTest {
 
-    public void testCreate() {
+    public void testCreateInt() {
         IntType value = TypeInteger.create(IntType.class, 2);
         Assert.assertNotNull(value);
         Assert.assertEquals(value.asInt(), 2);
+    }
+
+    public void testCreateInteger() {
+        IntType value = TypeInteger.create(IntType.class, Integer.valueOf(2));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.asInt(), 2);
+    }
+
+    @Test(expectedExceptions=IllegalArgumentException.class)
+    public void testCreateIntegerNull() {
+        TypeInteger.create(IntType.class, (Integer)null);
+    }
+
+    public void testCreateString() {
+        IntType value = TypeInteger.create(IntType.class, "2");
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.asInt(), 2);
+    }
+
+    @Test(expectedExceptions=IllegalArgumentException.class)
+    public void testCreateStringNull() {
+        TypeInteger.create(IntType.class, (String)null);
     }
 
 

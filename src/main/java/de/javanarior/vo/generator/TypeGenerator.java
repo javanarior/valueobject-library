@@ -23,17 +23,20 @@ import de.javanarior.vo.types.Value;
 /**
  *
  */
-public class GeneratorS {
+public class TypeGenerator {
 
     /**
      * Create a new Generator instance.
      */
-    private GeneratorS() {
+    private TypeGenerator() {
     }
 
-    public static <V extends Value<V, T>, T extends Comparable<T>> Class<V> generateS(Class<V> type,
-                    Class<? extends Comparable<?>> technicalType, Class<? extends AbstractValue> wrapperClass) {
+    @SuppressWarnings("unchecked")
+    public static <V extends Value<V, T>, T extends Comparable<T>> Class<V> generate(Class<V> type,
+                    Class<? extends Comparable<?>> technicalType,
+                    @SuppressWarnings("rawtypes") Class<? extends AbstractValue> wrapperClass) {
         ByteCodeContainer generatedClass = ByteCodeGenerator.generate(type, technicalType, wrapperClass);
         return (Class<V>)ByteCodeClassLoader.getClassLoader().load(generatedClass);
     }
+
 }

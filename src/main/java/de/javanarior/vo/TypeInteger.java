@@ -15,12 +15,9 @@
  */
 package de.javanarior.vo;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-
-import de.javanarior.vo.generator.ByteCodeGenerator;
-import de.javanarior.vo.generator.Generator;
-import de.javanarior.vo.generator.GeneratorS;
+import static de.javanarior.vo.types.AbstractValue.assertNotNull;
+import de.javanarior.utils.lang.reflect.Invoker;
+import de.javanarior.vo.generator.TypeGenerator;
 import de.javanarior.vo.types.IntWrapper;
 import de.javanarior.vo.types.Value;
 
@@ -29,46 +26,30 @@ import de.javanarior.vo.types.Value;
  */
 public class TypeInteger {
 
-    private static final ByteCodeGenerator BYTE_CODE_GENERATOR = new ByteCodeGenerator(Integer.TYPE, IntWrapper.class);
-    private static final Generator GENERATOR = new Generator(Integer.TYPE, IntWrapper.class);
+    @SuppressWarnings("rawtypes")
+    private static final Class<IntWrapper> WRAPPER_CLASS = IntWrapper.class;
+    private static final Class<? extends Comparable<?>> TECHNICAL_TYPE = Integer.TYPE;
 
-    /**
-     * Create a new TypeInteger instance.
-     */
-    public TypeInteger() {
-        // TODO 15.11.2014: Auto-generated constructor stub
+    private TypeInteger() {
+        /* Factory Class */
     }
 
-    public static <T extends Value<T, Integer>> T create(Class<T> type, int value) {
-        // ByteCodeGenerator generator = new ByteCodeGenerator(clazz,
-        // Integer.TYPE, IntWrapper.class);
-        // return generator.generate().;
-        Class<?> generated = GeneratorS.generateS(type, Integer.TYPE, IntWrapper.class);
-        return invokeConstructor(generated, new Class[] { Integer.TYPE }, value);
+    public static <V extends Value<V, Integer>> V create(Class<V> type, int value) {
+        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeIntConstructor(generated, assertNotNull(value));
     }
 
-    public static <T extends Value<T, Integer>> T create(Class<T> type, String value) {
-        // ByteCodeGenerator generator = new ByteCodeGenerator(clazz,
-        // Integer.TYPE, IntWrapper.class);
-        // return generator.generate().;
-        return create(type, Integer.valueOf(value).intValue());
+    public static <V extends Value<V, Integer>> V create(Class<V> type, String value) {
+        return create(type, Integer.valueOf(assertNotNull(value)));
     }
 
-//    public static <T extends Value<T, Integer>> T createG(Class<T> type, int value) {
-//        Class<?> generated = GeneratorS.generate(type, Integer.TYPE, IntWrapper.class);
-//        return invokeConstructor(generated, new Class[] { Integer.TYPE }, value);
-//    }
-
-    private static <T extends Value<T, Integer>> T invokeConstructor(Class<?> clazz,
-                    Class<?>[] parameterTypes, int value) {
-        Constructor<?> constructor;
-        try {
-            constructor = clazz.getConstructor(parameterTypes);
-            return (T)constructor.newInstance(value);
-        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | SecurityException
-                        | IllegalArgumentException | InvocationTargetException exception) {
-            // TODO Change RuntimeExpection
-            throw new RuntimeException(exception);
-        }
+    public static <V extends Value<V, Integer>> V create(Class<V> type, Integer value) {
+        return create(type, assertNotNull(value).intValue());
     }
+
+    @SuppressWarnings("unchecked")
+    private static <V extends Value<V, Integer>> V invokeIntConstructor(Class<V> objectClass, int value) {
+        return (V)Invoker.invokeConstructor(objectClass, Integer.TYPE, value);
+    }
+
 }

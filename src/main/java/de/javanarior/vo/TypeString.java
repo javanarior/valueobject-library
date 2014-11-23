@@ -15,9 +15,10 @@
  */
 package de.javanarior.vo;
 
+import static de.javanarior.vo.types.AbstractValue.assertNotNull;
 import de.javanarior.utils.lang.reflect.Invoker;
-import de.javanarior.vo.generator.Generator;
-import de.javanarior.vo.generator.GeneratorS;
+import de.javanarior.vo.generator.TypeGenerator;
+import de.javanarior.vo.types.AbstractValue;
 import de.javanarior.vo.types.StringWrapper;
 import de.javanarior.vo.types.Value;
 
@@ -29,54 +30,54 @@ public class TypeString {
     @SuppressWarnings("rawtypes")
     private static final Class<StringWrapper> WRAPPER_CLASS = StringWrapper.class;
     private static final Class<? extends Comparable<?>> TECHNICAL_TYPE = String.class;
-    private final Generator generator;
 
-    public TypeString() {
-        this.generator = new Generator(TECHNICAL_TYPE, WRAPPER_CLASS);
+    private TypeString() {
+        /* Factory Class */
     }
 
-    public <T extends Value<T, String>> T create(Class<T> type, String value) {
-        Class<T> classObject = generator.generate(type);
-        return invokeStringConstructor(classObject, value);
+    public static <T extends Value<T, String>> T create(Class<T> type, String value) {
+        Class<T> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeStringConstructor(classObject, assertNotNull(value));
     }
 
-    public <T extends Value<T, String>> T create(Class<T> type, Object value) {
-        return create(type, value.toString());
+    public static <T extends Value<T, String>> T create(Class<T> type, Object value) {
+        return create(type, AbstractValue.assertNotNull(value).toString());
     }
 
-    public <T extends Value<T, String>> T create(Class<T> type, boolean value) {
-        return create(type, Boolean.valueOf(value));
+    public static <T extends Value<T, String>> T create(Class<T> type, boolean value) {
+        return create(type, String.valueOf(value));
     }
 
-    public <T extends Value<T, String>> T create(Class<T> type, byte value) {
-        return create(type, Byte.valueOf(value));
+    public static <T extends Value<T, String>> T create(Class<T> type, byte value) {
+        return create(type, String.valueOf(value));
     }
 
-    public <T extends Value<T, String>> T create(Class<T> type, char value) {
-        return create(type, Character.valueOf(value));
+    public static <T extends Value<T, String>> T create(Class<T> type, char value) {
+        return create(type, String.valueOf(value));
     }
 
-    public <T extends Value<T, String>> T create(Class<T> type, double value) {
-        return create(type, Double.valueOf(value));
+    public static <T extends Value<T, String>> T create(Class<T> type, double value) {
+        return create(type, String.valueOf(value));
     }
 
-    public <T extends Value<T, String>> T create(Class<T> type, float value) {
-        return create(type, Float.valueOf(value));
+    public static <T extends Value<T, String>> T create(Class<T> type, float value) {
+        return create(type, String.valueOf(value));
     }
 
-    public <T extends Value<T, String>> T create(Class<T> type, int value) {
-        return create(type, Integer.valueOf(value));
+    public static <T extends Value<T, String>> T create(Class<T> type, int value) {
+        return create(type, String.valueOf(value));
     }
 
-    public <T extends Value<T, String>> T create(Class<T> type, long value) {
-        return create(type, Long.valueOf(value));
+    public static <T extends Value<T, String>> T create(Class<T> type, long value) {
+        return create(type, String.valueOf(value));
     }
 
-    public <T extends Value<T, String>> T create(Class<T> type, short value) {
-        return create(type, Short.valueOf(value));
+    public static <T extends Value<T, String>> T create(Class<T> type, short value) {
+        return create(type, String.valueOf(value));
     }
 
-    private <T extends Value<T, String>> T invokeStringConstructor(Class<T> objectClass, String value) {
+    @SuppressWarnings("unchecked")
+    private static <T extends Value<T, String>> T invokeStringConstructor(Class<T> objectClass, String value) {
         return (T)Invoker.invokeConstructor(objectClass, String.class, value);
     }
 }
