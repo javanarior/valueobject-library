@@ -27,24 +27,14 @@ import de.javanarior.vo.types.AbstractValue;
 /**
  * Generate a implementation of a value object interface.
  */
-public class ByteCodeGenerator {
+public class ByteCodeGeneratorS {
 
     private static final int OBJECT_PRIMITIVE_SIZE = 2;
     private static final int DOUBLE_SIZE = 3;
     private static final String GENERATED_VO_INDICATOR = "$VO$";
     private static final String CONTRUCTOR = "<init>";
 
-    private final Class<?> superClass;
-    private final Class<?> technicalType;
-
-    /**
-     * Create a new ByteCodeGenerator instance.
-     * @param type
-     * @param class1
-     */
-    public ByteCodeGenerator(Class<? extends Comparable> technicalType, Class<? extends AbstractValue> wrapperClass) {
-        this.technicalType = technicalType;
-        this.superClass = wrapperClass;
+    private ByteCodeGeneratorS() {
     }
 
     static String generateImplementationClassName(Class<?> valueType) {
@@ -52,39 +42,39 @@ public class ByteCodeGenerator {
         return name + GENERATED_VO_INDICATOR + Integer.toHexString(name.hashCode());
     }
 
-    String implementationClassName(Class<?> valueType) {
-        return ByteCodeGenerator.generateImplementationClassName(valueType);
+    static String implementationClassName(Class<?> valueType) {
+        return ByteCodeGeneratorS.generateImplementationClassName(valueType);
     }
 
-    String interfaceName(Class<?> valueType) {
+    static String interfaceName(Class<?> valueType) {
         return Type.getInternalName(valueType);
     }
 
-    String binaryClassName(Class<?> valueType) {
+    static String binaryClassName(Class<?> valueType) {
         return implementationClassName(valueType).replace('/', '.');
     }
 
-    String parentClassName() {
+    static String parentClassName(Class<?> superClass) {
         return Type.getInternalName(superClass);
     }
 
-    String[] implementedInterfaces(Class<?> valueType) {
+    static String[] implementedInterfaces(Class<?> valueType) {
         return new String[] { interfaceName(valueType) };
     }
 
-    String methodDescriptor(Class<?> type) {
+    static String methodDescriptor(Class<?> type) {
         return "(" + getType(type) + ")V";
     }
 
-    String addTypeSignature(String type) {
+    static String addTypeSignature(String type) {
         return "L" + type + ";";
     }
 
-    int getILOADOpCode(Class<?> type) {
-        return Type.getType(technicalType).getOpcode(Opcodes.ILOAD);
+    static int getILOADOpCode(Class<?> type) {
+        return Type.getType(type).getOpcode(Opcodes.ILOAD);
     }
 
-    int getStackSize(String desc) {
+    static int getStackSize(String desc) {
         switch (desc.charAt(0)) {
             case 'D':
             case 'J':
@@ -94,24 +84,24 @@ public class ByteCodeGenerator {
         }
     }
 
-    private String addTypeDiscriptor(Class<?> type) {
+    static private String addTypeDiscriptor(Class<?> type) {
         return Type.getDescriptor(type);
     }
 
-    private String getType(Class<?> type) {
+    static private String getType(Class<?> type) {
         return Type.getType(type).toString();
     }
 
     /* CHECKSTYLE:OFF */
-    public ByteCodeContainer generate(Class<?> valueType) {
+    public static ByteCodeContainer generate(Class<?> valueType, Class<? extends Comparable<?>> technicalType, Class<? extends AbstractValue> wrapperClass) {
         /* CHECKSTYLE:ON */
 
         ClassWriter classWriter = new ClassWriter(0);
         MethodVisitor methodVisitor;
 
-        classWriter.visit(Opcodes.V1_7, Opcodes.ACC_PUBLIC + Opcodes.ACC_SUPER, implementationClassName(valueType), "L" + parentClassName() + "<"
+        classWriter.visit(Opcodes.V1_7, Opcodes.ACC_PUBLIC + Opcodes.ACC_SUPER, implementationClassName(valueType), "L" + parentClassName(wrapperClass) + "<"
                         + addTypeDiscriptor(valueType) + ">;" + addTypeDiscriptor(valueType),
-                        parentClassName(), implementedInterfaces(valueType));
+                        parentClassName(wrapperClass), implementedInterfaces(valueType));
 
         methodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC, CONTRUCTOR, methodDescriptor(technicalType), null, null);
         methodVisitor.visitCode();
@@ -120,7 +110,7 @@ public class ByteCodeGenerator {
         methodVisitor.visitLineNumber(8, l0);
         methodVisitor.visitVarInsn(Opcodes.ALOAD, 0);
         methodVisitor.visitVarInsn(getILOADOpCode(technicalType), 1);
-        methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, parentClassName(), CONTRUCTOR, methodDescriptor(technicalType),
+        methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, parentClassName(wrapperClass), CONTRUCTOR, methodDescriptor(technicalType),
                         false);
         Label l1 = new Label();
         methodVisitor.visitLabel(l1);
