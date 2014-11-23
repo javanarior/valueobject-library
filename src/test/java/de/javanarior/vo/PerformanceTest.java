@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import de.javanarior.vo.generator.helper.StringType;
 
-@Test
+@Test(enabled=false)
 public class PerformanceTest {
 
     private List<WeakReference<StringType>> list;
