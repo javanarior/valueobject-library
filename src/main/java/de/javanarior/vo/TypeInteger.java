@@ -28,7 +28,7 @@ public class TypeInteger {
 
     @SuppressWarnings("rawtypes")
     private static final Class<IntWrapper> WRAPPER_CLASS = IntWrapper.class;
-    private static final Class<? extends Comparable<?>> TECHNICAL_TYPE = Integer.TYPE;
+    private static final Class<Integer> TECHNICAL_TYPE = Integer.TYPE;
 
     private TypeInteger() {
         /* Factory Class */

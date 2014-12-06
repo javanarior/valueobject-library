@@ -29,7 +29,7 @@ public class TypeString {
 
     @SuppressWarnings("rawtypes")
     private static final Class<StringWrapper> WRAPPER_CLASS = StringWrapper.class;
-    private static final Class<? extends Comparable<?>> TECHNICAL_TYPE = String.class;
+    private static final Class<String> TECHNICAL_TYPE = String.class;
 
     private TypeString() {
         /* Factory Class */

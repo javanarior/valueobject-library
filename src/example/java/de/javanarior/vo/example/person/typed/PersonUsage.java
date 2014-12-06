@@ -16,9 +16,11 @@
 package de.javanarior.vo.example.person.typed;
 
 //import static de.javanarior.vo.TypeInteger.create;
+import static de.javanarior.vo.TypeInteger.create;
 import static de.javanarior.vo.TypeString.create;
+import de.javanarior.vo.TypeInteger;
 import de.javanarior.vo.TypeString;
-//import de.javanarior.vo.generator.helper.IntType;
+import de.javanarior.vo.generator.helper.IntType;
 
 public class PersonUsage {
 
@@ -30,11 +32,12 @@ public class PersonUsage {
 
         // START SNIPPET: usage-generator
         Firstname first = TypeString.create(Firstname.class, "first");
-        Surname sur = TypeString.create(Surname.class, "sur");
+        Surname sur = create(Surname.class, "sur");
         Person customer = new Person(first, sur);
         // END SNIPPET: usage-generator
 
-//        create(IntType.class, "2");
+        TypeInteger.create(IntType.class, "2");
+        create(IntType.class, "2");
     }
 
 }
