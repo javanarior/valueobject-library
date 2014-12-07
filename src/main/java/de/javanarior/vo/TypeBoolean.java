@@ -18,19 +18,19 @@ package de.javanarior.vo;
 import static de.javanarior.vo.types.AbstractValue.assertNotNull;
 import de.javanarior.utils.lang.reflect.Invoker;
 import de.javanarior.vo.generator.TypeGenerator;
-import de.javanarior.vo.types.IntWrapper;
+import de.javanarior.vo.types.BooleanWrapper;
 import de.javanarior.vo.types.Value;
 
 /**
- * Factory to create Integer based Value Objects.
+ * Factory to create Boolean based Value Objects.
  */
-public class TypeInteger {
+public class TypeBoolean {
 
     @SuppressWarnings("rawtypes")
-    private static final Class<IntWrapper> WRAPPER_CLASS = IntWrapper.class;
-    private static final Class<Integer> TECHNICAL_TYPE = Integer.TYPE;
+    private static final Class<BooleanWrapper> WRAPPER_CLASS = BooleanWrapper.class;
+    private static final Class<Boolean> TECHNICAL_TYPE = Boolean.TYPE;
 
-    private TypeInteger() {
+    private TypeBoolean() {
         /* Factory Class */
     }
 
@@ -45,7 +45,7 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, Integer value) {
+    public static <V extends Value<V, Boolean>> V create(Class<V> type, Boolean value) {
         Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(generated, assertNotNull(value));
     }
@@ -61,8 +61,8 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, int value) {
-        return create(type, Integer.valueOf(value));
+    public static <V extends Value<V, Boolean>> V create(Class<V> type, boolean value) {
+        return create(type, Boolean.valueOf(value));
     }
 
     /**
@@ -76,12 +76,12 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, String value) {
-        return create(type, Integer.valueOf(assertNotNull(value)));
+    public static <V extends Value<V, Boolean>> V create(Class<V> type, String value) {
+        return create(type, Boolean.valueOf(assertNotNull(value)));
     }
 
     @SuppressWarnings("unchecked")
-    private static <V extends Value<V, Integer>> V invokeConstructor(Class<V> objectClass, Integer value) {
+    private static <V extends Value<V, Boolean>> V invokeConstructor(Class<V> objectClass, Boolean value) {
         return (V)Invoker.invokeConstructor(objectClass, value);
     }
 

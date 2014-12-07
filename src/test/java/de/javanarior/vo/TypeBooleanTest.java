@@ -18,37 +18,42 @@ package de.javanarior.vo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.generator.helper.IntType;
+import de.javanarior.vo.generator.helper.BooleanType;
 
 @Test
-public class TypeIntegerTest {
+public class TypeBooleanTest {
 
-    public void testCreateInteger() {
-        IntType value = TypeInteger.create(IntType.class, Integer.valueOf(2));
+    public void testCreateBoolean() {
+        BooleanType value = TypeBoolean.create(BooleanType.class, Boolean.TRUE);
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Boolean.TRUE);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateIntegerNull() {
-        TypeInteger.create(IntType.class, (Integer)null);
+    public void testCreateBooleanNull() {
+        TypeBoolean.create(BooleanType.class, (Boolean)null);
     }
 
-    public void testCreateInt() {
-        IntType value = TypeInteger.create(IntType.class, 2);
+    public void testCreateBooleanPrimitive() {
+        BooleanType value = TypeBoolean.create(BooleanType.class, true);
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Boolean.TRUE);
     }
 
     public void testCreateString() {
-        IntType value = TypeInteger.create(IntType.class, "2");
+        BooleanType value = TypeBoolean.create(BooleanType.class, "true");
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Boolean.TRUE);
+    }
+
+//    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testCreateStringIllegal() {
+        TypeBoolean.create(BooleanType.class, "trus");
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateStringNull() {
-        TypeInteger.create(IntType.class, (String)null);
+        TypeBoolean.create(BooleanType.class, (String)null);
     }
 
 }

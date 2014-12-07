@@ -18,37 +18,37 @@ package de.javanarior.vo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.generator.helper.IntType;
+import de.javanarior.vo.generator.helper.ByteType;
 
 @Test
-public class TypeIntegerTest {
+public class TypeByteTest {
 
-    public void testCreateInteger() {
-        IntType value = TypeInteger.create(IntType.class, Integer.valueOf(2));
+    public void testCreateByte() {
+        ByteType value = TypeByte.create(ByteType.class, Byte.valueOf("2"));
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Byte.valueOf("2"));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateIntegerNull() {
-        TypeInteger.create(IntType.class, (Integer)null);
+    public void testCreateByteNull() {
+        TypeByte.create(ByteType.class, (Byte)null);
     }
 
-    public void testCreateInt() {
-        IntType value = TypeInteger.create(IntType.class, 2);
+    public void testCreateBytePrimitive() {
+        ByteType value = TypeByte.create(ByteType.class, (byte)2);
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Byte.valueOf("2"));
     }
 
     public void testCreateString() {
-        IntType value = TypeInteger.create(IntType.class, "2");
+        ByteType value = TypeByte.create(ByteType.class, "2");
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Byte.valueOf("2"));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateStringNull() {
-        TypeInteger.create(IntType.class, (String)null);
+        TypeByte.create(ByteType.class, (String)null);
     }
 
 }

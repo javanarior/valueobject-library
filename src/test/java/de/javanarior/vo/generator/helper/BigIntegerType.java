@@ -15,10 +15,11 @@
  */
 package de.javanarior.vo.generator.helper;
 
-import java.math.BigDecimal;
+import java.math.BigInteger;
 
 import de.javanarior.vo.types.Value;
-
-public interface BigIntegerType extends Value<BigIntegerType, BigDecimal> {
+// FIXME svp following line should produce compiler error
+//public interface BigIntegerType extends Value<BigIntegerType, BigDecimal> {
+public interface BigIntegerType extends Value<BigIntegerType, BigInteger> {
 
 }

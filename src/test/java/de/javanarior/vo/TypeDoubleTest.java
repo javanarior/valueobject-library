@@ -18,37 +18,36 @@ package de.javanarior.vo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.generator.helper.IntType;
+import de.javanarior.vo.generator.helper.DoubleType;
 
 @Test
-public class TypeIntegerTest {
+public class TypeDoubleTest {
 
-    public void testCreateInteger() {
-        IntType value = TypeInteger.create(IntType.class, Integer.valueOf(2));
+    public void testCreateDouble() {
+        DoubleType value = TypeDouble.create(DoubleType.class, Double.valueOf(2.2));
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Double.valueOf(2.2));
     }
-
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateIntegerNull() {
-        TypeInteger.create(IntType.class, (Integer)null);
+    public void testCreateDoubleNull() {
+        TypeDouble.create(DoubleType.class, (Double)null);
     }
 
-    public void testCreateInt() {
-        IntType value = TypeInteger.create(IntType.class, 2);
+    public void testCreateDoublePrimitive() {
+        DoubleType value = TypeDouble.create(DoubleType.class, 2.2);
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Double.valueOf("2.2"));
     }
 
     public void testCreateString() {
-        IntType value = TypeInteger.create(IntType.class, "2");
+        DoubleType value = TypeDouble.create(DoubleType.class, "2");
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Double.valueOf(2));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateStringNull() {
-        TypeInteger.create(IntType.class, (String)null);
+        TypeDouble.create(DoubleType.class, (String)null);
     }
 
 }

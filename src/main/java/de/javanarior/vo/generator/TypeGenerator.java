@@ -31,10 +31,10 @@ public class TypeGenerator {
     private TypeGenerator() {
     }
 
-    @SuppressWarnings("unchecked")
-    public static <V extends Value<V, T>, T extends Comparable<T>> Class<V> generate(Class<V> type,
+    @SuppressWarnings({ "unchecked" })
+    public static <V extends Value<V, T>, T extends Comparable> Class<V> generate(Class<V> type,
                     Class<T> technicalType,
-                    @SuppressWarnings("rawtypes") Class<? extends AbstractValue> wrapperClass) {
+                    Class<? extends AbstractValue> wrapperClass) {
         ByteCodeContainer generatedClass = ByteCodeGenerator.generate(type, technicalType, wrapperClass);
         return (Class<V>)ByteCodeClassLoader.getClassLoader().load(generatedClass);
     }

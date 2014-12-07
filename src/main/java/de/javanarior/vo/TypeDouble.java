@@ -18,19 +18,19 @@ package de.javanarior.vo;
 import static de.javanarior.vo.types.AbstractValue.assertNotNull;
 import de.javanarior.utils.lang.reflect.Invoker;
 import de.javanarior.vo.generator.TypeGenerator;
-import de.javanarior.vo.types.IntWrapper;
+import de.javanarior.vo.types.DoubleWrapper;
 import de.javanarior.vo.types.Value;
 
 /**
- * Factory to create Integer based Value Objects.
+ * Factory to create Double based Value Objects.
  */
-public class TypeInteger {
+public class TypeDouble {
 
     @SuppressWarnings("rawtypes")
-    private static final Class<IntWrapper> WRAPPER_CLASS = IntWrapper.class;
-    private static final Class<Integer> TECHNICAL_TYPE = Integer.TYPE;
+    private static final Class<DoubleWrapper> WRAPPER_CLASS = DoubleWrapper.class;
+    private static final Class<Double> TECHNICAL_TYPE = Double.TYPE;
 
-    private TypeInteger() {
+    private TypeDouble() {
         /* Factory Class */
     }
 
@@ -45,7 +45,7 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, Integer value) {
+    public static <V extends Value<V, Double>> V create(Class<V> type, Double value) {
         Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(generated, assertNotNull(value));
     }
@@ -61,8 +61,8 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, int value) {
-        return create(type, Integer.valueOf(value));
+    public static <V extends Value<V, Double>> V create(Class<V> type, double value) {
+        return create(type, Double.valueOf(value));
     }
 
     /**
@@ -76,12 +76,12 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, String value) {
-        return create(type, Integer.valueOf(assertNotNull(value)));
+    public static <V extends Value<V, Double>> V create(Class<V> type, String value) {
+        return create(type, Double.valueOf(assertNotNull(value)));
     }
 
     @SuppressWarnings("unchecked")
-    private static <V extends Value<V, Integer>> V invokeConstructor(Class<V> objectClass, Integer value) {
+    private static <V extends Value<V, Double>> V invokeConstructor(Class<V> objectClass, Double value) {
         return (V)Invoker.invokeConstructor(objectClass, value);
     }
 

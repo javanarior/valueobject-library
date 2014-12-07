@@ -18,37 +18,37 @@ package de.javanarior.vo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.generator.helper.IntType;
+import de.javanarior.vo.generator.helper.ShortType;
 
 @Test
-public class TypeIntegerTest {
+public class TypeShortTest {
 
-    public void testCreateInteger() {
-        IntType value = TypeInteger.create(IntType.class, Integer.valueOf(2));
+    public void testCreateShort() {
+        ShortType value = TypeShort.create(ShortType.class, (short)2);
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Short.valueOf("2"));
     }
 
-    @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateIntegerNull() {
-        TypeInteger.create(IntType.class, (Integer)null);
+    @Test(expectedExceptions=IllegalArgumentException.class)
+    public void testCreateShortNull() {
+        TypeShort.create(ShortType.class, (Short)null);
     }
 
-    public void testCreateInt() {
-        IntType value = TypeInteger.create(IntType.class, 2);
+    public void testCreateShortPrimitive() {
+        ShortType value = TypeShort.create(ShortType.class, Short.valueOf("2"));
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Short.valueOf("2"));
     }
 
     public void testCreateString() {
-        IntType value = TypeInteger.create(IntType.class, "2");
+        ShortType value = TypeShort.create(ShortType.class, "2");
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Short.valueOf("2"));
     }
 
-    @Test(expectedExceptions = IllegalArgumentException.class)
+    @Test(expectedExceptions=IllegalArgumentException.class)
     public void testCreateStringNull() {
-        TypeInteger.create(IntType.class, (String)null);
+        TypeShort.create(ShortType.class, (String)null);
     }
 
 }

@@ -23,7 +23,7 @@ import de.javanarior.vo.types.StringWrapper;
 import de.javanarior.vo.types.Value;
 
 /**
- *
+ * Factory to create String based Value Objects.
  */
 public class TypeString {
 
@@ -35,49 +35,171 @@ public class TypeString {
         /* Factory Class */
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     public static <T extends Value<T, String>> T create(Class<T> type, String value) {
         Class<T> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
-        return invokeStringConstructor(classObject, assertNotNull(value));
+        return invokeConstructor(classObject, assertNotNull(value));
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     public static <T extends Value<T, String>> T create(Class<T> type, Object value) {
         return create(type, AbstractValue.assertNotNull(value).toString());
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     public static <T extends Value<T, String>> T create(Class<T> type, boolean value) {
         return create(type, String.valueOf(value));
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     public static <T extends Value<T, String>> T create(Class<T> type, byte value) {
         return create(type, String.valueOf(value));
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     public static <T extends Value<T, String>> T create(Class<T> type, char value) {
         return create(type, String.valueOf(value));
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     public static <T extends Value<T, String>> T create(Class<T> type, double value) {
         return create(type, String.valueOf(value));
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     public static <T extends Value<T, String>> T create(Class<T> type, float value) {
         return create(type, String.valueOf(value));
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     public static <T extends Value<T, String>> T create(Class<T> type, int value) {
         return create(type, String.valueOf(value));
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     public static <T extends Value<T, String>> T create(Class<T> type, long value) {
         return create(type, String.valueOf(value));
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     public static <T extends Value<T, String>> T create(Class<T> type, short value) {
         return create(type, String.valueOf(value));
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}.
+     *
+     * @param V
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
     @SuppressWarnings("unchecked")
-    private static <T extends Value<T, String>> T invokeStringConstructor(Class<T> objectClass, String value) {
+    private static <T extends Value<T, String>> T invokeConstructor(Class<T> objectClass, String value) {
         return (T)Invoker.invokeConstructor(objectClass, String.class, value);
     }
+
 }

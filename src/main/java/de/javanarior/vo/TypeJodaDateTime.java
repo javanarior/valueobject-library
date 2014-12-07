@@ -16,21 +16,24 @@
 package de.javanarior.vo;
 
 import static de.javanarior.vo.types.AbstractValue.assertNotNull;
+
+import org.joda.time.DateTime;
+
 import de.javanarior.utils.lang.reflect.Invoker;
 import de.javanarior.vo.generator.TypeGenerator;
-import de.javanarior.vo.types.IntWrapper;
+import de.javanarior.vo.types.JodaDateTimeWrapper;
 import de.javanarior.vo.types.Value;
 
 /**
- * Factory to create Integer based Value Objects.
+ * Factory to create Joda DateTime based Value Objects.
  */
-public class TypeInteger {
+public class TypeJodaDateTime {
 
     @SuppressWarnings("rawtypes")
-    private static final Class<IntWrapper> WRAPPER_CLASS = IntWrapper.class;
-    private static final Class<Integer> TECHNICAL_TYPE = Integer.TYPE;
+    private static final Class<JodaDateTimeWrapper> WRAPPER_CLASS = JodaDateTimeWrapper.class;
+    private static final Class<DateTime> TECHNICAL_TYPE = DateTime.class;
 
-    private TypeInteger() {
+    private TypeJodaDateTime() {
         /* Factory Class */
     }
 
@@ -45,9 +48,9 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, Integer value) {
-        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
-        return invokeConstructor(generated, assertNotNull(value));
+    public static <T extends Value<T, DateTime>> T create(Class<T> type, DateTime value) {
+        Class<T> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(classObject, assertNotNull(value));
     }
 
     /**
@@ -61,28 +64,9 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, int value) {
-        return create(type, Integer.valueOf(value));
-    }
-
-    /**
-     * Create value object with {@code type} and {@code value}.
-     *
-     * @param V
-     *            - the value type
-     * @param type
-     *            - object type
-     * @param value
-     *            - value for the object
-     * @return value object
-     */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, String value) {
-        return create(type, Integer.valueOf(assertNotNull(value)));
-    }
-
     @SuppressWarnings("unchecked")
-    private static <V extends Value<V, Integer>> V invokeConstructor(Class<V> objectClass, Integer value) {
-        return (V)Invoker.invokeConstructor(objectClass, value);
+    private static <T extends Value<T, DateTime>> T invokeConstructor(Class<T> objectClass, DateTime value) {
+        return (T)Invoker.invokeConstructor(objectClass, DateTime.class, value);
     }
 
 }

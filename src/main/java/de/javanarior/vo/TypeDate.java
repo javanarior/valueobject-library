@@ -16,21 +16,24 @@
 package de.javanarior.vo;
 
 import static de.javanarior.vo.types.AbstractValue.assertNotNull;
+
+import java.util.Date;
+
 import de.javanarior.utils.lang.reflect.Invoker;
 import de.javanarior.vo.generator.TypeGenerator;
-import de.javanarior.vo.types.IntWrapper;
+import de.javanarior.vo.types.DateWrapper;
 import de.javanarior.vo.types.Value;
 
 /**
- * Factory to create Integer based Value Objects.
+ * Factory to create Date based Value Objects.
  */
-public class TypeInteger {
+public class TypeDate {
 
     @SuppressWarnings("rawtypes")
-    private static final Class<IntWrapper> WRAPPER_CLASS = IntWrapper.class;
-    private static final Class<Integer> TECHNICAL_TYPE = Integer.TYPE;
+    private static final Class<DateWrapper> WRAPPER_CLASS = DateWrapper.class;
+    private static final Class<Date> TECHNICAL_TYPE = Date.class;
 
-    private TypeInteger() {
+    private TypeDate() {
         /* Factory Class */
     }
 
@@ -45,9 +48,9 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, Integer value) {
-        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
-        return invokeConstructor(generated, assertNotNull(value));
+    public static <T extends Value<T, Date>> T create(Class<T> type, Date value) {
+        Class<T> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(classObject, assertNotNull(value));
     }
 
     /**
@@ -61,8 +64,8 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, int value) {
-        return create(type, Integer.valueOf(value));
+    public static <T extends Value<T, Date>> T create(Class<T> type, long value) {
+        return create(type, new Date(value));
     }
 
     /**
@@ -76,13 +79,9 @@ public class TypeInteger {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Integer>> V create(Class<V> type, String value) {
-        return create(type, Integer.valueOf(assertNotNull(value)));
-    }
-
     @SuppressWarnings("unchecked")
-    private static <V extends Value<V, Integer>> V invokeConstructor(Class<V> objectClass, Integer value) {
-        return (V)Invoker.invokeConstructor(objectClass, value);
+    private static <T extends Value<T, Date>> T invokeConstructor(Class<T> objectClass, Date value) {
+        return (T)Invoker.invokeConstructor(objectClass, Date.class, value);
     }
 
 }

@@ -24,8 +24,10 @@ import de.javanarior.utils.compare.SpeakingComparableAdapter;
  * Base class for value objects.
  *
  * @param <V>
+ *            -
  *            the value type
  * @param <T>
+ *            -
  *            the technical type to which the value type is mapped
  */
 public abstract class AbstractValue<V extends Value<V, T>, T extends Comparable> extends

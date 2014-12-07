@@ -1,57 +1,0 @@
-[INFO] Scanning for projects...
-Downloading: http://nexus:8081/nexus/content/groups/public/de/javanarior/javanarior-build-resources/8-SNAPSHOT/maven-metadata.xml
-2/2 KB            Downloaded: http://nexus:8081/nexus/content/groups/public/de/javanarior/javanarior-build-resources/8-SNAPSHOT/maven-metadata.xml (2 KB at 3.7 KB/sec)
-Downloading: http://nexus:8081/nexus/content/groups/public/de/javanarior/javanarior-build-resources/8-SNAPSHOT/javanarior-build-resources-8-20141123.175820-1.pom
-2/3 KB   3/3 KB            Downloaded: http://nexus:8081/nexus/content/groups/public/de/javanarior/javanarior-build-resources/8-SNAPSHOT/javanarior-build-resources-8-20141123.175820-1.pom (3 KB at 37.3 KB/sec)
-Downloading: http://nexus:8081/nexus/content/groups/public/de/javanarior/javanarior-build-resources/8-SNAPSHOT/javanarior-build-resources-8-20141123.175820-1.jar
-4/16 KB   6/16 KB   10/16 KB   14/16 KB   16/16 KB              Downloaded: http://nexus:8081/nexus/content/groups/public/de/javanarior/javanarior-build-resources/8-SNAPSHOT/javanarior-build-resources-8-20141123.175820-1.jar (16 KB at 180.5 KB/sec)
-Downloading: http://nexus:8081/nexus/content/groups/public/org/apache/maven/plugins/maven-assembly-plugin/2.5.1/maven-assembly-plugin-2.5.1.pom
-4/18 KB    6/18 KB   10/18 KB   14/18 KB   18/18 KB              Downloaded: http://nexus:8081/nexus/content/groups/public/org/apache/maven/plugins/maven-assembly-plugin/2.5.1/maven-assembly-plugin-2.5.1.pom (18 KB at 86.7 KB/sec)
-Downloading: http://nexus:8081/nexus/content/groups/public/org/apache/maven/plugins/maven-assembly-plugin/2.5.1/maven-assembly-plugin-2.5.1.jar
-3/228 KB   7/228 KB   11/228 KB   15/228 KB   19/228 KB   21/228 KB   25/228 KB   27/228 KB   30/228 KB   34/228 KB   38/228 KB   38/228 KB   42/228 KB   42/228 KB   44/228 KB   48/228 KB   48/228 KB   52/228 KB   52/228 KB   55/228 KB   59/228 KB   60/228 KB   64/228 KB   64/228 KB   67/228 KB   70/228 KB   74/228 KB   74/228 KB   78/228 KB   78/228 KB   81/228 KB   85/228 KB   85/228 KB   89/228 KB   90/228 KB   91/228 KB   94/228 KB   98/228 KB   98/228 KB   102/228 KB   102/228 KB   105/228 KB   109/228 KB   109/228 KB   112/228 KB   115/228 KB   119/228 KB   119/228 KB   123/228 KB   124/228 KB   127/228 KB   131/228 KB   131/228 KB   134/228 KB   137/228 KB   141/228 KB   141/228 KB   145/228 KB   146/228 KB   150/228 KB   153/228 KB   157/228 KB   157/228 KB   158/228 KB   160/228 KB   161/228 KB   165/228 KB   166/228 KB   170/228 KB   170/228 KB   173/228 KB   177/228 KB   177/228 KB   180/228 KB   183/228 KB   187/228 KB   187/228 KB   191/228 KB   191/228 KB   195/228 KB   196/228 KB   198/228 KB   202/228 KB   203/228 KB   205/228 KB   208/228 KB   212/228 KB   213/228 KB   217/228 KB   217/228 KB   221/228 KB   221/228 KB   224/228 KB   227/228 KB   228/228 KB                Downloaded: http://nexus:8081/nexus/content/groups/public/org/apache/maven/plugins/maven-assembly-plugin/2.5.1/maven-assembly-plugin-2.5.1.jar (228 KB at 2707.5 KB/sec)
-[INFO]                                                                         
-[INFO] ------------------------------------------------------------------------
-[INFO] Building ValueObject Library 0.4.1-SNAPSHOT
-[INFO] ------------------------------------------------------------------------
-Downloading: http://nexus:8081/nexus/content/groups/public/de/javanarior/library/java-utils/0.0.3-SNAPSHOT/maven-metadata.xml
-2/2 KB                Downloaded: http://nexus:8081/nexus/content/groups/public/de/javanarior/library/java-utils/0.0.3-SNAPSHOT/maven-metadata.xml (2 KB at 10.1 KB/sec)
-Downloading: http://nexus:8081/nexus/content/groups/public/de/javanarior/library/java-utils/0.0.3-SNAPSHOT/java-utils-0.0.3-20141123.170125-1.pom
-3/23 KB   7/23 KB   11/23 KB   15/23 KB   19/23 KB   23/23 KB   23/23 KB              Downloaded: http://nexus:8081/nexus/content/groups/public/de/javanarior/library/java-utils/0.0.3-SNAPSHOT/java-utils-0.0.3-20141123.170125-1.pom (23 KB at 462.8 KB/sec)
-Downloading: http://nexus:8081/nexus/content/groups/public/de/javanarior/library/java-utils/0.0.3-SNAPSHOT/java-utils-0.0.3-20141123.170125-1.jar
-2/8 KB     6/8 KB   8/8 KB            Downloaded: http://nexus:8081/nexus/content/groups/public/de/javanarior/library/java-utils/0.0.3-SNAPSHOT/java-utils-0.0.3-20141123.170125-1.jar (8 KB at 95.0 KB/sec)
-[INFO] 
-[INFO] --- maven-dependency-plugin:2.9:tree (default-cli) @ valueobject-library ---
-Downloading: http://nexus:8081/nexus/content/groups/public/org/codehaus/plexus/plexus-io/2.0.9/plexus-io-2.0.9.pom
-3/3 KB            Downloaded: http://nexus:8081/nexus/content/groups/public/org/codehaus/plexus/plexus-io/2.0.9/plexus-io-2.0.9.pom (3 KB at 4.3 KB/sec)
-Downloading: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-analyzer/1.5/maven-dependency-analyzer-1.5.pom
-4/6 KB   6/6 KB            Downloaded: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-analyzer/1.5/maven-dependency-analyzer-1.5.pom (6 KB at 12.9 KB/sec)
-Downloading: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom
-3/8 KB   7/8 KB   8/8 KB            Downloaded: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom (8 KB at 18.9 KB/sec)
-Downloading: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-invoker/2.1.1/maven-invoker-2.1.1.pom
-4/6 KB   6/6 KB            Downloaded: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-invoker/2.1.1/maven-invoker-2.1.1.pom (6 KB at 24.3 KB/sec)
-Downloading: http://nexus:8081/nexus/content/groups/public/org/codehaus/plexus/plexus-io/2.0.9/plexus-io-2.0.9.jar
-Downloading: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.jar
-Downloading: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-analyzer/1.5/maven-dependency-analyzer-1.5.jar
-Downloading: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-invoker/2.1.1/maven-invoker-2.1.1.jar
-3/58 KB   7/58 KB   11/58 KB   15/58 KB   16/58 KB   20/58 KB   23/58 KB   27/58 KB   31/58 KB   35/58 KB   35/58 KB   39/58 KB   43/58 KB   47/58 KB   51/58 KB   55/58 KB   58/58 KB   4/30 KB   58/58 KB   6/30 KB   58/58 KB   10/30 KB   58/58 KB   10/30 KB   58/58 KB   14/30 KB   58/58 KB   14/30 KB   58/58 KB   14/30 KB   4/31 KB   58/58 KB   17/30 KB   4/31 KB   58/58 KB   21/30 KB   4/31 KB   58/58 KB   21/30 KB   4/31 KB   58/58 KB   21/30 KB   8/31 KB   58/58 KB   21/30 KB   12/31 KB   58/58 KB   21/30 KB   13/31 KB   58/58 KB   24/30 KB   13/31 KB   58/58 KB   28/30 KB   13/31 KB   58/58 KB   29/30 KB   13/31 KB   58/58 KB   29/30 KB   17/31 KB   58/58 KB   30/30 KB   17/31 KB   58/58 KB   30/30 KB   17/31 KB   58/58 KB   30/30 KB   20/31 KB   58/58 KB   30/30 KB   24/31 KB   58/58 KB   30/30 KB   27/31 KB   58/58 KB   30/30 KB   31/31 KB   58/58 KB                                    Downloaded: http://nexus:8081/nexus/content/groups/public/org/codehaus/plexus/plexus-io/2.0.9/plexus-io-2.0.9.jar (58 KB at 102.4 KB/sec)
-                                 Downloaded: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-invoker/2.1.1/maven-invoker-2.1.1.jar (30 KB at 49.0 KB/sec)
-                                 Downloaded: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-analyzer/1.5/maven-dependency-analyzer-1.5.jar (31 KB at 50.4 KB/sec)
-3/63 KB                          7/63 KB   11/63 KB   15/63 KB   19/63 KB   23/63 KB   24/63 KB   28/63 KB   29/63 KB   33/63 KB   33/63 KB   37/63 KB   37/63 KB   40/63 KB   43/63 KB   47/63 KB   47/63 KB   50/63 KB   54/63 KB   54/63 KB   58/63 KB   59/63 KB   63/63 KB   63/63 KB              Downloaded: http://nexus:8081/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.jar (63 KB at 93.8 KB/sec)
-[WARNING] Using Maven 2 dependency tree to get verbose output, which may be inconsistent with actual Maven 3 resolution
-[INFO] de.javanarior.library:valueobject-library:jar:0.4.1-SNAPSHOT
-[INFO] +- de.javanarior.library:java-utils:jar:0.0.3-SNAPSHOT:compile
-[INFO] +- org.ow2.asm:asm:jar:5.0.2:compile
-[INFO] +- joda-time:joda-time:jar:2.5:compile
-[INFO] +- org.testng:testng:jar:6.8.8:test
-[INFO] |  +- org.beanshell:bsh:jar:2.0b4:test
-[INFO] |  \- com.beust:jcommander:jar:1.27:test
-[INFO] \- org.mockito:mockito-core:jar:1.9.5:test
-[INFO]    +- org.hamcrest:hamcrest-core:jar:1.1:test
-[INFO]    \- org.objenesis:objenesis:jar:1.0:test
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 6.558 s
-[INFO] Finished at: 2014-11-23T19:27:54+01:00
-[INFO] Final Memory: 19M/487M
-[INFO] ------------------------------------------------------------------------
