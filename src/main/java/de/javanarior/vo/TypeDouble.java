@@ -80,9 +80,8 @@ public class TypeDouble {
         return create(type, Double.valueOf(assertNotNull(value)));
     }
 
-    @SuppressWarnings("unchecked")
     private static <V extends Value<V, Double>> V invokeConstructor(Class<V> objectClass, Double value) {
-        return (V)Invoker.invokeConstructor(objectClass, value);
+        return Invoker.invokeConstructor(objectClass, value);
     }
 
 }

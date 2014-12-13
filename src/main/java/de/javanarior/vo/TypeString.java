@@ -197,9 +197,8 @@ public class TypeString {
      *            - value for the object
      * @return value object
      */
-    @SuppressWarnings("unchecked")
     private static <T extends Value<T, String>> T invokeConstructor(Class<T> objectClass, String value) {
-        return (T)Invoker.invokeConstructor(objectClass, String.class, value);
+        return Invoker.invokeConstructor(objectClass, String.class, value);
     }
 
 }

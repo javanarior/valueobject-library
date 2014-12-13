@@ -64,9 +64,8 @@ public class TypeJodaDateTime {
      *            - value for the object
      * @return value object
      */
-    @SuppressWarnings("unchecked")
     private static <T extends Value<T, DateTime>> T invokeConstructor(Class<T> objectClass, DateTime value) {
-        return (T)Invoker.invokeConstructor(objectClass, DateTime.class, value);
+        return Invoker.invokeConstructor(objectClass, DateTime.class, value);
     }
 
 }

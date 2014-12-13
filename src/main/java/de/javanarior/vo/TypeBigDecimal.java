@@ -148,9 +148,8 @@ public class TypeBigDecimal {
         return create(type, new BigDecimal(assertNotNull(value)));
     }
 
-    @SuppressWarnings("unchecked")
     private static <V extends Value<V, BigDecimal>> V invokeConstructor(Class<V> objectClass, BigDecimal value) {
-        return (V)Invoker.invokeConstructor(objectClass, TECHNICAL_TYPE, value);
+        return Invoker.invokeConstructor(objectClass, TECHNICAL_TYPE, value);
     }
 
 }

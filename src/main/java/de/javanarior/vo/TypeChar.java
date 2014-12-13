@@ -65,9 +65,8 @@ public class TypeChar {
         return create(type, Character.valueOf(value));
     }
 
-    @SuppressWarnings("unchecked")
     private static <V extends Value<V, Character>> V invokeConstructor(Class<V> objectClass, Character value) {
-        return (V)Invoker.invokeConstructor(objectClass, value);
+        return Invoker.invokeConstructor(objectClass, value);
     }
 
 }

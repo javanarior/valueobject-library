@@ -80,9 +80,8 @@ public class TypeShort {
         return create(type, Short.valueOf(assertNotNull(value)));
     }
 
-    @SuppressWarnings("unchecked")
     private static <V extends Value<V, Short>> V invokeConstructor(Class<V> objectClass, Short value) {
-        return (V)Invoker.invokeConstructor(objectClass, value);
+        return Invoker.invokeConstructor(objectClass, value);
     }
 
 }

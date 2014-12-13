@@ -80,9 +80,8 @@ public class TypeInteger {
         return create(type, Integer.valueOf(assertNotNull(value)));
     }
 
-    @SuppressWarnings("unchecked")
     private static <V extends Value<V, Integer>> V invokeConstructor(Class<V> objectClass, Integer value) {
-        return (V)Invoker.invokeConstructor(objectClass, value);
+        return Invoker.invokeConstructor(objectClass, value);
     }
 
 }

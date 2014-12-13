@@ -80,9 +80,8 @@ public class TypeBoolean {
         return create(type, Boolean.valueOf(assertNotNull(value)));
     }
 
-    @SuppressWarnings("unchecked")
     private static <V extends Value<V, Boolean>> V invokeConstructor(Class<V> objectClass, Boolean value) {
-        return (V)Invoker.invokeConstructor(objectClass, value);
+        return Invoker.invokeConstructor(objectClass, value);
     }
 
 }

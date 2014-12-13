@@ -16,7 +16,7 @@ public class TypeJodaDateTimeTest {
         Assert.assertEquals(value.getValue(), now);
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateDateTimeNull() {
         TypeJodaDateTime.create(JodaDateTimeType.class, null);
     }

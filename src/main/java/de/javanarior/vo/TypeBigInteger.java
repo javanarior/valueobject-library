@@ -128,9 +128,8 @@ public class TypeBigInteger {
         return create(type, new BigInteger(assertNotNull(value)));
     }
 
-    @SuppressWarnings("unchecked")
     private static <V extends Value<V, BigInteger>> V invokeConstructor(Class<V> objectClass, BigInteger value) {
-        return (V)Invoker.invokeConstructor(objectClass, TECHNICAL_TYPE, value);
+        return Invoker.invokeConstructor(objectClass, TECHNICAL_TYPE, value);
     }
 
 }

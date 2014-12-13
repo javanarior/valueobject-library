@@ -80,9 +80,8 @@ public class TypeByte {
         return create(type, Byte.valueOf(assertNotNull(value)));
     }
 
-    @SuppressWarnings("unchecked")
     private static <V extends Value<V, Byte>> V invokeConstructor(Class<V> objectClass, Byte value) {
-        return (V)Invoker.invokeConstructor(objectClass, value);
+        return Invoker.invokeConstructor(objectClass, value);
     }
 
 }

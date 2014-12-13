@@ -79,9 +79,8 @@ public class TypeDate {
      *            - value for the object
      * @return value object
      */
-    @SuppressWarnings("unchecked")
     private static <T extends Value<T, Date>> T invokeConstructor(Class<T> objectClass, Date value) {
-        return (T)Invoker.invokeConstructor(objectClass, Date.class, value);
+        return Invoker.invokeConstructor(objectClass, Date.class, value);
     }
 
 }
