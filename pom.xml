@@ -42,7 +42,7 @@
 
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <javanarior-build-resources.version>8-SNAPSHOT</javanarior-build-resources.version>
+        <javanarior-build-resources.version>7</javanarior-build-resources.version>
         <joda-time.version>2.5</joda-time.version>
     </properties>
 
@@ -76,7 +76,7 @@
         <dependency>
             <groupId>de.javanarior.library</groupId>
             <artifactId>java-utils</artifactId>
-            <version>0.0.3-SNAPSHOT</version>
+            <version>0.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.ow2.asm</groupId>
