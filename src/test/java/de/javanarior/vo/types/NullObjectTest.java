@@ -39,6 +39,7 @@ public class NullObjectTest {
         assertTrue(STRING_NULL_OBJECT.isNull());
     }
 
+    @SuppressWarnings("boxing")
     public void testHashCodeNotEqualsForDifferentTypes() {
         assertNotEquals(STRING_NULL_OBJECT.hashCode(), OTHER_TYPE_NULL_OBJECT.hashCode());
     }

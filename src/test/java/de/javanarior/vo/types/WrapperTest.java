@@ -85,6 +85,7 @@ public class WrapperTest {
         /* @formatter:on */
     }
 
+    @SuppressWarnings("boxing")
     @Test(dataProvider = "getValue")
     public void testHashCodeNotEqualForDifferentValues(Value<?, ?> one, Value<?, ?> anotherOne, Value<?, ?> two) {
         assertNotEquals(one.hashCode(), two.hashCode());
