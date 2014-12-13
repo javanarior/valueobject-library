@@ -31,8 +31,8 @@ public class TypeGenerator {
     private TypeGenerator() {
     }
 
-    @SuppressWarnings({ "unchecked" })
-    public static <V extends Value<V, T>, T extends Comparable> Class<V> generate(Class<V> type,
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    public static <V extends Value<V, T>, T extends Comparable<?>> Class<V> generate(Class<V> type,
                     Class<T> technicalType,
                     Class<? extends AbstractValue> wrapperClass) {
         ByteCodeContainer generatedClass = ByteCodeGenerator.generate(type, technicalType, wrapperClass);

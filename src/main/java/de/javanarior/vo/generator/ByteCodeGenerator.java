@@ -93,7 +93,7 @@ public class ByteCodeGenerator {
     }
 
     /* CHECKSTYLE:OFF */
-    public static ByteCodeContainer generate(Class<?> valueType, Class<? extends Comparable> technicalType,
+    public static ByteCodeContainer generate(Class<?> valueType, Class<? extends Comparable<?>> technicalType,
                     @SuppressWarnings("rawtypes") Class<? extends AbstractValue> wrapperClass) {
         /* CHECKSTYLE:ON */
 

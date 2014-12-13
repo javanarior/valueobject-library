@@ -30,7 +30,7 @@ import de.javanarior.utils.compare.SpeakingComparableAdapter;
  *            -
  *            the technical type to which the value type is mapped
  */
-public abstract class AbstractValue<V extends Value<V, T>, T extends Comparable> extends
+public abstract class AbstractValue<V extends Value<V, T>, T extends Comparable<?>> extends
                 SpeakingComparableAdapter<V> implements Value<V, T> {
 
     /**
@@ -156,8 +156,9 @@ public abstract class AbstractValue<V extends Value<V, T>, T extends Comparable>
     }
 
     @Override
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public int compareTo(V other) {
-        return getValue().compareTo(other.getValue());
+        return ((Comparable)getValue()).compareTo(other.getValue());
     }
 
 }
