@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.javanarior.vo.generator.helper;
+package de.javanarior.vo.example.types;
+
+import org.joda.time.LocalDateTime;
 
 import de.javanarior.vo.types.Value;
 
-public interface StringType extends Value<StringType, String> {
+public interface JodaLocalDateTimeType extends Value<JodaLocalDateTimeType, LocalDateTime> {
 
 }

@@ -5,7 +5,7 @@ import java.util.Date;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.generator.helper.DateType;
+import de.javanarior.vo.example.types.DateType;
 
 @Test
 public class TypeDateTest {

@@ -4,7 +4,7 @@ import org.joda.time.LocalDate;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.generator.helper.JodaLocalDateType;
+import de.javanarior.vo.example.types.JodaLocalDateType;
 
 @Test
 public class TypeJodaLocalDateTest {

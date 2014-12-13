@@ -20,7 +20,7 @@ import java.math.BigInteger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.generator.helper.BigIntegerType;
+import de.javanarior.vo.example.types.BigIntegerType;
 
 @Test
 public class TypeBigIntegerTest {

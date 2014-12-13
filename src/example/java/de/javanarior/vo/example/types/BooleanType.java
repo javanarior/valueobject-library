@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.javanarior.vo.generator.helper;
+package de.javanarior.vo.example.types;
 
 import de.javanarior.vo.types.Value;
 
-public interface CharType extends Value<CharType, Character> {
+public interface BooleanType extends Value<BooleanType, Boolean> {
 
 }

@@ -4,7 +4,7 @@ import org.joda.time.DateTime;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.generator.helper.JodaDateTimeType;
+import de.javanarior.vo.example.types.JodaDateTimeType;
 
 @Test
 public class TypeJodaDateTimeTest {

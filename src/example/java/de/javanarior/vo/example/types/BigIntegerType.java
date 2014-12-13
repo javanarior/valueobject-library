@@ -13,10 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.javanarior.vo.generator.helper;
+package de.javanarior.vo.example.types;
+
+import java.math.BigInteger;
 
 import de.javanarior.vo.types.Value;
-
-public interface IntType extends Value<IntType, Integer> {
+// FIXME svp following line should produce compiler error
+//public interface BigIntegerType extends Value<BigIntegerType, BigDecimal> {
+public interface BigIntegerType extends Value<BigIntegerType, BigInteger> {
 
 }

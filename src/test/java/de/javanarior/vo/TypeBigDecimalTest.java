@@ -21,7 +21,7 @@ import java.math.BigInteger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.generator.helper.BigDecimalType;
+import de.javanarior.vo.example.types.BigDecimalType;
 
 @Test
 public class TypeBigDecimalTest {

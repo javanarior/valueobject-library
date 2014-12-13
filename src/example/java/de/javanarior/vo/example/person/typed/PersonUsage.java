@@ -20,7 +20,7 @@ import static de.javanarior.vo.TypeInteger.create;
 import static de.javanarior.vo.TypeString.create;
 import de.javanarior.vo.TypeInteger;
 import de.javanarior.vo.TypeString;
-import de.javanarior.vo.generator.helper.IntType;
+import de.javanarior.vo.example.types.IntType;
 
 public class PersonUsage {
 

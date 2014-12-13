@@ -18,7 +18,7 @@ package de.javanarior.vo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import de.javanarior.vo.generator.helper.IntType;
+import de.javanarior.vo.example.types.IntType;
 
 @Test
 public class TypeIntegerTest {
