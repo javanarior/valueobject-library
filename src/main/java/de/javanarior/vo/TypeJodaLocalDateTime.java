@@ -27,7 +27,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create Joda LocalDateTime based Value Objects.
  */
-public class TypeJodaLocalDateTime {
+public final class TypeJodaLocalDateTime {
 
     @SuppressWarnings("rawtypes")
     private static final Class<JodaLocalDateTimeWrapper> WRAPPER_CLASS = JodaLocalDateTimeWrapper.class;

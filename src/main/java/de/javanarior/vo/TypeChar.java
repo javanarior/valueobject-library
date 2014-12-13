@@ -24,7 +24,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create Character based Value Objects.
  */
-public class TypeChar {
+public final class TypeChar {
 
     @SuppressWarnings("rawtypes")
     private static final Class<CharWrapper> WRAPPER_CLASS = CharWrapper.class;

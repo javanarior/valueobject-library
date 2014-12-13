@@ -25,7 +25,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create String based Value Objects.
  */
-public class TypeString {
+public final class TypeString {
 
     @SuppressWarnings("rawtypes")
     private static final Class<StringWrapper> WRAPPER_CLASS = StringWrapper.class;

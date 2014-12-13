@@ -27,7 +27,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create Date based Value Objects.
  */
-public class TypeDate {
+public final class TypeDate {
 
     @SuppressWarnings("rawtypes")
     private static final Class<DateWrapper> WRAPPER_CLASS = DateWrapper.class;

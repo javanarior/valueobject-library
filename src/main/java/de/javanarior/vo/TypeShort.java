@@ -24,7 +24,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create Short based Value Objects.
  */
-public class TypeShort {
+public final class TypeShort {
 
     @SuppressWarnings("rawtypes")
     private static final Class<ShortWrapper> WRAPPER_CLASS = ShortWrapper.class;

@@ -27,7 +27,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create BigInteger based Value Objects.
  */
-public class TypeBigInteger {
+public final class TypeBigInteger {
 
     @SuppressWarnings("rawtypes")
     private static final Class<BigIntegerWrapper> WRAPPER_CLASS = BigIntegerWrapper.class;

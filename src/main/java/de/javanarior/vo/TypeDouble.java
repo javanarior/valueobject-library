@@ -24,7 +24,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create Double based Value Objects.
  */
-public class TypeDouble {
+public final class TypeDouble {
 
     @SuppressWarnings("rawtypes")
     private static final Class<DoubleWrapper> WRAPPER_CLASS = DoubleWrapper.class;

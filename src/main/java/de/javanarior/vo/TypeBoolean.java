@@ -24,7 +24,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create Boolean based Value Objects.
  */
-public class TypeBoolean {
+public final class TypeBoolean {
 
     @SuppressWarnings("rawtypes")
     private static final Class<BooleanWrapper> WRAPPER_CLASS = BooleanWrapper.class;

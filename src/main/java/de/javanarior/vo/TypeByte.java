@@ -24,7 +24,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create Byte based Value Objects.
  */
-public class TypeByte {
+public final class TypeByte {
 
     @SuppressWarnings("rawtypes")
     private static final Class<ByteWrapper> WRAPPER_CLASS = ByteWrapper.class;

@@ -27,12 +27,12 @@ import de.javanarior.vo.types.AbstractValue;
 /**
  * Generate a implementation of a value object interface.
  */
-public class ByteCodeGenerator {
+public final class ByteCodeGenerator {
 
     private static final int OBJECT_PRIMITIVE_SIZE = 2;
     private static final int DOUBLE_SIZE = 3;
     private static final String GENERATED_VO_INDICATOR = "$VO$";
-    private static final String CONTRUCTOR = "<init>";
+    private static final String CONSTRUCTOR = "<init>";
 
     private ByteCodeGenerator() {
     }
@@ -84,14 +84,25 @@ public class ByteCodeGenerator {
         }
     }
 
-    static private String addTypeDiscriptor(Class<?> type) {
+    static String addTypeDiscriptor(Class<?> type) {
         return Type.getDescriptor(type);
     }
 
-    static private String getType(Class<?> type) {
+    static String getType(Class<?> type) {
         return Type.getType(type).toString();
     }
 
+    /**
+     * Generate a implementation of a value object.
+     *
+     * @param valueType
+     *            - value object type
+     * @param technicalType
+     *            - to which the value object is mapped
+     * @param wrapperClass
+     *            - abstract wrapper class, correspond to the technical type
+     * @return class name and byte code in a container
+     */
     /* CHECKSTYLE:OFF */
     public static ByteCodeContainer generate(Class<?> valueType, Class<? extends Comparable<?>> technicalType,
                     @SuppressWarnings("rawtypes") Class<? extends AbstractValue> wrapperClass) {
@@ -105,25 +116,30 @@ public class ByteCodeGenerator {
                         + addTypeDiscriptor(valueType) + ">;" + addTypeDiscriptor(valueType),
                         parentClassName(wrapperClass), implementedInterfaces(valueType));
 
-        methodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC, CONTRUCTOR, methodDescriptor(technicalType), null,
+        methodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC, CONSTRUCTOR, methodDescriptor(technicalType), null,
                         null);
         methodVisitor.visitCode();
-        Label l0 = new Label();
-        methodVisitor.visitLabel(l0);
-        methodVisitor.visitLineNumber(8, l0);
+        Label label0 = new Label();
+        methodVisitor.visitLabel(label0);
+        /* CHECKSTYLE:OFF */
+        methodVisitor.visitLineNumber(8, label0);
+        /* CHECKSTYLE:ON */
         methodVisitor.visitVarInsn(Opcodes.ALOAD, 0);
         methodVisitor.visitVarInsn(getILOADOpCode(technicalType), 1);
-        methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, parentClassName(wrapperClass), CONTRUCTOR,
+        methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, parentClassName(wrapperClass), CONSTRUCTOR,
                         methodDescriptor(technicalType),
                         false);
-        Label l1 = new Label();
-        methodVisitor.visitLabel(l1);
-        methodVisitor.visitLineNumber(9, l1);
+        Label label1 = new Label();
+        methodVisitor.visitLabel(label1);
+        /* CHECKSTYLE:OFF */
+        methodVisitor.visitLineNumber(9, label1);
+        /* CHECKSTYLE:ON */
         methodVisitor.visitInsn(Opcodes.RETURN);
-        Label l2 = new Label();
-        methodVisitor.visitLabel(l2);
-        methodVisitor.visitLocalVariable("this", addTypeSignature(implementationClassName(valueType)), null, l0, l2, 0);
-        methodVisitor.visitLocalVariable("value", getType(technicalType), null, l0, l2, 1);
+        Label label2 = new Label();
+        methodVisitor.visitLabel(label2);
+        methodVisitor.visitLocalVariable("this", addTypeSignature(implementationClassName(valueType)), null, label0,
+                        label2, 0);
+        methodVisitor.visitLocalVariable("value", getType(technicalType), null, label0, label2, 1);
         int stackSize = getStackSize(Type.getDescriptor(technicalType));
         methodVisitor.visitMaxs(stackSize, stackSize);
         methodVisitor.visitEnd();

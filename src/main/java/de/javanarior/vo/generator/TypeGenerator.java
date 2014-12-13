@@ -21,9 +21,9 @@ import de.javanarior.vo.types.AbstractValue;
 import de.javanarior.vo.types.Value;
 
 /**
- *
+ * Generate a implementation of value object and load the class.
  */
-public class TypeGenerator {
+public final class TypeGenerator {
 
     /**
      * Create a new Generator instance.
@@ -31,6 +31,17 @@ public class TypeGenerator {
     private TypeGenerator() {
     }
 
+    /**
+     * Generate a implementation of value object and load the class.
+     *
+     * @param type
+     *            - value object type
+     * @param technicalType
+     *            - to which the value object is mapped
+     * @param wrapperClass
+     *            - abstract wrapper class, correspond to the technical type
+     * @return class object
+     */
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public static <V extends Value<V, T>, T extends Comparable<?>> Class<V> generate(Class<V> type,
                     Class<T> technicalType,

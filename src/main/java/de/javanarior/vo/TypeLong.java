@@ -24,7 +24,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create Integer based Value Objects.
  */
-public class TypeLong {
+public final class TypeLong {
 
     @SuppressWarnings("rawtypes")
     private static final Class<LongWrapper> WRAPPER_CLASS = LongWrapper.class;

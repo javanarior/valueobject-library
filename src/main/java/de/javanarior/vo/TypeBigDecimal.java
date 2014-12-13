@@ -31,7 +31,7 @@ import de.javanarior.vo.types.Value;
  * there is no
  * factory method to create BigDecimals from double values.
  */
-public class TypeBigDecimal {
+public final class TypeBigDecimal {
 
     @SuppressWarnings("rawtypes")
     private static final Class<BigDecimalWrapper> WRAPPER_CLASS = BigDecimalWrapper.class;

@@ -27,7 +27,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create Joda DateTime based Value Objects.
  */
-public class TypeJodaDateTime {
+public final class TypeJodaDateTime {
 
     @SuppressWarnings("rawtypes")
     private static final Class<JodaDateTimeWrapper> WRAPPER_CLASS = JodaDateTimeWrapper.class;

@@ -24,7 +24,7 @@ import de.javanarior.vo.types.Value;
 /**
  * Factory to create Integer based Value Objects.
  */
-public class TypeInteger {
+public final class TypeInteger {
 
     @SuppressWarnings("rawtypes")
     private static final Class<IntWrapper> WRAPPER_CLASS = IntWrapper.class;
