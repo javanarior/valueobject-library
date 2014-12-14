@@ -18,8 +18,7 @@ package de.javanarior.vo.example.types;
 import java.math.BigInteger;
 
 import de.javanarior.vo.types.Value;
-// FIXME svp following line should produce compiler error
-//public interface BigIntegerType extends Value<BigIntegerType, BigDecimal> {
+
 public interface BigIntegerType extends Value<BigIntegerType, BigInteger> {
 
 }
