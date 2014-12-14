@@ -34,7 +34,7 @@ import de.javanarior.vo.types.helper.OtherDateValue;
 @Test
 public class DateWrapperTest {
 
-    static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat ("yyyy-MM-dd");
+    static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy-MM-dd");
 
     private Date oneValue;
     private DateValue one;

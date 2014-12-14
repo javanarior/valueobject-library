@@ -98,8 +98,8 @@ public class ByteCodeGeneratorTest {
     }
 
     public void testBinaryClassName() {
-        Assert.assertEquals(ByteCodeGenerator.binaryClassName(IntType.class), ByteCodeGenerator
-                        .implementationClassName(IntType.class).replace('/', '.'));
+        Assert.assertEquals(ByteCodeGenerator.binaryClassName(IntType.class),
+                                ByteCodeGenerator.implementationClassName(IntType.class).replace('/', '.'));
     }
 
     public void testMethodDescriptor() {
@@ -146,8 +146,6 @@ public class ByteCodeGeneratorTest {
     public void testGenerate(Class<?> interfaze, Class<? extends Comparable<?>> technicalType,
                     Class<? extends AbstractValue<?, ?>> superClass, Object value)
                     throws Exception {
-        // ByteCodeGenerator generator = new ByteCodeGenerator(technicalType,
-        // superClass);
         ByteCodeContainer generatedClass = ByteCodeGenerator.generate(interfaze, technicalType, superClass);
         ByteCodeClassLoader classLoader = ByteCodeClassLoader.getClassLoader();
         Class<?> load = classLoader.load(generatedClass);

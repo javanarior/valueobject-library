@@ -32,7 +32,7 @@ public class TypeBigDecimalTest {
         Assert.assertEquals(value.getValue(), new BigDecimal(2.2));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateBigDecimalNull() {
         TypeBigDecimal.create(BigDecimalType.class, (BigDecimal)null);
     }
@@ -43,7 +43,7 @@ public class TypeBigDecimalTest {
         Assert.assertEquals(value.getValue(), new BigDecimal("2"));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateBigIntegerNull() {
         TypeBigDecimal.create(BigDecimalType.class, (BigInteger)null);
     }
@@ -54,7 +54,7 @@ public class TypeBigDecimalTest {
         Assert.assertEquals(value.getValue(), new BigDecimal(2));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateIntegerNull() {
         TypeBigDecimal.create(BigDecimalType.class, (Integer)null);
     }
@@ -71,7 +71,7 @@ public class TypeBigDecimalTest {
         Assert.assertEquals(value.getValue(), new BigDecimal(2));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateLongNull() {
         TypeBigDecimal.create(BigDecimalType.class, (Long)null);
     }
@@ -88,10 +88,9 @@ public class TypeBigDecimalTest {
         Assert.assertEquals(value.getValue(), new BigDecimal("2.2"));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateStringNull() {
         TypeBigDecimal.create(BigDecimalType.class, (String)null);
     }
-
 
 }

@@ -29,7 +29,7 @@ public class TypeShortTest {
         Assert.assertEquals(value.getValue(), Short.valueOf("2"));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateShortNull() {
         TypeShort.create(ShortType.class, (Short)null);
     }
@@ -46,7 +46,7 @@ public class TypeShortTest {
         Assert.assertEquals(value.getValue(), Short.valueOf("2"));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateStringNull() {
         TypeShort.create(ShortType.class, (String)null);
     }

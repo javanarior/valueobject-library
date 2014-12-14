@@ -31,7 +31,7 @@ public class TypeBigIntegerTest {
         Assert.assertEquals(value.getValue(), new BigInteger("2"));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateBigIntegerNull() {
         TypeBigInteger.create(BigIntegerType.class, (BigInteger)null);
     }
@@ -42,7 +42,7 @@ public class TypeBigIntegerTest {
         Assert.assertEquals(value.getValue(), BigInteger.valueOf(2));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateIntegerNull() {
         TypeBigInteger.create(BigIntegerType.class, (Integer)null);
     }
@@ -59,7 +59,7 @@ public class TypeBigIntegerTest {
         Assert.assertEquals(value.getValue(), BigInteger.valueOf(2));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateLongNull() {
         TypeBigInteger.create(BigIntegerType.class, (Long)null);
     }
@@ -76,10 +76,9 @@ public class TypeBigIntegerTest {
         Assert.assertEquals(value.getValue(), new BigInteger("2"));
     }
 
-    @Test(expectedExceptions=IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateStringNull() {
         TypeBigInteger.create(BigIntegerType.class, (String)null);
     }
-
 
 }
