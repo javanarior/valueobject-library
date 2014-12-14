@@ -15,8 +15,6 @@
  */
 package de.javanarior.vo.generator;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
@@ -32,6 +30,7 @@ import org.testng.annotations.Test;
 
 import de.javanarior.utils.lang.ByteCodeClassLoader;
 import de.javanarior.utils.lang.ByteCodeContainer;
+import de.javanarior.utils.lang.reflect.Invoker;
 import de.javanarior.vo.example.types.BigDecimalType;
 import de.javanarior.vo.example.types.BigIntegerType;
 import de.javanarior.vo.example.types.BooleanType;
@@ -64,6 +63,7 @@ import de.javanarior.vo.types.LongWrapper;
 import de.javanarior.vo.types.ShortWrapper;
 import de.javanarior.vo.types.StringWrapper;
 import de.javanarior.vo.types.Value;
+import de.javanarior.vo.types.helper.IntValue;
 
 @Test
 public class ByteCodeGeneratorTest {
@@ -99,7 +99,7 @@ public class ByteCodeGeneratorTest {
 
     public void testBinaryClassName() {
         Assert.assertEquals(ByteCodeGenerator.binaryClassName(IntType.class),
-                                ByteCodeGenerator.implementationClassName(IntType.class).replace('/', '.'));
+                        ByteCodeGenerator.implementationClassName(IntType.class).replace('/', '.'));
     }
 
     public void testMethodDescriptor() {
@@ -150,17 +150,17 @@ public class ByteCodeGeneratorTest {
         ByteCodeClassLoader classLoader = ByteCodeClassLoader.getClassLoader();
         Class<?> load = classLoader.load(generatedClass);
         Assert.assertNotNull(load);
-        Value<?, ?> valueObject = invokeConstructor(load, value, new Class[] { technicalType });
+        Value<?, ?> valueObject = (Value<?, ?>)Invoker.invokeConstructor(load, technicalType, value);
         Assert.assertEquals(valueObject.getValue(), value);
     }
 
-    private Value<?, ?> invokeConstructor(Class<?> load, Object value, Class<?>[] parameterTypes) {
+    public void testGenerateWithClassAsType() {
         try {
-            Constructor<?> constructor = load.getConstructor(parameterTypes);
-            return (Value<?, ?>)constructor.newInstance(value);
-        } catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException
-                        | IllegalArgumentException | InvocationTargetException exception) {
-            throw new IllegalStateException(exception);
+            ByteCodeGenerator.generate(IntValue.class, Integer.TYPE, IntWrapper.class);
+        } catch (IllegalArgumentException exception) {
+            Assert.assertEquals(exception.getMessage(),
+                            "Could not generate implementation for class " + IntValue.class.getName()
+                                            + ". Please provide interface");
         }
     }
 

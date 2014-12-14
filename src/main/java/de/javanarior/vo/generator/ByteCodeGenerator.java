@@ -15,6 +15,8 @@
  */
 package de.javanarior.vo.generator;
 
+import java.lang.reflect.Modifier;
+
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
@@ -108,6 +110,11 @@ public final class ByteCodeGenerator {
                     @SuppressWarnings("rawtypes") Class<? extends AbstractValue> wrapperClass) {
         /* CHECKSTYLE:ON */
 
+        if (!isInterface(valueType)) {
+            throw new IllegalArgumentException("Could not generate implementation for class " + valueType.getName()
+                            + ". Please provide interface");
+        }
+
         ClassWriter classWriter = new ClassWriter(0);
         MethodVisitor methodVisitor;
 
@@ -146,6 +153,10 @@ public final class ByteCodeGenerator {
         classWriter.visitEnd();
 
         return new ByteCodeContainer(binaryClassName(valueType), classWriter.toByteArray());
+    }
+
+    private static boolean isInterface(Class<?> valueType) {
+        return Modifier.isInterface(valueType.getModifiers());
     }
 
 }
