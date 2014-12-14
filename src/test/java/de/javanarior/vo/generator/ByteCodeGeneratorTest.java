@@ -122,22 +122,22 @@ public class ByteCodeGeneratorTest {
     public Object[][] getWrapper() {
         // @formatter:off
         return new Object[][] {
-                {BigDecimalType.class, BigDecimal.class, BigDecimalWrapper.class , new BigDecimal("2.2")},
-                {BigIntegerType.class, BigInteger.class, BigIntegerWrapper.class , new BigInteger("2")},
-                {BooleanType.class, Boolean.TYPE, BooleanWrapper.class , Boolean.TRUE},
-                {ByteType.class, Byte.TYPE, ByteWrapper.class , Byte.valueOf("1")},
-                {CharType.class, Character.TYPE, CharWrapper.class , Character.valueOf('Z')},
-                {DateType.class, Date.class, DateWrapper.class , new Date()},
-                {DoubleType.class, Double.TYPE, DoubleWrapper.class , Double.valueOf(2.2)},
-                {IntType.class, Integer.TYPE, IntWrapper.class , Integer.valueOf(12)},
-                {JodaDateTimeType.class, DateTime.class, JodaDateTimeWrapper.class , new DateTime()},
-                {JodaLocalDateTimeType.class, LocalDateTime.class, JodaLocalDateTimeWrapper.class ,
-                 new LocalDateTime()},
-                {JodaLocalDateType.class, LocalDate.class, JodaLocalDateWrapper.class , new LocalDate()},
-                {JodaLocalTimeType.class, LocalTime.class, JodaLocalTimeWrapper.class , new LocalTime()},
-                {LongType.class, Long.TYPE, LongWrapper.class , Long.valueOf("21")},
-                {ShortType.class, Short.TYPE, ShortWrapper.class , Short.valueOf("2")},
-                {StringType.class, String.class, StringWrapper.class, "TestMe" }
+            {BigDecimalType.class, BigDecimal.class, BigDecimalWrapper.class , new BigDecimal("2.2")},
+            {BigIntegerType.class, BigInteger.class, BigIntegerWrapper.class , new BigInteger("2")},
+            {BooleanType.class, Boolean.TYPE, BooleanWrapper.class , Boolean.TRUE},
+            {ByteType.class, Byte.TYPE, ByteWrapper.class , Byte.valueOf("1")},
+            {CharType.class, Character.TYPE, CharWrapper.class , Character.valueOf('Z')},
+            {DateType.class, Date.class, DateWrapper.class , new Date()},
+            {DoubleType.class, Double.TYPE, DoubleWrapper.class , Double.valueOf(2.2)},
+            {IntType.class, Integer.TYPE, IntWrapper.class , Integer.valueOf(12)},
+            {JodaDateTimeType.class, DateTime.class, JodaDateTimeWrapper.class , new DateTime()},
+            {JodaLocalDateTimeType.class, LocalDateTime.class, JodaLocalDateTimeWrapper.class ,
+             new LocalDateTime()},
+            {JodaLocalDateType.class, LocalDate.class, JodaLocalDateWrapper.class , new LocalDate()},
+            {JodaLocalTimeType.class, LocalTime.class, JodaLocalTimeWrapper.class , new LocalTime()},
+            {LongType.class, Long.TYPE, LongWrapper.class , Long.valueOf("21")},
+            {ShortType.class, Short.TYPE, ShortWrapper.class , Short.valueOf("2")},
+            {StringType.class, String.class, StringWrapper.class, "TestMe" }
         };
         // @formatter:on
     }

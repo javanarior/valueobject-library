@@ -19,36 +19,37 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.example.types.IntType;
+import de.javanarior.vo.example.types.LongType;
 
 @Test
 public class TypeLongTest {
 
-    public void testCreateInteger() {
-        IntType value = TypeInteger.create(IntType.class, Integer.valueOf(2));
+    public void testCreateLong() {
+        LongType value = TypeLong.create(LongType.class, Long.valueOf(2));
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Long.valueOf(2));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateIntegerNull() {
+    public void testCreateLongNull() {
         TypeInteger.create(IntType.class, (Integer)null);
     }
 
-    public void testCreateInt() {
-        IntType value = TypeInteger.create(IntType.class, 2);
+    public void testCreateLongPrimitive() {
+        LongType value = TypeLong.create(LongType.class, 2L);
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Long.valueOf(2));
     }
 
     public void testCreateString() {
-        IntType value = TypeInteger.create(IntType.class, "2");
+        LongType value = TypeLong.create(LongType.class, "2");
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+        Assert.assertEquals(value.getValue(), Long.valueOf(2));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateStringNull() {
-        TypeInteger.create(IntType.class, (String)null);
+        TypeLong.create(LongType.class, (String)null);
     }
 
 }
