@@ -6,7 +6,7 @@
     <parent>
         <groupId>de.javanarior</groupId>
         <artifactId>javanarior-oss-pom</artifactId>
-        <version>23</version>
+        <version>27</version>
     </parent>
 
     <groupId>de.javanarior.library</groupId>
@@ -43,7 +43,7 @@
 
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <javanarior-build-resources.version>8</javanarior-build-resources.version>
+        <javanarior-build-resources.version>9</javanarior-build-resources.version>
         <joda-time.version>2.5</joda-time.version>
     </properties>
 
