@@ -13,7 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package de.javanarior.vo.example.person.generated.typed;
+
 /**
- * An example person without value types.
+ * Example Person with value types.
  */
-package de.javanarior.vo.example.person.string;
+//START SNIPPET: class
+public class Person {
+
+    private final Firstname firstname;
+    private final Surname surname;
+
+    public Person(Firstname firstname, Surname surname) {
+        this.firstname = firstname;
+        this.surname = surname;
+    }
+
+    public Firstname getFirstname() {
+        return firstname;
+    }
+
+    public Surname getSurename() {
+        return surname;
+    }
+
+}
+//END SNIPPET: class

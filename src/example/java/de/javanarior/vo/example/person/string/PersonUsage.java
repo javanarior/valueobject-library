@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.javanarior.vo.example.person.typed;
+package de.javanarior.vo.example.person.string;
 
 //import static de.javanarior.vo.TypeInteger.create;
 
@@ -21,9 +21,9 @@ public class PersonUsage {
 
     @SuppressWarnings("unused")
     public static void main(String[] args) {
-        // START SNIPPET: usage-implementation
-        Person person = new Person(new Firstname("firstname"), new Surname("surname"));
-        // END SNIPPET: usage-implementation
+        // START SNIPPET: usage-string
+        Person person = new Person("firstname", "surname");
+        // END SNIPPET: usage-string
     }
 
 }

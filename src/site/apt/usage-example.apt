@@ -6,6 +6,11 @@
 
 Example
 
+%{toc|section=1|fromDepth=2|toDepth=3}
+
+  The different possible usages are described with a simple example Person. To compare with a
+'type less' implementation, also a implementation with simple String is shown.
+
 * Person Example
 
   This Person example is very simple. The Person consists of first name and surname.
@@ -13,14 +18,40 @@ Without value object your person would look like this
 
 %{include|snippet=class|source=src/example/java/de/javanarior/vo/example/person/string/Person.java}
 
+  You will use this class as usual
+
+%{include|snippet=usage-string|source=src/example/java/de/javanarior/vo/example/person/string/PersonUsage.java}
+
+  Note that the parameters can be swapped without errors, you will have to write a test spot this error.
+
+* Person with types (Classes)
+
   Now with value object, you first have to write your value objects.
 
 %{include|snippet=class|source=src/example/java/de/javanarior/vo/example/person/typed/Firstname.java}
 %{include|snippet=class|source=src/example/java/de/javanarior/vo/example/person/typed/Surname.java}
 
-  And with these types our Person would look like this
+  And with these types your Person would look like this
 
 %{include|snippet=class|source=src/example/java/de/javanarior/vo/example/person/typed/Person.java}
+
+  The usage of this class also simple
+
+%{include|snippet=usage-implementation|source=src/example/java/de/javanarior/vo/example/person/typed/PersonUsage.java}
+
+  But here you can <<not>> swap the names, you will get a compiler error.
+
+* Person with types (Generated)
+
+  When you let generate the implementation classes, you have to write interfaces for the types.
+
+%{include|snippet=interface|source=src/example/java/de/javanarior/vo/example/person/generated/typed/Firstname.java}
+%{include|snippet=interface|source=src/example/java/de/javanarior/vo/example/person/generated/typed/Surname.java}
+
+  Here you create the instances of your types with the <<<TypeString>>> factory class. The naming schema for the
+factory classes is <<<Type\<TechnicalType\>>>>.
+
+%{include|snippet=usage-generator|source=src/example/java/de/javanarior/vo/example/person/generated/typed/PersonUsage.java}
 
   The change looks very small, but has a great impact. You have to imagine that the type was changed from
 String to e.g. FirstName. Accidentally confuse first name and surname is not possible. The compiler will
