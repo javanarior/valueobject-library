@@ -15,7 +15,6 @@
  */
 package de.javanarior.vo.types;
 
-import static de.javanarior.vo.types.DateWrapperTest.DATE_FORMATTER;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotEquals;
@@ -24,6 +23,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.text.ParseException;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
@@ -48,17 +48,21 @@ import de.javanarior.vo.types.helper.LongValue;
 import de.javanarior.vo.types.helper.ShortValue;
 import de.javanarior.vo.types.helper.StringValueImpl;
 
+/* CHECKSTYLE:OFF */
 @Test
 public class WrapperTest {
+    /* CHECKSTYLE:ON */
 
+    /* CHECKSTYLE:OFF */
     @DataProvider(name = "getValue")
-    public Object[][] getWrapper() throws Exception {
-//        @formatter:off
+    public Object[][] getWrapper() throws ParseException {
+        /* CHECKSTYLE:ON */
+        /* @formatter:off */
         return new Object[][] {
             {new BigDecimalValue(BigDecimal.valueOf(1.1)), new BigDecimalValue(BigDecimal.valueOf(1.1)),
-              new BigDecimalValue(BigDecimal.valueOf(2.2))}
+             new BigDecimalValue(BigDecimal.valueOf(2.2))}
           , {new BigIntegerValue(BigInteger.valueOf(1)), new BigIntegerValue(BigInteger.valueOf(1)),
-              new BigIntegerValue(BigInteger.valueOf(2))}
+             new BigIntegerValue(BigInteger.valueOf(2))}
           , {new BooleanValue(true), new BooleanValue(true), new BooleanValue(false)}
           , {new ByteValue((byte)1), new ByteValue((byte)1), new ByteValue((byte)2)}
           , {new CharValue('1'), new CharValue('1'), new CharValue('2')}
@@ -67,20 +71,21 @@ public class WrapperTest {
           , {new LongValue(1L), new LongValue(1L), new LongValue(2L)}
           , {new ShortValue((short)1), new ShortValue((short)1), new ShortValue((short)2)}
           , {new StringValueImpl("one"), new StringValueImpl("one"), new StringValueImpl("two")}
-          , {new DateValue(DATE_FORMATTER.parse("2014-10-20")), new DateValue(DATE_FORMATTER.parse("2014-10-20")),
-              new DateValue(DATE_FORMATTER.parse("2014-10-21"))}
+          , {new DateValue(LocalDate.parse("2014-10-20").toDate()), new DateValue(LocalDate.parse("2014-10-20").toDate()),
+             new DateValue(LocalDate.parse("2014-10-21").toDate())}
           , {new JodaDateTimeValue(new DateTime("2014-10-20")), new JodaDateTimeValue(new DateTime("2014-10-20")),
-              new JodaDateTimeValue(new DateTime("2014-10-21"))}
+             new JodaDateTimeValue(new DateTime("2014-10-21"))}
           , {new JodaLocalDateTimeValue(new LocalDateTime("2014-10-20")), new JodaLocalDateTimeValue(
-                          new LocalDateTime("2014-10-20")), new JodaLocalDateTimeValue(new LocalDateTime("2014-10-21"))}
+              new LocalDateTime("2014-10-20")), new JodaLocalDateTimeValue(new LocalDateTime("2014-10-21"))}
           , {new JodaLocalDateValue(new LocalDate("2014-10-20")), new JodaLocalDateValue(
-                          new LocalDate("2014-10-20")), new JodaLocalDateValue(new LocalDate("2014-10-21"))}
+              new LocalDate("2014-10-20")), new JodaLocalDateValue(new LocalDate("2014-10-21"))}
           , {new JodaLocalTimeValue(new LocalTime("12:13:14")), new JodaLocalTimeValue(
-                          new LocalTime("12:13:14")), new JodaLocalTimeValue(new LocalTime("14:13:12"))}
+              new LocalTime("12:13:14")), new JodaLocalTimeValue(new LocalTime("14:13:12"))}
         };
-//        @formatter:on
+        /* @formatter:on */
     }
 
+    @SuppressWarnings("boxing")
     @Test(dataProvider = "getValue")
     public void testHashCodeNotEqualForDifferentValues(Value<?, ?> one, Value<?, ?> anotherOne, Value<?, ?> two) {
         assertNotEquals(one.hashCode(), two.hashCode());

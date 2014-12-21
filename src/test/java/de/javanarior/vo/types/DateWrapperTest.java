@@ -34,8 +34,6 @@ import de.javanarior.vo.types.helper.OtherDateValue;
 @Test
 public class DateWrapperTest {
 
-    static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat ("yyyy-MM-dd");
-
     private Date oneValue;
     private DateValue one;
     private DateValue two;
@@ -44,9 +42,10 @@ public class DateWrapperTest {
 
     @BeforeClass
     public void setUp() throws ParseException {
-        oneValue = DATE_FORMATTER.parse("2014-10-20");
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+        oneValue = dateFormatter.parse("2014-10-20");
         one = new DateValue(oneValue);
-        two = new DateValue(DATE_FORMATTER.parse("2014-10-21"));
+        two = new DateValue(dateFormatter.parse("2014-10-21"));
         anotherOne = new DateValue(oneValue);
         otherTypeOne = new OtherDateValue(oneValue);
     }

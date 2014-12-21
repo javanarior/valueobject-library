@@ -13,7 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/**
- * An example person without value types.
- */
-package de.javanarior.vo.example.person.string;
+package de.javanarior.vo.example.types;
+
+import org.joda.time.LocalTime;
+
+import de.javanarior.vo.types.Value;
+
+public interface JodaLocalTimeType extends Value<JodaLocalTimeType, LocalTime> {
+
+}

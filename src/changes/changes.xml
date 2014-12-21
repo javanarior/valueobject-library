@@ -8,8 +8,11 @@
     </properties>
 
     <body>
-        <release version="0.5.0" date="2014-10-19"
-            description="Add support for java.util.Date.">
+        <release version="0.5.0" date="2014-12-23"
+            description="Add support for Date, DateTime and Generator.">
+            <action dev="Sven" date="2014-12-14" type="add">
+                Add Generator for value object implementations.
+            </action>
             <action dev="Sven" date="2014-10-19" type="add">
                 Add Wrapper for java.util.Date.
             </action>
