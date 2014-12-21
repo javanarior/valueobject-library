@@ -44,7 +44,7 @@ public final class TypeBigDecimal {
     /**
      * Create value object with {@code type} and {@code value}.
      *
-     * @param V
+     * @param <V>
      *            - the value type
      * @param type
      *            - object type
@@ -60,7 +60,7 @@ public final class TypeBigDecimal {
     /**
      * Create value object with {@code type} and {@code value}.
      *
-     * @param V
+     * @param <V>
      *            - the value type
      * @param type
      *            - object type
@@ -76,7 +76,7 @@ public final class TypeBigDecimal {
     /**
      * Create value object with {@code type} and {@code value}.
      *
-     * @param V
+     * @param <V>
      *            - the value type
      * @param type
      *            - object type
@@ -91,7 +91,7 @@ public final class TypeBigDecimal {
     /**
      * Create value object with {@code type} and {@code value}.
      *
-     * @param V
+     * @param <V>
      *            - the value type
      * @param type
      *            - object type
@@ -106,7 +106,7 @@ public final class TypeBigDecimal {
     /**
      * Create value object with {@code type} and {@code value}.
      *
-     * @param V
+     * @param <V>
      *            - the value type
      * @param type
      *            - object type
@@ -121,7 +121,7 @@ public final class TypeBigDecimal {
     /**
      * Create value object with {@code type} and {@code value}.
      *
-     * @param V
+     * @param <V>
      *            - the value type
      * @param type
      *            - object type
@@ -136,7 +136,7 @@ public final class TypeBigDecimal {
     /**
      * Create value object with {@code type} and {@code value}.
      *
-     * @param V
+     * @param <V>
      *            - the value type
      * @param type
      *            - object type
