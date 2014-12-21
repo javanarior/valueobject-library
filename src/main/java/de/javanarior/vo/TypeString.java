@@ -46,8 +46,8 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, String>> T create(Class<T> type, String value) {
-        Class<T> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+    public static <V extends Value<V, String>> V create(Class<V> type, String value) {
+        Class<V> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(classObject, assertNotNull(value));
     }
 
@@ -62,7 +62,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, String>> T create(Class<T> type, Object value) {
+    public static <V extends Value<V, String>> V create(Class<V> type, Object value) {
         return create(type, AbstractValue.assertNotNull(value).toString());
     }
 
@@ -77,7 +77,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, String>> T create(Class<T> type, boolean value) {
+    public static <V extends Value<V, String>> V create(Class<V> type, boolean value) {
         return create(type, String.valueOf(value));
     }
 
@@ -92,7 +92,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, String>> T create(Class<T> type, byte value) {
+    public static <V extends Value<V, String>> V create(Class<V> type, byte value) {
         return create(type, String.valueOf(value));
     }
 
@@ -107,7 +107,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, String>> T create(Class<T> type, char value) {
+    public static <V extends Value<V, String>> V create(Class<V> type, char value) {
         return create(type, String.valueOf(value));
     }
 
@@ -122,7 +122,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, String>> T create(Class<T> type, double value) {
+    public static <V extends Value<V, String>> V create(Class<V> type, double value) {
         return create(type, String.valueOf(value));
     }
 
@@ -137,7 +137,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, String>> T create(Class<T> type, float value) {
+    public static <V extends Value<V, String>> V create(Class<V> type, float value) {
         return create(type, String.valueOf(value));
     }
 
@@ -152,7 +152,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, String>> T create(Class<T> type, int value) {
+    public static <V extends Value<V, String>> V create(Class<V> type, int value) {
         return create(type, String.valueOf(value));
     }
 
@@ -167,7 +167,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, String>> T create(Class<T> type, long value) {
+    public static <V extends Value<V, String>> V create(Class<V> type, long value) {
         return create(type, String.valueOf(value));
     }
 
@@ -182,7 +182,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, String>> T create(Class<T> type, short value) {
+    public static <V extends Value<V, String>> V create(Class<V> type, short value) {
         return create(type, String.valueOf(value));
     }
 
@@ -197,7 +197,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
-    private static <T extends Value<T, String>> T invokeConstructor(Class<T> objectClass, String value) {
+    private static <V extends Value<V, String>> V invokeConstructor(Class<V> objectClass, String value) {
         return Invoker.invokeConstructor(objectClass, String.class, value);
     }
 

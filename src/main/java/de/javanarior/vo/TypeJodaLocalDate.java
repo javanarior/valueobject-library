@@ -48,8 +48,8 @@ public final class TypeJodaLocalDate {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, LocalDate>> T create(Class<T> type, LocalDate value) {
-        Class<T> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+    public static <V extends Value<V, LocalDate>> V create(Class<V> type, LocalDate value) {
+        Class<V> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(classObject, assertNotNull(value));
     }
 
@@ -64,7 +64,7 @@ public final class TypeJodaLocalDate {
      *            - value for the object
      * @return value object
      */
-    private static <T extends Value<T, LocalDate>> T invokeConstructor(Class<T> objectClass, LocalDate value) {
+    private static <V extends Value<V, LocalDate>> V invokeConstructor(Class<V> objectClass, LocalDate value) {
         return Invoker.invokeConstructor(objectClass, LocalDate.class, value);
     }
 

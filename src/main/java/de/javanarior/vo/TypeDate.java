@@ -48,8 +48,8 @@ public final class TypeDate {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, Date>> T create(Class<T> type, Date value) {
-        Class<T> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+    public static <V extends Value<V, Date>> V create(Class<V> type, Date value) {
+        Class<V> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(classObject, assertNotNull(value));
     }
 
@@ -64,7 +64,7 @@ public final class TypeDate {
      *            - value for the object
      * @return value object
      */
-    public static <T extends Value<T, Date>> T create(Class<T> type, long value) {
+    public static <V extends Value<V, Date>> V create(Class<V> type, long value) {
         return create(type, new Date(value));
     }
 
@@ -79,7 +79,7 @@ public final class TypeDate {
      *            - value for the object
      * @return value object
      */
-    private static <T extends Value<T, Date>> T invokeConstructor(Class<T> objectClass, Date value) {
+    private static <V extends Value<V, Date>> V invokeConstructor(Class<V> objectClass, Date value) {
         return Invoker.invokeConstructor(objectClass, Date.class, value);
     }
 
