@@ -1,6 +1,6 @@
 # Value Object Library [![Build Status](https://travis-ci.org/javanarior/vo-lib.svg?branch=master)](https://travis-ci.org/javanarior/vo-lib)
 
-More Information are at the [Project Page](http://javanarior.github.io/vo-lib).
+More Information are at the [Project Page](http://javanarior.github.io/valueobject-library).
 
 # Installation/Distribution
 
