@@ -18,6 +18,13 @@
             </action>
         </release>
 
+        <release version="0.4.4" date="2014-12-23"
+            description="Add support for FileTime.">
+            <action dev="Sven" date="2015-04-19" type="add">
+                Add Wrapper for java.nio.file.attribute.FileTime.
+            </action>
+        </release>
+
         <release version="0.4.0" date="2014-10-12" description="Rename project.">
             <action dev="Sven" date="2014-10-12" type="update">
                 Rename artifact and repository from vo-lib to valueobject-library.

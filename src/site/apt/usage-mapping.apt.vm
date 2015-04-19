@@ -32,6 +32,8 @@ The following table list the Java types for which a wrapper exists.
 *-----------------------*----------------------------*
   double/Double         | DoubleWrapper
 *-----------------------*----------------------------*
+  FileTime              | FileTimeWrapper
+*-----------------------*----------------------------*
   int/Integer           | IntWrapper
 *-----------------------*----------------------------*
   long/Long             | LongWrapper

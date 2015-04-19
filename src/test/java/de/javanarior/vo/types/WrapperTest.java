@@ -23,6 +23,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.nio.file.attribute.FileTime;
 import java.text.ParseException;
 
 import org.joda.time.DateTime;
@@ -39,6 +40,7 @@ import de.javanarior.vo.types.helper.ByteValue;
 import de.javanarior.vo.types.helper.CharValue;
 import de.javanarior.vo.types.helper.DateValue;
 import de.javanarior.vo.types.helper.DoubleValue;
+import de.javanarior.vo.types.helper.FileTimeValue;
 import de.javanarior.vo.types.helper.IntValue;
 import de.javanarior.vo.types.helper.JodaDateTimeValue;
 import de.javanarior.vo.types.helper.JodaLocalDateTimeValue;
@@ -81,6 +83,9 @@ public class WrapperTest {
               new LocalDate("2014-10-20")), new JodaLocalDateValue(new LocalDate("2014-10-21"))}
           , {new JodaLocalTimeValue(new LocalTime("12:13:14")), new JodaLocalTimeValue(
               new LocalTime("12:13:14")), new JodaLocalTimeValue(new LocalTime("14:13:12"))}
+          , {new FileTimeValue(FileTime.fromMillis(new DateTime("12:13:14").getMillis())),
+              new FileTimeValue(FileTime.fromMillis(new DateTime("12:13:14").getMillis())),
+              new FileTimeValue(FileTime.fromMillis(new DateTime("14:13:12").getMillis()))}
         };
         /* @formatter:on */
     }
