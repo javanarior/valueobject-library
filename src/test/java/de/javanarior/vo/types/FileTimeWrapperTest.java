@@ -33,10 +33,14 @@ import de.javanarior.vo.types.helper.OtherFileTimeValue;
 public class FileTimeWrapperTest {
 
     private static final FileTime ONE_VALUE = FileTime.fromMillis(new DateTime("2014-10-20").getMillis());
-    private static final FileTimeValue ONE = new FileTimeValue(FileTime.fromMillis(new DateTime("2014-10-20").getMillis()));
-    private static final FileTimeValue TWO = new FileTimeValue(FileTime.fromMillis(new DateTime("2014-10-21").getMillis()));
-    private static final FileTimeValue ANOTHER_ONE = new FileTimeValue(FileTime.fromMillis(new DateTime("2014-10-20").getMillis()));
-    private static final OtherFileTimeValue OTHER_TYPE_ONE = new OtherFileTimeValue(FileTime.fromMillis(new DateTime("2014-10-20").getMillis()));
+    private static final FileTimeValue ONE = new FileTimeValue(FileTime.fromMillis(
+                    new DateTime("2014-10-20").getMillis()));
+    private static final FileTimeValue TWO = new FileTimeValue(FileTime.fromMillis(
+                    new DateTime("2014-10-21").getMillis()));
+    private static final FileTimeValue ANOTHER_ONE = new FileTimeValue(FileTime.fromMillis(
+                    new DateTime("2014-10-20").getMillis()));
+    private static final OtherFileTimeValue OTHER_TYPE_ONE = new OtherFileTimeValue(FileTime.fromMillis(
+                    new DateTime("2014-10-20").getMillis()));
 
     public void testJodaDateTimeWrapperNullArgument() {
         try {

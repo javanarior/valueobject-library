@@ -84,8 +84,8 @@ public class WrapperTest {
           , {new JodaLocalTimeValue(new LocalTime("12:13:14")), new JodaLocalTimeValue(
               new LocalTime("12:13:14")), new JodaLocalTimeValue(new LocalTime("14:13:12"))}
           , {new FileTimeValue(FileTime.fromMillis(new DateTime("2014-10-20").getMillis())),
-              new FileTimeValue(FileTime.fromMillis(new DateTime("2014-10-20").getMillis())),
-              new FileTimeValue(FileTime.fromMillis(new DateTime("2014-10-21").getMillis()))}
+             new FileTimeValue(FileTime.fromMillis(new DateTime("2014-10-20").getMillis())),
+             new FileTimeValue(FileTime.fromMillis(new DateTime("2014-10-21").getMillis()))}
         };
         /* @formatter:on */
     }
