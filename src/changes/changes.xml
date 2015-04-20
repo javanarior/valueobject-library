@@ -8,20 +8,35 @@
     </properties>
 
     <body>
-        <release version="0.5.0" date="2014-12-23"
-            description="Add support for Date, DateTime and Generator.">
-            <action dev="Sven" date="2014-12-14" type="add">
-                Add Generator for value object implementations.
-            </action>
-            <action dev="Sven" date="2014-10-19" type="add">
-                Add Wrapper for java.util.Date.
-            </action>
+        <release version="0.5.0" date="2015"
+            description="Validation">
+
         </release>
 
-        <release version="0.4.4" date="2014-12-23"
+        <release version="0.4.3" date="2014-12-23"
             description="Add support for FileTime.">
             <action dev="Sven" date="2015-04-19" type="add">
                 Add Wrapper for java.nio.file.attribute.FileTime.
+            </action>
+        </release>
+
+        <release version="0.4.2" date="2014-12-21"
+            description="Release Build 0.4.1 was broken">
+            <action dev="Sven" date="2014-12-21" type="add">
+                Start new Release build.
+            </action>
+        </release>
+
+        <release version="0.4.1" date="2014-12-21"
+            description="Add support for Date, DateTime, JodaTime and Generator.">
+            <action dev="Sven" date="2014-12-21" type="add">
+                Add Generator for value object implementations.
+            </action>
+            <action dev="Sven" date="2014-10-26" type="add">
+                Add Wrapper for JodaTime.
+            </action>
+            <action dev="Sven" date="2015-04-19" type="add">
+                Add Wrapper for java.util.Date.
             </action>
         </release>
 
