@@ -23,9 +23,9 @@ under the License.
     <link>http://javanarior.github.io/valueobject-library</link>
     <description>ValueObject Library - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2014</copyright>
+    <copyright>&#169;2014 - 2015</copyright>
     <item>
-      <title>File: 107,
+      <title>File: 113,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -102,6 +102,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.TypeFileTimeTest.java">de/javanarior/vo/TypeFileTimeTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaDateTimeWrapper.java">de/javanarior/vo/types/JodaDateTimeWrapper.java</a>
                 </td>
                 <td>
@@ -130,7 +144,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherShortValue.java">de/javanarior/vo/types/helper/OtherShortValue.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaLocalDateTimeWrapperTest.java">de/javanarior/vo/types/JodaLocalDateTimeWrapperTest.java</a>
                 </td>
                 <td>
                   0
@@ -144,7 +158,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.JodaLocalDateTimeWrapperTest.java">de/javanarior/vo/types/JodaLocalDateTimeWrapperTest.java</a>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherShortValue.java">de/javanarior/vo/types/helper/OtherShortValue.java</a>
                 </td>
                 <td>
                   0
@@ -410,6 +424,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.OtherFileTimeValue.java">de/javanarior/vo/types/helper/OtherFileTimeValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.DoubleWrapper.java">de/javanarior/vo/types/DoubleWrapper.java</a>
                 </td>
                 <td>
@@ -522,6 +550,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.FileTimeWrapper.java">de/javanarior/vo/types/FileTimeWrapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.AbstractValue.java">de/javanarior/vo/types/AbstractValue.java</a>
                 </td>
                 <td>
@@ -592,7 +634,35 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.TypeFileTime.java">de/javanarior/vo/TypeFileTime.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.BigIntegerWrapperTest.java">de/javanarior/vo/types/BigIntegerWrapperTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.helper.FileTimeValue.java">de/javanarior/vo/types/helper/FileTimeValue.java</a>
                 </td>
                 <td>
                   0
@@ -985,6 +1055,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.TypeDateTest.java">de/javanarior/vo/TypeDateTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://javanarior.github.io/valueobject-library/checkstyle.html#de.javanarior.vo.types.FileTimeWrapperTest.java">de/javanarior/vo/types/FileTimeWrapperTest.java</a>
                 </td>
                 <td>
                   0
