@@ -15,12 +15,16 @@
  */
 package de.javanarior.vo;
 
-import static de.javanarior.vo.types.AbstractValue.assertNotNull;
 import de.javanarior.utils.lang.reflect.Invoker;
 import de.javanarior.vo.generator.TypeGenerator;
-import de.javanarior.vo.types.AbstractValue;
 import de.javanarior.vo.types.StringWrapper;
 import de.javanarior.vo.types.Value;
+import de.javanarior.vo.validation.ValidationException;
+import de.javanarior.vo.validation.Validator;
+import de.javanarior.vo.validation.ValidatorFactory;
+import de.javanarior.vo.validation.ValidatorResult;
+import de.javanarior.vo.validation.constraints.Constraint;
+import de.javanarior.vo.validation.constraints.NoOpConstraint;
 
 /**
  * Factory to create String based Value Objects.
@@ -35,24 +39,41 @@ public final class TypeString {
         /* Factory Class */
     }
 
-    /**
-     * Create value object with {@code type} and {@code value}.
-     *
-     * @param <V>
-     *            - the value type
-     * @param type
-     *            - object type
-     * @param value
-     *            - value for the object
-     * @return value object
-     */
-    public static <V extends Value<V, String>> V create(Class<V> type, String value) {
+    // @SafeVarargs
+    public static <V extends Value<V, String>> V create(Class<V> type, String value, Constraint<String>... constraints) {
+        Validator<String> validator = ValidatorFactory.create(constraints);
+        ValidatorResult result = validator.validate(value);
+        if (result.hasErrors()) {
+            throw new ValidationException(result);
+        }
+        if (value == null) {
+            return null;
+        }
         Class<V> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
-        return invokeConstructor(classObject, assertNotNull(value));
+        return invokeConstructor(classObject, value);
+    }
+
+    public static <V extends Value<V, String>> V createNullSafe(Class<V> type, String value,
+                    Constraint<String>... constraints) {
+        Validator<String> validator = ValidatorFactory.create(constraints);
+        ValidatorResult result = validator.validate(value);
+        if (result.hasErrors()) {
+            throw new ValidationException(result);
+        }
+        if (value == null) {
+            return create(type);
+        }
+        Class<V> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(classObject, value);
+    }
+
+    public static <V extends Value<V, String>> V create(Class<V> type) {
+        return Invoker.invokeConstructor(TypeGenerator.generateNull(type, TECHNICAL_TYPE));
     }
 
     /**
-     * Create value object with {@code type} and {@code value}.
+     * Create value object with {@code type} and {@code value}. If {@code value}
+     * is {@code null}, {@code null} will be returned.
      *
      * @param <V>
      *            - the value type
@@ -60,10 +81,35 @@ public final class TypeString {
      *            - object type
      * @param value
      *            - value for the object
-     * @return value object
+     * @return value object or {@code null} if {@code value} is {@code null}
      */
+    public static <V extends Value<V, String>> V create(Class<V> type, String value) {
+        return create(type, value, new NoOpConstraint<String>());
+    }
+
+    public static <V extends Value<V, String>> V createNullSafe(Class<V> type, String value) {
+        return createNullSafe(type, value, new NoOpConstraint<String>());
+    }
+
+    /**
+     * Create value object with {@code type} and {@code value}. If {@code value}
+     * is {@code null}, {@code null} will be returned.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object or {@code null} if {@code value} is {@code null}
+     * @deprecated TODO
+     */
+    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, Object value) {
-        return create(type, AbstractValue.assertNotNull(value).toString());
+        if (value == null) {
+            return null;
+        }
+        return create(type, value.toString());
     }
 
     /**

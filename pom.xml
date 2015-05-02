@@ -42,7 +42,7 @@
 
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <javanarior-build-resources.version>9</javanarior-build-resources.version>
+        <javanarior-build-resources.version>12</javanarior-build-resources.version>
         <joda-time.version>2.5</joda-time.version>
     </properties>
 
@@ -90,11 +90,29 @@
             <version>${joda-time.version}</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+            <optional>true</optional>
+        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>org.hibernate</groupId> -->
+<!--             <artifactId>hibernate-validator</artifactId> -->
+<!--             <version>4.1.0.Final</version> -->
+<!--             <optional>true</optional> -->
+<!--         </dependency> -->
 
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.8.13</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>java-hamcrest</artifactId>
+            <version>2.0.0.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>

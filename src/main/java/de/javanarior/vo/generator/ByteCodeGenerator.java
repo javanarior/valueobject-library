@@ -25,12 +25,14 @@ import org.objectweb.asm.Type;
 
 import de.javanarior.utils.lang.ByteCodeContainer;
 import de.javanarior.vo.types.AbstractValue;
+import de.javanarior.vo.types.NullObject;
 
 /**
  * Generate a implementation of a value object interface.
  */
 public final class ByteCodeGenerator {
 
+    private static final String NULL_VALUE_PARENT_CLASS_NAME = parentClassName(NullObject.class);
     private static final int OBJECT_PRIMITIVE_SIZE = 2;
     private static final int DOUBLE_SIZE = 3;
     private static final String GENERATED_VO_INDICATOR = "$VO$";
@@ -44,8 +46,17 @@ public final class ByteCodeGenerator {
         return name + GENERATED_VO_INDICATOR + Integer.toHexString(name.hashCode());
     }
 
+    static String generateImplementationNullClassName(Class<?> valueType) {
+        String name = Type.getInternalName(valueType);
+        return name + GENERATED_VO_INDICATOR + "Null" + Integer.toHexString(name.hashCode());
+    }
+
     static String implementationClassName(Class<?> valueType) {
-        return ByteCodeGenerator.generateImplementationClassName(valueType);
+        return generateImplementationClassName(valueType);
+    }
+
+    static String implementationNullClassName(Class<?> valueType) {
+        return generateImplementationNullClassName(valueType);
     }
 
     static String interfaceName(Class<?> valueType) {
@@ -54,6 +65,10 @@ public final class ByteCodeGenerator {
 
     static String binaryClassName(Class<?> valueType) {
         return implementationClassName(valueType).replace('/', '.');
+    }
+
+    static String binaryNullClassName(Class<?> valueType) {
+        return implementationNullClassName(valueType).replace('/', '.');
     }
 
     static String parentClassName(Class<?> superClass) {
@@ -153,6 +168,49 @@ public final class ByteCodeGenerator {
         classWriter.visitEnd();
 
         return new ByteCodeContainer(binaryClassName(valueType), classWriter.toByteArray());
+    }
+
+    /* CHECKSTYLE:OFF */
+    public static ByteCodeContainer generateNullValue(Class<?> valueType, Class<? extends Comparable<?>> technicalType) {
+        /* CHECKSTYLE:ON */
+        if (!isInterface(valueType)) {
+            throw new IllegalArgumentException("Could not generate implementation for class " + valueType.getName()
+                            + ". Please provide interface");
+        }
+
+        ClassWriter classWriter = new ClassWriter(0);
+        MethodVisitor methodVisitor;
+
+        classWriter.visit(Opcodes.V1_7, Opcodes.ACC_PUBLIC + Opcodes.ACC_SUPER,
+                        implementationNullClassName(valueType), "L"
+                                        + NULL_VALUE_PARENT_CLASS_NAME + "<"
+                                        + addTypeDiscriptor(valueType) + ">;" + addTypeDiscriptor(valueType),
+                        NULL_VALUE_PARENT_CLASS_NAME, implementedInterfaces(valueType));
+
+        methodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC, CONSTRUCTOR, "()V", null, null);
+        methodVisitor.visitCode();
+        Label label0 = new Label();
+        methodVisitor.visitLabel(label0);
+        /* CHECKSTYLE:OFF */
+        methodVisitor.visitLineNumber(8, label0);
+        /* CHECKSTYLE:ON */
+        methodVisitor.visitVarInsn(Opcodes.ALOAD, 0);
+        methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, NULL_VALUE_PARENT_CLASS_NAME, CONSTRUCTOR, "()V", false);
+        Label label1 = new Label();
+        methodVisitor.visitLabel(label1);
+        /* CHECKSTYLE:OFF */
+        methodVisitor.visitLineNumber(9, label1);
+        /* CHECKSTYLE:ON */
+        methodVisitor.visitInsn(Opcodes.RETURN);
+        Label label2 = new Label();
+        methodVisitor.visitLabel(label2);
+        methodVisitor.visitLocalVariable("this", addTypeSignature(implementationNullClassName(valueType)), null, label0,
+                        label2, 0);
+        methodVisitor.visitMaxs(1, 1);
+        methodVisitor.visitEnd();
+        classWriter.visitEnd();
+
+        return new ByteCodeContainer(binaryNullClassName(valueType), classWriter.toByteArray());
     }
 
     private static boolean isInterface(Class<?> valueType) {

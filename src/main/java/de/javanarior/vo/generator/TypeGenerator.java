@@ -50,4 +50,11 @@ public final class TypeGenerator {
         return (Class<V>)ByteCodeClassLoader.getClassLoader().load(generatedClass);
     }
 
+    @SuppressWarnings("unchecked")
+    public static <V extends Value<V, T>, T extends Comparable<?>> Class<V> generateNull(Class<V> type,
+                    Class<T> technicalType) {
+        ByteCodeContainer generatedClass = ByteCodeGenerator.generateNullValue(type, technicalType);
+        return (Class<V>)ByteCodeClassLoader.getClassLoader().load(generatedClass);
+    }
+
 }

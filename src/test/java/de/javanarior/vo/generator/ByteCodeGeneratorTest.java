@@ -154,6 +154,19 @@ public class ByteCodeGeneratorTest {
         Assert.assertEquals(valueObject.getValue(), value);
     }
 
+    @Test(dataProvider = "getWrapper")
+    public void testGenerateNullValue(Class<?> interfaze, Class<? extends Comparable<?>> technicalType,
+                    Class<? extends AbstractValue<?, ?>> superClass, Object value)
+                                    throws Exception {
+        ByteCodeContainer generatedClass = ByteCodeGenerator.generateNullValue(interfaze, technicalType);
+        ByteCodeClassLoader classLoader = ByteCodeClassLoader.getClassLoader();
+        Class<?> load = classLoader.load(generatedClass);
+        Assert.assertNotNull(load);
+        Value<?, ?> valueObject = (Value<?, ?>)Invoker.invokeConstructor(load);
+        Assert.assertNotNull(valueObject);
+        Assert.assertNull(valueObject.getValue());
+    }
+
     public void testGenerateWithClassAsType() {
         try {
             ByteCodeGenerator.generate(IntValue.class, Integer.TYPE, IntWrapper.class);
