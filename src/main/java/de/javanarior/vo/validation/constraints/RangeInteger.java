@@ -19,7 +19,7 @@ package de.javanarior.vo.validation.constraints;
  * Reports a error if the value is lower than or greater then the specified
  * limits.
  */
-public class IncludingRangeInteger extends AbstractContraint<Integer> {
+public class RangeInteger extends AbstractContraint<Integer> {
 
     private final int min;
     private final int max;
@@ -33,7 +33,7 @@ public class IncludingRangeInteger extends AbstractContraint<Integer> {
      * @param maximum
      *            - including maximum of the value
      */
-    public IncludingRangeInteger(int minimum, int maximum) {
+    public RangeInteger(int minimum, int maximum) {
         super(null);
         this.min = minimum;
         this.max = maximum;
@@ -51,7 +51,7 @@ public class IncludingRangeInteger extends AbstractContraint<Integer> {
      * @param customMessage
      *            - message to use for constraint violations.
      */
-    public IncludingRangeInteger(int minimum, int maximum, String customMessage) {
+    public RangeInteger(int minimum, int maximum, String customMessage) {
         super(customMessage);
         this.min = minimum;
         this.max = maximum;

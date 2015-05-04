@@ -39,7 +39,7 @@ public class ContraintTest {
             {new NotNullConstraint<Comparable<?>>(), 1, null, new NotNullConstraint<Comparable<?>>(CUSTOME_MESSAGE)},
             {new NotZeroInteger(), 1, 0, new NotZeroInteger(CUSTOME_MESSAGE)},
             {new PositiveInteger(), 1, -1, new PositiveInteger(CUSTOME_MESSAGE)},
-            {new IncludingRangeInteger(3, 4), 3, 5, new IncludingRangeInteger(3, 4, CUSTOME_MESSAGE)},
+            {new RangeInteger(3, 4), 3, 5, new RangeInteger(3, 4, CUSTOME_MESSAGE)},
             {new LengthString(2, 2), "xx", "x", new LengthString(2, 2, CUSTOME_MESSAGE)},
             {new RegExString("AA"), "AA", "a", new RegExString("AA", CUSTOME_MESSAGE)}
 
