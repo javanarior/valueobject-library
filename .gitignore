@@ -5,3 +5,5 @@ test-output/
 .classpath
 /.checkstyle
 /.fbIncludeFilterFile
+/.idea/
+*.iml
