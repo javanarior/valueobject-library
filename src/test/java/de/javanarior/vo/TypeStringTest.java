@@ -21,57 +21,69 @@ import org.testng.annotations.Test;
 import de.javanarior.vo.example.types.StringType;
 import de.javanarior.vo.types.NullObject;
 import de.javanarior.vo.validation.ValidationException;
+import de.javanarior.vo.validation.constraints.LengthString;
 import de.javanarior.vo.validation.constraints.NoOpConstraint;
 import de.javanarior.vo.validation.constraints.NotNullConstraint;
-import de.javanarior.vo.validation.constraints.PositiveInteger;
 
 @Test
 public class TypeStringTest {
 
-    public void testCreateStringNoOpConstraintNotNull() {
-        StringType value = TypeString.create(StringType.class, "testme", new NoOpConstraint<String>());
+    public void testCreateStringNullString() {
+        StringType value = TypeString.create(StringType.class, "null");
         Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), "testme");
+        Assert.assertEquals(value.getValue(), "null");
     }
 
-    public void testCreateStringNoOpConstraintNull() {
-        StringType value = TypeString.create(StringType.class, (String)null, new NoOpConstraint<String>());
+    public void testCreateStringNull() {
+        StringType value = TypeString.create(StringType.class, (String)null);
         Assert.assertNull(value);
     }
 
-    public void testCreateStringNotNullConstraintNotNull() {
-        StringType value = TypeString.create(StringType.class, "testme", new NotNullConstraint<String>());
+    public void testCreateNullSafeNotNull() {
+        StringType value = TypeString.createNullSafe(StringType.class, "testme");
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), "testme");
     }
 
-    public void testCreateStringNotNullConstraintNull() {
-        try {
-            TypeString.create(StringType.class, (String)null, new NotNullConstraint<String>());
-        } catch (ValidationException exception) {
-            Assert.assertEquals(exception.getMessage(), "value violate NotNullConstraint");
-        }
-    }
-
-    public void testCreateNullSafeStringNoOpConstraintNotNull() {
-        StringType value = TypeString.createNullSafe(StringType.class, "testme", new NoOpConstraint<String>());
-        Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), "testme");
-    }
-
-    public void testCreateNullSafeStringNoOpConstraintNull() {
-        StringType value = TypeString.createNullSafe(StringType.class, (String)null, new NoOpConstraint<String>());
+    public void testCreateNullSafeStringNull() {
+        StringType value = TypeString.createNullSafe(StringType.class, (String)null);
         Assert.assertNotNull(value);
         Assert.assertTrue(value instanceof NullObject);
     }
 
-    public void testCreateNullSafeStringNotNullConstraintNotNull() {
+    public void testCreateNullSafeObjectNull() {
+        StringType value = TypeString.createNullSafe(StringType.class, (Object)null);
+        Assert.assertNotNull(value);
+        Assert.assertTrue(value instanceof NullObject);
+    }
+
+    public void testCreateNullSafeStringNullString() {
+        StringType value = TypeString.createNullSafe(StringType.class, "null");
+        Assert.assertNotNull(value);
+        Assert.assertTrue(value instanceof NullObject);
+    }
+
+    public void testCreateNoConstraintViolation() {
+        StringType value = TypeString.create(StringType.class, "test", new LengthString(1, 4));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), "test");
+    }
+
+    public void testCreateConstraintViolation() {
+        try {
+            TypeString.create(StringType.class, "", new LengthString(1, 4));
+        } catch (ValidationException exception) {
+            Assert.assertEquals(exception.getMessage(), "value violate LengthString");
+        }
+    }
+
+    public void testCreateNullSafeNoConstraintViolation() {
         StringType value = TypeString.createNullSafe(StringType.class, "testme", new NotNullConstraint<String>());
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), "testme");
     }
 
-    public void testCreateNullSafeStringNotNullConstraintNull() {
+    public void testCreateNullSafeConstraintViolation() {
         try {
             TypeString.createNullSafe(StringType.class, (String)null, new NotNullConstraint<String>());
         } catch (ValidationException exception) {
@@ -127,6 +139,12 @@ public class TypeStringTest {
         Assert.assertTrue(value.getValue().matches("java\\.lang\\.Object.*"));
     }
 
+    public void testCreateNullSafeObject() {
+        StringType value = TypeString.createNullSafe(StringType.class, new Object());
+        Assert.assertNotNull(value);
+        Assert.assertTrue(value.getValue().matches("java\\.lang\\.Object.*"));
+    }
+
     public void testCreateObjectNull() {
         StringType value = TypeString.create(StringType.class, (Object)null);
         Assert.assertNull(value);
@@ -144,15 +162,16 @@ public class TypeStringTest {
         Assert.assertEquals(value.getValue(), "testme");
     }
 
+    public void testCreateStringNoOpConstraint() {
+      StringType value = TypeString.create(StringType.class, "testme", new NoOpConstraint<String>());
+      Assert.assertNotNull(value);
+      Assert.assertEquals(value.getValue(), "testme");
+  }
+
     public void testCreateStringEmpty() {
         StringType value = TypeString.create(StringType.class, "");
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), "");
-    }
-
-    public void testCreateStringNull() {
-        StringType value = TypeString.create(StringType.class, (String)null);
-        Assert.assertNull(value);
     }
 
 }
