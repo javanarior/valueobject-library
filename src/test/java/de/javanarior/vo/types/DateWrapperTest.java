@@ -18,7 +18,6 @@ package de.javanarior.vo.types;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 import java.text.ParseException;
@@ -36,8 +35,6 @@ public class DateWrapperTest {
 
     private Date oneValue;
     private DateValue one;
-    private DateValue two;
-    private DateValue anotherOne;
     private OtherDateValue otherTypeOne;
 
     @BeforeClass
@@ -45,8 +42,6 @@ public class DateWrapperTest {
         SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
         oneValue = dateFormatter.parse("2014-10-20");
         one = new DateValue(oneValue);
-        two = new DateValue(dateFormatter.parse("2014-10-21"));
-        anotherOne = new DateValue(oneValue);
         otherTypeOne = new OtherDateValue(oneValue);
     }
 
@@ -68,12 +63,6 @@ public class DateWrapperTest {
     public void testAsString() {
         assertEquals(one.asString(), oneValue.toString());
         assertEquals(oneValue.toString(), one.asString());
-    }
-
-    public void testCompareTo() {
-        assertEquals(one.compareTo(anotherOne), 0);
-        assertTrue(one.compareTo(two) < 0);
-        assertTrue(two.compareTo(one) > 0);
     }
 
     public void testGetValue() {

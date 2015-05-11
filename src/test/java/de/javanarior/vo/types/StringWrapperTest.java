@@ -18,7 +18,6 @@ package de.javanarior.vo.types;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 import org.testng.annotations.Test;
@@ -33,8 +32,6 @@ public class StringWrapperTest {
 
     private static final String ONE_VALUE = "one";
     private static final StringValue ONE = new StringValueImpl(ONE_VALUE);
-    private static final StringValue TWO = new StringValueImpl("2");
-    private static final StringValue ANOTHER_ONE = new StringValueImpl(ONE_VALUE);
     private static final OtherStringValue OTHER_TYPE_ONE = new OtherStringValueImpl(ONE_VALUE);
 
     public void testStringWrapperNullArgument() {
@@ -55,12 +52,6 @@ public class StringWrapperTest {
     public void testAsString() {
         assertEquals(ONE.asString(), ONE_VALUE);
         assertEquals(ONE_VALUE, ONE.asString());
-    }
-
-    public void testCompareTo() {
-        assertEquals(ONE.compareTo(ANOTHER_ONE), 0);
-        assertTrue(ONE.compareTo(TWO) > 0);
-        assertTrue(TWO.compareTo(ONE) < 0);
     }
 
     public void testGetValue() {

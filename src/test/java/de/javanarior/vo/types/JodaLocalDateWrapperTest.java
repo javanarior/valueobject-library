@@ -18,7 +18,6 @@ package de.javanarior.vo.types;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 import org.joda.time.LocalDate;
@@ -32,8 +31,6 @@ public class JodaLocalDateWrapperTest {
 
     private static final LocalDate ONE_VALUE = new LocalDate("2014-10-20");
     private static final JodaLocalDateValue ONE = new JodaLocalDateValue(new LocalDate("2014-10-20"));
-    private static final JodaLocalDateValue TWO = new JodaLocalDateValue(new LocalDate("2014-10-21"));
-    private static final JodaLocalDateValue ANOTHER_ONE = new JodaLocalDateValue(new LocalDate("2014-10-20"));
     private static final OtherJodaLocalDateValue OTHER_TYPE_ONE = new OtherJodaLocalDateValue(new LocalDate("2014-10-20"));
 
     public void testJodaDateTimeWrapperNullArgument() {
@@ -54,12 +51,6 @@ public class JodaLocalDateWrapperTest {
     public void testAsString() {
         assertEquals(ONE.asString(), ONE_VALUE.toString());
         assertEquals(ONE_VALUE.toString(), ONE.asString());
-    }
-
-    public void testCompareTo() {
-        assertEquals(ONE.compareTo(ANOTHER_ONE), 0);
-        assertTrue(ONE.compareTo(TWO) < 0);
-        assertTrue(TWO.compareTo(ONE) > 0);
     }
 
     public void testGetValue() {

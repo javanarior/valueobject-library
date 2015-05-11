@@ -17,7 +17,6 @@ package de.javanarior.vo.types;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
@@ -28,8 +27,6 @@ import de.javanarior.vo.types.helper.OtherBooleanValue;
 public class BooleanWrapperTest {
 
     private static final BooleanValue ONE = new BooleanValue(true);
-    private static final BooleanValue TWO = new BooleanValue(false);
-    private static final BooleanValue ANOTHER_ONE = new BooleanValue(true);
     private static final OtherBooleanValue OTHER_TYPE_ONE = new OtherBooleanValue(true);
 
     public void testEqualsForDifferentTypes() {
@@ -47,13 +44,8 @@ public class BooleanWrapperTest {
         assertEquals(Boolean.TRUE, ONE.asBoolean());
     }
 
-    public void testCompareTo() {
-        assertEquals(ONE.compareTo(ANOTHER_ONE), 0);
-        assertTrue(ONE.compareTo(TWO) > 0);
-        assertTrue(TWO.compareTo(ONE) < 0);
-    }
-
     public void testGetValue() {
         assertEquals(ONE.getValue(), Boolean.TRUE);
     }
+
 }

@@ -18,7 +18,6 @@ package de.javanarior.vo.types;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 import java.math.BigInteger;
@@ -33,8 +32,6 @@ public class BigIntegerWrapperTest {
 
     private static final BigInteger ONE_VALUE = BigInteger.valueOf(1L);
     private static final BigIntegerValue ONE = new BigIntegerValue(ONE_VALUE);
-    private static final BigIntegerValue TWO = new BigIntegerValue(BigInteger.valueOf(2L));
-    private static final BigIntegerValue ANOTHER_ONE = new BigIntegerValue(ONE_VALUE);
     private static final OtherBigIntegerValue OTHER_TYPE_ONE = new OtherBigIntegerValue(ONE_VALUE);
 
     public void testBigIntegerWrapperNullArgument() {
@@ -55,12 +52,6 @@ public class BigIntegerWrapperTest {
     public void testAsBigInteger() {
         assertEquals(ONE.asBigInteger(), ONE_VALUE);
         assertEquals(ONE_VALUE, ONE.asBigInteger());
-    }
-
-    public void testCompareTo() {
-        assertEquals(ONE.compareTo(ANOTHER_ONE), 0);
-        assertTrue(ONE.compareTo(TWO) < 0);
-        assertTrue(TWO.compareTo(ONE) > 0);
     }
 
     public void testAsString() {

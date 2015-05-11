@@ -17,7 +17,6 @@ package de.javanarior.vo.types;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
@@ -29,8 +28,6 @@ public class CharWrapperTest {
 
     private static final Character ONE_VALUE = Character.valueOf('1');
     private static final CharValue ONE = new CharValue('1');
-    private static final CharValue TWO = new CharValue('2');
-    private static final CharValue ANOTHER_ONE = new CharValue('1');
     private static final OtherCharValue OTHER_TYPE_ONE = new OtherCharValue('1');
 
     public void testEqualsForDifferentTypes() {
@@ -46,12 +43,6 @@ public class CharWrapperTest {
     public void testAsCharacter() {
         assertEquals(ONE.asCharacter(), ONE_VALUE);
         assertEquals(ONE_VALUE, ONE.asCharacter());
-    }
-
-    public void testCompareTo() {
-        assertEquals(ONE.compareTo(ANOTHER_ONE), 0);
-        assertTrue(ONE.compareTo(TWO) < 0);
-        assertTrue(TWO.compareTo(ONE) > 0);
     }
 
     public void testGetValue() {

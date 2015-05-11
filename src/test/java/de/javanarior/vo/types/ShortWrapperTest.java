@@ -17,7 +17,6 @@ package de.javanarior.vo.types;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
@@ -29,8 +28,6 @@ public class ShortWrapperTest {
 
     private static final Short ONE_VALUE = Short.valueOf("1");
     private static final ShortValue ONE = new ShortValue((short)1);
-    private static final ShortValue TWO = new ShortValue((short)2);
-    private static final ShortValue ANOTHER_ONE = new ShortValue((short)1);
     private static final OtherShortValue OTHER_TYPE_ONE = new OtherShortValue((short)1);
 
     public void testEqualsForDifferentTypes() {
@@ -46,12 +43,6 @@ public class ShortWrapperTest {
     public void testAsShort() {
         assertEquals(ONE.asShort(), ONE_VALUE);
         assertEquals(ONE_VALUE, ONE.asShort());
-    }
-
-    public void testCompareTo() {
-        assertEquals(ONE.compareTo(ANOTHER_ONE), 0);
-        assertTrue(ONE.compareTo(TWO) < 0);
-        assertTrue(TWO.compareTo(ONE) > 0);
     }
 
     public void testGetValue() {

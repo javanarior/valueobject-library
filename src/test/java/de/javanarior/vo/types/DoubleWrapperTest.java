@@ -17,7 +17,6 @@ package de.javanarior.vo.types;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
@@ -29,8 +28,6 @@ public class DoubleWrapperTest {
 
     private static final Double ONE_VALUE = Double.valueOf(1.1);
     private static final DoubleValue ONE = new DoubleValue(1.1);
-    private static final DoubleValue TWO = new DoubleValue(2.2);
-    private static final DoubleValue ANOTHER_ONE = new DoubleValue(1.1);
     private static final OtherDoubleValue OTHER_TYPE_ONE = new OtherDoubleValue(1.1);
 
     public void testEqualsForDifferentTypes() {
@@ -46,12 +43,6 @@ public class DoubleWrapperTest {
     public void testAsDouble() {
         assertEquals(ONE.asDouble(), ONE_VALUE);
         assertEquals(ONE_VALUE, ONE.asDouble());
-    }
-
-    public void testCompareTo() {
-        assertEquals(ONE.compareTo(ANOTHER_ONE), 0);
-        assertTrue(ONE.compareTo(TWO) < 0);
-        assertTrue(TWO.compareTo(ONE) > 0);
     }
 
     public void testgetValue() {

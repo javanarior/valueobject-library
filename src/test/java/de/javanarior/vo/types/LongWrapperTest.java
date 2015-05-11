@@ -17,7 +17,6 @@ package de.javanarior.vo.types;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
@@ -29,8 +28,6 @@ public class LongWrapperTest {
 
     private static final Long ONE_VALUE = Long.valueOf(1);
     private static final LongValue ONE = new LongValue(1L);
-    private static final LongValue TWO = new LongValue(2);
-    private static final LongValue ANOTHER_ONE = new LongValue(1);
     private static final OtherLongValue OTHER_TYPE_ONE = new OtherLongValue(1L);
 
     public void testEqualsForDifferentTypes() {
@@ -46,12 +43,6 @@ public class LongWrapperTest {
     public void testAsLong() {
         assertEquals(ONE.asLong(), ONE_VALUE);
         assertEquals(ONE_VALUE, ONE.asLong());
-    }
-
-    public void testCompareTo() {
-        assertEquals(ONE.compareTo(ANOTHER_ONE), 0);
-        assertTrue(ONE.compareTo(TWO) < 0);
-        assertTrue(TWO.compareTo(ONE) > 0);
     }
 
     public void testGetValue() {

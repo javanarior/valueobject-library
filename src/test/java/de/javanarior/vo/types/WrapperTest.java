@@ -63,7 +63,7 @@ public class WrapperTest {
              new BigDecimalValue(BigDecimal.valueOf(2.2))}
           , {new BigIntegerValue(BigInteger.valueOf(1)), new BigIntegerValue(BigInteger.valueOf(1)),
              new BigIntegerValue(BigInteger.valueOf(2))}
-          , {new BooleanValue(true), new BooleanValue(true), new BooleanValue(false)}
+          , {new BooleanValue(false), new BooleanValue(false), new BooleanValue(true)}
           , {new ByteValue((byte)1), new ByteValue((byte)1), new ByteValue((byte)2)}
           , {new CharValue('1'), new CharValue('1'), new CharValue('2')}
           , {new DoubleValue(1.1), new DoubleValue(1.1), new DoubleValue(2.2)}
@@ -111,6 +111,14 @@ public class WrapperTest {
         assertTrue(one.equals(anotherOne));
         assertTrue(anotherOne.equals(one));
         assertTrue(one.equals(one));
+    }
+
+    @Test(dataProvider = "getValue")
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public void testCompareTo(Value<?, ?> one, Value<?, ?> anotherOne, Value<?, ?> two) {
+        assertEquals(((Comparable)one).compareTo(anotherOne), 0);
+        assertTrue(((Comparable)one).compareTo(two) < 0);
+        assertTrue(((Comparable)two).compareTo(one) > 0);
     }
 
     @Test(dataProvider = "getValue")
