@@ -53,6 +53,23 @@ public final class TypeString {
         return invokeConstructor(classObject, value);
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}. If {@code value}
+     * is {@code null} or the String {@code "null"} (see String#valueOf(Object)), a Null Object will be
+     * returned. If the {@code value} does not fulfill the {@code constraints} a
+     * {@link ValidationException} will be thrown.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @param constraints
+     *            - constraints which the {@code value} has to fulfill
+     * @return value object or null object if {@code value} is {@code null}
+     * @see TypeString#create(Class)
+     */
     public static <V extends Value<V, String>> V createNullSafe(Class<V> type, String value,
                     Constraint<String>... constraints) {
         Validator<String> validator = ValidatorFactory.create(constraints);
@@ -60,13 +77,22 @@ public final class TypeString {
         if (result.hasErrors()) {
             throw new ValidationException(result);
         }
-        if (value == null) {
+        if (value == null || "null".equals(value)) {
             return create(type);
         }
         Class<V> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(classObject, value);
     }
 
+    /**
+     * Create a Null Object of {@code type}.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @return null object of {@code type}
+     */
     public static <V extends Value<V, String>> V create(Class<V> type) {
         return Invoker.invokeConstructor(TypeGenerator.generateNull(type, TECHNICAL_TYPE));
     }
@@ -87,6 +113,19 @@ public final class TypeString {
         return create(type, value, new NoOpConstraint<String>());
     }
 
+    /**
+     * Create value object with {@code type} and {@code value}. If {@code value}
+     * is {@code null} or the String {@code "null"}, a Null Object will be returned.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object or null object if {@code value} is {@code null} or the String {@code "null"}
+     * @see TypeString#create(Class)
+     */
     public static <V extends Value<V, String>> V createNullSafe(Class<V> type, String value) {
         return createNullSafe(type, value, new NoOpConstraint<String>());
     }
@@ -102,14 +141,30 @@ public final class TypeString {
      * @param value
      *            - value for the object
      * @return value object or {@code null} if {@code value} is {@code null}
-     * @deprecated TODO
      */
-    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, Object value) {
         if (value == null) {
             return null;
         }
         return create(type, value.toString());
+    }
+
+    /**
+     * Create value object with {@code type} and {@code value}. If {@code value}
+     * is {@code null}, a Null Object will be returned.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object or null object if {@code value} is {@code null}
+     * @see TypeString#create(Class)
+     */
+
+    public static <V extends Value<V, String>> V createNullSafe(Class<V> type, Object value) {
+        return createNullSafe(type, String.valueOf(value));
     }
 
     /**
