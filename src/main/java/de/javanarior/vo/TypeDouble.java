@@ -80,6 +80,19 @@ public final class TypeDouble {
         return create(type, Double.valueOf(assertNotNull(value)));
     }
 
+    /**
+     * Create a Null Object of {@code type}.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @return null object of {@code type}
+     */
+    public static <V extends Value<V, Double>> V create(Class<V> type) {
+        return TypeNull.create(type, TECHNICAL_TYPE);
+    }
+
     private static <V extends Value<V, Double>> V invokeConstructor(Class<V> objectClass, Double value) {
         return Invoker.invokeConstructor(objectClass, value);
     }

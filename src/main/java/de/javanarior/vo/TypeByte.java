@@ -80,6 +80,19 @@ public final class TypeByte {
         return create(type, Byte.valueOf(assertNotNull(value)));
     }
 
+    /**
+     * Create a Null Object of {@code type}.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @return null object of {@code type}
+     */
+    public static <V extends Value<V, Byte>> V create(Class<V> type) {
+        return TypeNull.create(type, TECHNICAL_TYPE);
+    }
+
     private static <V extends Value<V, Byte>> V invokeConstructor(Class<V> objectClass, Byte value) {
         return Invoker.invokeConstructor(objectClass, value);
     }

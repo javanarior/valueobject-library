@@ -80,6 +80,19 @@ public final class TypeLong {
         return create(type, Long.valueOf(assertNotNull(value)));
     }
 
+    /**
+     * Create a Null Object of {@code type}.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @return null object of {@code type}
+     */
+    public static <V extends Value<V, Long>> V create(Class<V> type) {
+        return TypeNull.create(type, TECHNICAL_TYPE);
+    }
+
     private static <V extends Value<V, Long>> V invokeConstructor(Class<V> objectClass, Long value) {
         return Invoker.invokeConstructor(objectClass, value);
     }

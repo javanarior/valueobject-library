@@ -40,7 +40,8 @@ public final class TypeString {
     }
 
     // @SafeVarargs
-    public static <V extends Value<V, String>> V create(Class<V> type, String value, Constraint<String>... constraints) {
+    public static <V extends Value<V, String>> V create(Class<V> type, String value,
+                    Constraint<String>... constraints) {
         Validator<String> validator = ValidatorFactory.create(constraints);
         ValidatorResult result = validator.validate(value);
         if (result.hasErrors()) {
@@ -55,7 +56,8 @@ public final class TypeString {
 
     /**
      * Create value object with {@code type} and {@code value}. If {@code value}
-     * is {@code null} or the String {@code "null"} (see String#valueOf(Object)), a Null Object will be
+     * is {@code null} or the String {@code "null"} (see
+     * String#valueOf(Object)), a Null Object will be
      * returned. If the {@code value} does not fulfill the {@code constraints} a
      * {@link ValidationException} will be thrown.
      *
@@ -94,7 +96,7 @@ public final class TypeString {
      * @return null object of {@code type}
      */
     public static <V extends Value<V, String>> V create(Class<V> type) {
-        return Invoker.invokeConstructor(TypeGenerator.generateNull(type, TECHNICAL_TYPE));
+        return TypeNull.create(type, TECHNICAL_TYPE);
     }
 
     /**
@@ -115,7 +117,8 @@ public final class TypeString {
 
     /**
      * Create value object with {@code type} and {@code value}. If {@code value}
-     * is {@code null} or the String {@code "null"}, a Null Object will be returned.
+     * is {@code null} or the String {@code "null"}, a Null Object will be
+     * returned.
      *
      * @param <V>
      *            - the value type
@@ -123,7 +126,8 @@ public final class TypeString {
      *            - object type
      * @param value
      *            - value for the object
-     * @return value object or null object if {@code value} is {@code null} or the String {@code "null"}
+     * @return value object or null object if {@code value} is {@code null} or
+     *         the String {@code "null"}
      * @see TypeString#create(Class)
      */
     public static <V extends Value<V, String>> V createNullSafe(Class<V> type, String value) {

@@ -54,16 +54,18 @@ public final class TypeJodaDateTime {
     }
 
     /**
-     * Create value object with {@code type} and {@code value}.
+     * Create a Null Object of {@code type}.
      *
      * @param <V>
      *            - the value type
      * @param type
      *            - object type
-     * @param value
-     *            - value for the object
-     * @return value object
+     * @return null object of {@code type}
      */
+    public static <V extends Value<V, DateTime>> V create(Class<V> type) {
+        return TypeNull.create(type, TECHNICAL_TYPE);
+    }
+
     private static <V extends Value<V, DateTime>> V invokeConstructor(Class<V> objectClass, DateTime value) {
         return Invoker.invokeConstructor(objectClass, DateTime.class, value);
     }

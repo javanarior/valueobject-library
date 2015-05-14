@@ -65,6 +65,19 @@ public final class TypeChar {
         return create(type, Character.valueOf(value));
     }
 
+    /**
+     * Create a Null Object of {@code type}.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @return null object of {@code type}
+     */
+    public static <V extends Value<V, Character>> V create(Class<V> type) {
+        return TypeNull.create(type, TECHNICAL_TYPE);
+    }
+
     private static <V extends Value<V, Character>> V invokeConstructor(Class<V> objectClass, Character value) {
         return Invoker.invokeConstructor(objectClass, value);
     }

@@ -148,6 +148,19 @@ public final class TypeBigDecimal {
         return create(type, new BigDecimal(assertNotNull(value)));
     }
 
+    /**
+     * Create a Null Object of {@code type}.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @return null object of {@code type}
+     */
+    public static <V extends Value<V, BigDecimal>> V create(Class<V> type) {
+        return TypeNull.create(type, TECHNICAL_TYPE);
+    }
+
     private static <V extends Value<V, BigDecimal>> V invokeConstructor(Class<V> objectClass, BigDecimal value) {
         return Invoker.invokeConstructor(objectClass, TECHNICAL_TYPE, value);
     }
