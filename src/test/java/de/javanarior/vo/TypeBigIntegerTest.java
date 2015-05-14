@@ -15,35 +15,63 @@
  */
 package de.javanarior.vo;
 
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
+
 import java.math.BigInteger;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.example.types.BigIntegerType;
+import de.javanarior.vo.types.NullObject;
 
 @Test
 public class TypeBigIntegerTest {
 
-    public void testCreateBigInteger() {
+    public void testCreate() {
         BigIntegerType value = TypeBigInteger.create(BigIntegerType.class, new BigInteger("2"));
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), new BigInteger("2"));
     }
 
+    public void testValue() {
+        BigIntegerType value = TypeBigInteger.value(BigIntegerType.class, new BigInteger("2"));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), new BigInteger("2"));
+    }
+
+    public void testValueNullSafe() {
+        BigIntegerType value = TypeBigInteger.valueNullSafe(BigIntegerType.class, new BigInteger("2"));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), new BigInteger("2"));
+    }
+
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateBigIntegerNull() {
+    public void testCreateNull() {
         TypeBigInteger.create(BigIntegerType.class, (BigInteger)null);
     }
 
-    public void testCreateInteger() {
+    public void testValueNull() {
+        BigIntegerType value = TypeBigInteger.value(BigIntegerType.class, (BigInteger)null);
+        assertNull(value);
+    }
+
+    public void testValueNullSafeNull() {
+        BigIntegerType value = TypeBigInteger.valueNullSafe(BigIntegerType.class, (BigInteger)null);
+        assertNotNull(value);
+        assertTrue(value instanceof NullObject);
+    }
+
+    public void testNullValueInteger() {
         BigIntegerType value = TypeBigInteger.create(BigIntegerType.class, Integer.valueOf(2));
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), BigInteger.valueOf(2));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateIntegerNull() {
+    public void testNullValueIntegerNull() {
         TypeBigInteger.create(BigIntegerType.class, (Integer)null);
     }
 
@@ -53,8 +81,20 @@ public class TypeBigIntegerTest {
         Assert.assertEquals(value.getValue(), BigInteger.valueOf(2));
     }
 
+    public void testValueIntegerPrimitive() {
+        BigIntegerType value = TypeBigInteger.value(BigIntegerType.class, 2);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), BigInteger.valueOf(2));
+    }
+
     public void testCreateLong() {
         BigIntegerType value = TypeBigInteger.create(BigIntegerType.class, Long.valueOf(2));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), BigInteger.valueOf(2));
+    }
+
+    public void testValueLong() {
+        BigIntegerType value = TypeBigInteger.value(BigIntegerType.class, Long.valueOf(2));
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), BigInteger.valueOf(2));
     }
@@ -66,6 +106,12 @@ public class TypeBigIntegerTest {
 
     public void testCreateLongPrimitive() {
         BigIntegerType value = TypeBigInteger.create(BigIntegerType.class, 2L);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), BigInteger.valueOf(2L));
+    }
+
+    public void testValueLongPrimitive() {
+        BigIntegerType value = TypeBigInteger.value(BigIntegerType.class, 2L);
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), BigInteger.valueOf(2L));
     }

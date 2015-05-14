@@ -19,6 +19,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.example.types.DoubleType;
+import de.javanarior.vo.types.NullObject;
 
 @Test
 public class TypeDoubleTest {
@@ -28,9 +29,33 @@ public class TypeDoubleTest {
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), Double.valueOf(2.2));
     }
+
+    public void testValueDouble() {
+        DoubleType value = TypeDouble.value(DoubleType.class, Double.valueOf(2.2));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), Double.valueOf(2.2));
+    }
+
+    public void testValueNullSafeDouble() {
+        DoubleType value = TypeDouble.valueNullSafe(DoubleType.class, Double.valueOf(2.2));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), Double.valueOf(2.2));
+    }
+
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testCreateDoubleNull() {
         TypeDouble.create(DoubleType.class, (Double)null);
+    }
+
+    public void testValueNull() {
+        DoubleType value = TypeDouble.value(DoubleType.class, (Double)null);
+        Assert.assertNull(value);
+    }
+
+    public void testValueNullSafeNull() {
+        DoubleType value = TypeDouble.valueNullSafe(DoubleType.class, (Double)null);
+        Assert.assertNotNull(value);
+        Assert.assertTrue(value instanceof NullObject);
     }
 
     public void testCreateDoublePrimitive() {
@@ -39,14 +64,20 @@ public class TypeDoubleTest {
         Assert.assertEquals(value.getValue(), Double.valueOf("2.2"));
     }
 
-    public void testCreateString() {
+    public void testValueDoublePrimitive() {
+        DoubleType value = TypeDouble.value(DoubleType.class, 2.2);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), Double.valueOf("2.2"));
+    }
+
+    public void testNullValueString() {
         DoubleType value = TypeDouble.create(DoubleType.class, "2");
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), Double.valueOf(2));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateStringNull() {
+    public void testNullValueStringNull() {
         TypeDouble.create(DoubleType.class, (String)null);
     }
 

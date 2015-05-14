@@ -21,25 +21,57 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.example.types.DateType;
+import de.javanarior.vo.types.NullObject;
 
 @Test
 public class TypeDateTest {
 
-    public void testCreateDate() {
+    public void testCreate() {
         Date date = new Date();
         DateType value = TypeDate.create(DateType.class, date);
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), date);
     }
 
+    public void testValue() {
+        Date date = new Date();
+        DateType value = TypeDate.value(DateType.class, date);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), date);
+    }
+
+    public void testValueNullSafe() {
+        Date date = new Date();
+        DateType value = TypeDate.valueNullSafe(DateType.class, date);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), date);
+    }
+
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateDateNull() {
+    public void testCreateNull() {
         TypeDate.create(DateType.class, null);
+    }
+
+    public void testValueNull() {
+        DateType value = TypeDate.value(DateType.class, null);
+        Assert.assertNull(value);
+    }
+    public void testValueNullSafeNull() {
+        DateType value = TypeDate.valueNullSafe(DateType.class, null);
+        Assert.assertNotNull(value);
+        Assert.assertTrue(value instanceof NullObject);
     }
 
     public void testCreateLong() {
         long time = new Date().getTime();
         DateType value = TypeDate.create(DateType.class, time);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue().getTime(), time);
+    }
+
+    public void testValueLong() {
+        long time = new Date().getTime();
+        DateType value = TypeDate.value(DateType.class, time);
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue().getTime(), time);
     }

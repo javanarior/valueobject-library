@@ -22,7 +22,7 @@ import de.javanarior.vo.types.LongWrapper;
 import de.javanarior.vo.types.Value;
 
 /**
- * Factory to create Integer based Value Objects.
+ * Factory to create Long based Value Objects.
  */
 public final class TypeLong {
 
@@ -45,7 +45,49 @@ public final class TypeLong {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, Long>> V create(Class<V> type, Long value) {
+        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(generated, assertNotNull(value));
+    }
+
+    /**
+     * Create value object of {@code type} with {@code value}. If {@code value}
+     * is {@code null}, {@code null} will be returned.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object or {@code null} if {@code value} is {@code null}
+     */
+    public static <V extends Value<V, Long>> V value(Class<V> type, Long value) {
+        if (value == null) {
+            return null;
+        }
+        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(generated, value);
+    }
+
+    /**
+     * Create value object of {@code type} with {@code value}. If {@code value}
+     * is {@code null} a Null Object will be returned.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object or null object if {@code value} is {@code null}
+     * @see TypeLong#nullValue(Class)
+     */
+    public static <V extends Value<V, Long>> V valueNullSafe(Class<V> type, Long value) {
+        if (value == null) {
+            return nullValue(type);
+        }
         Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(generated, assertNotNull(value));
     }
@@ -61,12 +103,13 @@ public final class TypeLong {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, Long>> V create(Class<V> type, long value) {
-        return create(type, Long.valueOf(value));
+        return value(type, Long.valueOf(value));
     }
 
     /**
-     * Create value object with {@code type} and {@code value}.
+     * Create value object of {@code type} with {@code value}.
      *
      * @param <V>
      *            - the value type
@@ -76,8 +119,8 @@ public final class TypeLong {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Long>> V create(Class<V> type, String value) {
-        return create(type, Long.valueOf(assertNotNull(value)));
+    public static <V extends Value<V, Long>> V value(Class<V> type, long value) {
+        return value(type, Long.valueOf(value));
     }
 
     /**
@@ -89,7 +132,7 @@ public final class TypeLong {
      *            - object type
      * @return null object of {@code type}
      */
-    public static <V extends Value<V, Long>> V create(Class<V> type) {
+    public static <V extends Value<V, Long>> V nullValue(Class<V> type) {
         return TypeNull.create(type, TECHNICAL_TYPE);
     }
 

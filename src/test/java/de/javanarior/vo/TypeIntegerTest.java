@@ -19,6 +19,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.example.types.IntType;
+import de.javanarior.vo.types.NullObject;
 
 @Test
 public class TypeIntegerTest {
@@ -29,9 +30,32 @@ public class TypeIntegerTest {
         Assert.assertEquals(value.getValue(), Integer.valueOf(2));
     }
 
+    public void testValueInteger() {
+        IntType value = TypeInteger.value(IntType.class, Integer.valueOf(2));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+    }
+
+    public void testValueNullSafeInteger() {
+        IntType value = TypeInteger.valueNullSafe(IntType.class, Integer.valueOf(2));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+    }
+
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateIntegerNull() {
+    public void testCreateNull() {
         TypeInteger.create(IntType.class, (Integer)null);
+    }
+
+    public void testValueNull() {
+        IntType value = TypeInteger.value(IntType.class, (Integer)null);
+        Assert.assertNull(value);
+    }
+
+    public void testValueSafeNull() {
+        IntType value = TypeInteger.valueNullSafe(IntType.class, (Integer)null);
+        Assert.assertNotNull(value);
+        Assert.assertTrue(value instanceof NullObject);
     }
 
     public void testCreateInt() {
@@ -40,14 +64,20 @@ public class TypeIntegerTest {
         Assert.assertEquals(value.getValue(), Integer.valueOf(2));
     }
 
-    public void testCreateString() {
+    public void testValueInt() {
+        IntType value = TypeInteger.value(IntType.class, 2);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), Integer.valueOf(2));
+    }
+
+    public void testNullValueString() {
         IntType value = TypeInteger.create(IntType.class, "2");
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), Integer.valueOf(2));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateStringNull() {
+    public void testNullValueStringNull() {
         TypeInteger.create(IntType.class, (String)null);
     }
 

@@ -52,9 +52,51 @@ public final class TypeBigDecimal {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, BigDecimal>> V create(Class<V> type, BigDecimal value) {
         Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(generated, assertNotNull(value));
+    }
+
+    /**
+     * Create value object of {@code type} with {@code value}. If {@code value}
+     * is {@code null}, {@code null} will be returned.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object or {@code null} if {@code value} is {@code null}
+     */
+    public static <V extends Value<V, BigDecimal>> V value(Class<V> type, BigDecimal value) {
+        if (value == null) {
+            return null;
+        }
+        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(generated, value);
+    }
+
+    /**
+     * Create value object of {@code type} with {@code value}. If {@code value}
+     * is {@code null} a Null Object will be returned.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object or null object if {@code value} is {@code null}
+     * @see TypeBigDecimal#nullValue(Class)
+     */
+    public static <V extends Value<V, BigDecimal>> V valueNullSafe(Class<V> type, BigDecimal value) {
+        if (value == null) {
+            return nullValue(type);
+        }
+        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(generated, value);
     }
 
     /**
@@ -68,6 +110,7 @@ public final class TypeBigDecimal {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, BigDecimal>> V create(Class<V> type, BigInteger value) {
         Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(generated, new BigDecimal(assertNotNull(value)));
@@ -84,6 +127,7 @@ public final class TypeBigDecimal {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, BigDecimal>> V create(Class<V> type, int value) {
         return create(type, new BigDecimal(value));
     }
@@ -99,6 +143,7 @@ public final class TypeBigDecimal {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, BigDecimal>> V create(Class<V> type, Integer value) {
         return create(type, new BigDecimal(assertNotNull(value).intValue()));
     }
@@ -114,8 +159,56 @@ public final class TypeBigDecimal {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, BigDecimal>> V create(Class<V> type, long value) {
         return create(type, BigDecimal.valueOf(value));
+    }
+
+    /**
+     * Create value object of {@code type} with {@code value}.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
+    public static <V extends Value<V, BigDecimal>> V value(Class<V> type, double value) {
+        return value(type, BigDecimal.valueOf(value));
+    }
+
+    /**
+     * Create value object of {@code type} with {@code value}.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
+    public static <V extends Value<V, BigDecimal>> V value(Class<V> type, long value) {
+        return value(type, BigDecimal.valueOf(value));
+    }
+
+    /**
+     * Create value object of {@code type} with {@code value}.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param unscaledValue
+     *            - value for the object, without scale
+     * @param scale - scale for {@code unscaledValue}
+     * @return value object
+     * @see BigDecimal#valueOf(long, int)
+     */
+    public static <V extends Value<V, BigDecimal>> V value(Class<V> type, long unscaledValue, int scale) {
+        return value(type, BigDecimal.valueOf(unscaledValue, scale));
     }
 
     /**
@@ -129,6 +222,7 @@ public final class TypeBigDecimal {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, BigDecimal>> V create(Class<V> type, Long value) {
         return create(type, new BigDecimal(assertNotNull(value).longValue()));
     }
@@ -144,6 +238,7 @@ public final class TypeBigDecimal {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, BigDecimal>> V create(Class<V> type, String value) {
         return create(type, new BigDecimal(assertNotNull(value)));
     }
@@ -157,7 +252,7 @@ public final class TypeBigDecimal {
      *            - object type
      * @return null object of {@code type}
      */
-    public static <V extends Value<V, BigDecimal>> V create(Class<V> type) {
+    public static <V extends Value<V, BigDecimal>> V nullValue(Class<V> type) {
         return TypeNull.create(type, TECHNICAL_TYPE);
     }
 

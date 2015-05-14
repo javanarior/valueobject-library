@@ -15,6 +15,11 @@
  */
 package de.javanarior.vo;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
@@ -22,44 +27,68 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.example.types.BigDecimalType;
+import de.javanarior.vo.types.NullObject;
 
 @Test
 public class TypeBigDecimalTest {
 
-    public void testCreateBigDecimal() {
+    public void testCreate() {
         BigDecimalType value = TypeBigDecimal.create(BigDecimalType.class, new BigDecimal(2.2));
-        Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), new BigDecimal(2.2));
+        assertNotNull(value);
+        assertEquals(value.getValue(), new BigDecimal(2.2));
+    }
+
+    public void testValue() {
+        BigDecimalType value = TypeBigDecimal.value(BigDecimalType.class, new BigDecimal(2.2));
+        assertNotNull(value);
+        assertEquals(value.getValue(), new BigDecimal(2.2));
+    }
+
+    public void testValueNullSafe() {
+        BigDecimalType value = TypeBigDecimal.valueNullSafe(BigDecimalType.class, new BigDecimal(2.2));
+        assertNotNull(value);
+        assertEquals(value.getValue(), new BigDecimal(2.2));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateBigDecimalNull() {
+    public void testNullValueBigDecimalNull() {
         TypeBigDecimal.create(BigDecimalType.class, (BigDecimal)null);
     }
 
-    public void testCreateBigInteger() {
+    public void testValueNull() {
+        BigDecimalType value = TypeBigDecimal.value(BigDecimalType.class, (BigDecimal)null);
+        assertNull(value);
+    }
+
+    public void testValueNullSafeNull() {
+        BigDecimalType value = TypeBigDecimal.valueNullSafe(BigDecimalType.class, (BigDecimal)null);
+        assertNotNull(value);
+        assertTrue(value instanceof NullObject);
+    }
+
+    public void testNullValueBigInteger() {
         BigDecimalType value = TypeBigDecimal.create(BigDecimalType.class, new BigInteger("2"));
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), new BigDecimal("2"));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateBigIntegerNull() {
+    public void testNullValueBigIntegerNull() {
         TypeBigDecimal.create(BigDecimalType.class, (BigInteger)null);
     }
 
-    public void testCreateInteger() {
+    public void testNullValueInteger() {
         BigDecimalType value = TypeBigDecimal.create(BigDecimalType.class, Integer.valueOf(2));
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), new BigDecimal(2));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateIntegerNull() {
+    public void testNullValueIntegerNull() {
         TypeBigDecimal.create(BigDecimalType.class, (Integer)null);
     }
 
-    public void testCreateIntegerPrimitive() {
+    public void testNullValueIntegerPrimitive() {
         BigDecimalType value = TypeBigDecimal.create(BigDecimalType.class, 2);
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), new BigDecimal(2));
@@ -82,14 +111,32 @@ public class TypeBigDecimalTest {
         Assert.assertEquals(value.getValue(), new BigDecimal(2L));
     }
 
-    public void testCreateString() {
+    public void testValueDoublePrimitive() {
+        BigDecimalType value = TypeBigDecimal.value(BigDecimalType.class, 2.2);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), new BigDecimal("2.2"));
+    }
+
+    public void testValueLongPrimitive() {
+        BigDecimalType value = TypeBigDecimal.value(BigDecimalType.class, 2L);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), new BigDecimal(2L));
+    }
+
+    public void testValueLongPrimitiveWithScale() {
+        BigDecimalType value = TypeBigDecimal.value(BigDecimalType.class, 22L, 1);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), new BigDecimal("2.2"));
+    }
+
+    public void testNullValueString() {
         BigDecimalType value = TypeBigDecimal.create(BigDecimalType.class, "2.2");
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), new BigDecimal("2.2"));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateStringNull() {
+    public void testNullValueStringNull() {
         TypeBigDecimal.create(BigDecimalType.class, (String)null);
     }
 

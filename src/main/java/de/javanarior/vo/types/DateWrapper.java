@@ -25,7 +25,7 @@ import java.util.Date;
  */
 public abstract class DateWrapper<V extends Value<V, Date>> extends AbstractValue<V, Date> {
 
-    private final Date value;
+    private final long value;
 
     /**
      * Create Date Type from Date value.
@@ -35,34 +35,38 @@ public abstract class DateWrapper<V extends Value<V, Date>> extends AbstractValu
      */
     public DateWrapper(Date value) {
         super();
-        this.value = assertNotNull(value);
+        this.value = assertNotNull(value).getTime();
     }
 
     @Override
     public Date getValue() {
-        return value;
+        return new Date(value);
     }
 
     @Override
     public int hashCode() {
-        return 31 * super.hashCode() + value.hashCode();
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + (int)(value ^ (value >>> 32));
+        return result;
     }
 
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (!super.equals(obj)) {
             return false;
         }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
         DateWrapper<?> other = (DateWrapper<?>)obj;
-        if (!value.equals(other.value)) {
+        if (value != other.value) {
             return false;
         }
         return true;
-    }
-
-    @Override
-    public String asString() {
-        return value.toString();
     }
 
 }

@@ -24,16 +24,38 @@ import de.javanarior.vo.example.types.JodaDateTimeType;
 @Test
 public class TypeJodaDateTimeTest {
 
-    public void testCreateDateTime() {
+    public void testCreate() {
         DateTime now = DateTime.now();
         JodaDateTimeType value = TypeJodaDateTime.create(JodaDateTimeType.class, now);
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), now);
     }
 
+    public void testValue() {
+        DateTime now = DateTime.now();
+        JodaDateTimeType value = TypeJodaDateTime.value(JodaDateTimeType.class, now);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), now);
+    }
+
+    public void testValueNullSafe() {
+        DateTime now = DateTime.now();
+        JodaDateTimeType value = TypeJodaDateTime.valueNullSafe(JodaDateTimeType.class, now);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), now);
+    }
+
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateDateTimeNull() {
+    public void testCreateNull() {
         TypeJodaDateTime.create(JodaDateTimeType.class, null);
+    }
+
+    public void testValueNull() {
+        TypeJodaDateTime.value(JodaDateTimeType.class, null);
+    }
+
+    public void testValueNullSafeNull() {
+        TypeJodaDateTime.valueNullSafe(JodaDateTimeType.class, null);
     }
 
 }

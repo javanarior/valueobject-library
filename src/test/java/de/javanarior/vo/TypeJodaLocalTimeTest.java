@@ -20,11 +20,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.example.types.JodaLocalTimeType;
+import de.javanarior.vo.types.NullObject;
 
 @Test
 public class TypeJodaLocalTimeTest {
 
-    public void testCreateDateTime() {
+    public void testCreate() {
         LocalTime now = LocalTime.now();
         JodaLocalTimeType value = TypeJodaLocalTime.create(JodaLocalTimeType.class, now);
         Assert.assertNotNull(value);
@@ -32,8 +33,33 @@ public class TypeJodaLocalTimeTest {
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateDateTimeNull() {
+    public void testCreateNull() {
         TypeJodaLocalTime.create(JodaLocalTimeType.class, null);
+    }
+
+    public void testValue() {
+        LocalTime now = LocalTime.now();
+        JodaLocalTimeType value = TypeJodaLocalTime.value(JodaLocalTimeType.class, now);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), now);
+    }
+
+    public void testValueNull() {
+        JodaLocalTimeType value = TypeJodaLocalTime.value(JodaLocalTimeType.class, null);
+        Assert.assertNull(value);
+    }
+
+    public void testValueNullSafe() {
+        LocalTime now = LocalTime.now();
+        JodaLocalTimeType value = TypeJodaLocalTime.valueNullSafe(JodaLocalTimeType.class, now);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), now);
+    }
+
+    public void testValueNullSafeNull() {
+        JodaLocalTimeType value = TypeJodaLocalTime.valueNullSafe(JodaLocalTimeType.class, null);
+        Assert.assertNotNull(value);
+        Assert.assertTrue(value instanceof NullObject);
     }
 
 }

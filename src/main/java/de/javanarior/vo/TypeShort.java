@@ -50,19 +50,20 @@ public final class TypeShort {
         return invokeConstructor(generated, assertNotNull(value));
     }
 
-    /**
-     * Create value object with {@code type} and {@code value}.
-     *
-     * @param <V>
-     *            - the value type
-     * @param type
-     *            - object type
-     * @param value
-     *            - value for the object
-     * @return value object
-     */
-    public static <V extends Value<V, Short>> V create(Class<V> type, short value) {
-        return create(type, Short.valueOf(value));
+    public static <V extends Value<V, Short>> V value(Class<V> type, Short value) {
+        if (value == null) {
+            return null;
+        }
+        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(generated, value);
+    }
+
+    public static <V extends Value<V, Short>> V valueNullSafe(Class<V> type, Short value) {
+        if (value == null) {
+            return create(type);
+        }
+        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(generated, value);
     }
 
     /**
@@ -76,8 +77,8 @@ public final class TypeShort {
      *            - value for the object
      * @return value object
      */
-    public static <V extends Value<V, Short>> V create(Class<V> type, String value) {
-        return create(type, Short.valueOf(assertNotNull(value)));
+    public static <V extends Value<V, Short>> V create(Class<V> type, short value) {
+        return create(type, Short.valueOf(value));
     }
 
     /**

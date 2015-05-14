@@ -15,18 +15,35 @@
  */
 package de.javanarior.vo;
 
-import org.testng.Assert;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Test;
 
 import de.javanarior.vo.example.types.BooleanType;
+import de.javanarior.vo.types.NullObject;
 
 @Test
 public class TypeBooleanTest {
 
     public void testCreateBoolean() {
         BooleanType value = TypeBoolean.create(BooleanType.class, Boolean.TRUE);
-        Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Boolean.TRUE);
+        assertNotNull(value);
+        assertEquals(value.getValue(), Boolean.TRUE);
+    }
+
+    public void testValueBoolean() {
+        BooleanType value = TypeBoolean.value(BooleanType.class, Boolean.TRUE);
+        assertNotNull(value);
+        assertEquals(value.getValue(), Boolean.TRUE);
+    }
+
+    public void testValueNullSafeBoolean() {
+        BooleanType value = TypeBoolean.valueNullSafe(BooleanType.class, Boolean.TRUE);
+        assertNotNull(value);
+        assertEquals(value.getValue(), Boolean.TRUE);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
@@ -34,25 +51,42 @@ public class TypeBooleanTest {
         TypeBoolean.create(BooleanType.class, (Boolean)null);
     }
 
+    public void testValueBooleanNull() {
+        BooleanType value = TypeBoolean.value(BooleanType.class, (Boolean)null);
+        assertNull(value);
+    }
+
+    public void testValueNullSafeBooleanNull() {
+        BooleanType value = TypeBoolean.valueNullSafe(BooleanType.class, (Boolean)null);
+        assertNotNull(value);
+        assertTrue(value instanceof NullObject);
+    }
+
     public void testCreateBooleanPrimitive() {
         BooleanType value = TypeBoolean.create(BooleanType.class, true);
-        Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Boolean.TRUE);
+        assertNotNull(value);
+        assertEquals(value.getValue(), Boolean.TRUE);
     }
 
-    public void testCreateString() {
+    public void testValueBooleanPrimitive() {
+        BooleanType value = TypeBoolean.value(BooleanType.class, true);
+        assertNotNull(value);
+        assertEquals(value.getValue(), Boolean.TRUE);
+    }
+
+    public void testNullValueString() {
         BooleanType value = TypeBoolean.create(BooleanType.class, "true");
-        Assert.assertNotNull(value);
-        Assert.assertEquals(value.getValue(), Boolean.TRUE);
+        assertNotNull(value);
+        assertEquals(value.getValue(), Boolean.TRUE);
     }
 
-//    @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateStringIllegal() {
+    // @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testNullValueStringIllegal() {
         TypeBoolean.create(BooleanType.class, "trus");
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateStringNull() {
+    public void testNullValueStringNull() {
         TypeBoolean.create(BooleanType.class, (String)null);
     }
 

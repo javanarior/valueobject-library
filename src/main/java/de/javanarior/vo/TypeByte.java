@@ -45,7 +45,49 @@ public final class TypeByte {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, Byte>> V create(Class<V> type, Byte value) {
+        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(generated, assertNotNull(value));
+    }
+
+    /**
+     * Create value object of {@code type} with {@code value}. If {@code value}
+     * is {@code null}, {@code null} will be returned.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object or {@code null} if {@code value} is {@code null}
+     */
+    public static <V extends Value<V, Byte>> V value(Class<V> type, Byte value) {
+        if (value == null) {
+            return null;
+        }
+        Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(generated, assertNotNull(value));
+    }
+
+    /**
+     * Create value object of {@code type} with {@code value}. If {@code value}
+     * is {@code null} a Null Object will be returned.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object or null object if {@code value} is {@code null}
+     * @see TypeChar#nullValue(Class)
+     */
+    public static <V extends Value<V, Byte>> V valueNullSafe(Class<V> type, Byte value) {
+        if (value == null) {
+            return nullValue(type);
+        }
         Class<V> generated = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(generated, assertNotNull(value));
     }
@@ -61,7 +103,23 @@ public final class TypeByte {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, Byte>> V create(Class<V> type, byte value) {
+        return create(type, Byte.valueOf(value));
+    }
+
+    /**
+     * Create value object of {@code type} with {@code value}.
+     *
+     * @param <V>
+     *            - the value type
+     * @param type
+     *            - object type
+     * @param value
+     *            - value for the object
+     * @return value object
+     */
+    public static <V extends Value<V, Byte>> V value(Class<V> type, byte value) {
         return create(type, Byte.valueOf(value));
     }
 
@@ -76,6 +134,7 @@ public final class TypeByte {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, Byte>> V create(Class<V> type, String value) {
         return create(type, Byte.valueOf(assertNotNull(value)));
     }
@@ -89,7 +148,7 @@ public final class TypeByte {
      *            - object type
      * @return null object of {@code type}
      */
-    public static <V extends Value<V, Byte>> V create(Class<V> type) {
+    public static <V extends Value<V, Byte>> V nullValue(Class<V> type) {
         return TypeNull.create(type, TECHNICAL_TYPE);
     }
 

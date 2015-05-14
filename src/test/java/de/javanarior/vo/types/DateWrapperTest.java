@@ -17,6 +17,7 @@ package de.javanarior.vo.types;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.fail;
 
@@ -55,6 +56,14 @@ public class DateWrapperTest {
         }
     }
 
+    public void testDateWrapperImmutable() {
+        long millis = oneValue.getTime();
+        assertEquals(one.getValue(), oneValue);
+        oneValue.setTime(1L);
+        assertNotEquals(one.getValue(), oneValue);
+        assertEquals(one.getValue().getTime(), millis);
+    }
+
     public void testEqualsForDifferentTypes() {
         assertFalse(one.equals(otherTypeOne));
         assertFalse(otherTypeOne.equals(one));
@@ -63,10 +72,6 @@ public class DateWrapperTest {
     public void testAsString() {
         assertEquals(one.asString(), oneValue.toString());
         assertEquals(oneValue.toString(), one.asString());
-    }
-
-    public void testGetValue() {
-        assertEquals(one.getValue(), oneValue);
     }
 
 }
