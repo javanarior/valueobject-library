@@ -8,9 +8,18 @@
     </properties>
 
     <body>
-        <release version="0.5.0" date="2015"
+        <release version="0.5.0" date="2015-06-31"
             description="Validation">
-
+            <action dev="Sven" date="2015-05-15" type="fix">
+                Fix DateWrapper, ensure immutability.
+            </action>
+            <action dev="Sven" date="2015-05-15" type="update">
+                Deprecate all create Methods, de.javanarior.vo.Type*#create(*).
+                The create Methods are replaced by #value and #valueNullSafe Methods.
+            </action>
+            <action dev="Sven" date="2015-05-04" type="add">
+                Add Constraints and Validator to validate values.
+            </action>
         </release>
 
         <release version="0.4.3" date="2015-04-20"
