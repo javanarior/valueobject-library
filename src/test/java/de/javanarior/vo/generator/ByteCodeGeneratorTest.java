@@ -17,6 +17,7 @@ package de.javanarior.vo.generator;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.nio.file.attribute.FileTime;
 import java.util.Date;
 
 import org.joda.time.DateTime;
@@ -38,6 +39,7 @@ import de.javanarior.vo.example.types.ByteType;
 import de.javanarior.vo.example.types.CharType;
 import de.javanarior.vo.example.types.DateType;
 import de.javanarior.vo.example.types.DoubleType;
+import de.javanarior.vo.example.types.FileTimeType;
 import de.javanarior.vo.example.types.IntType;
 import de.javanarior.vo.example.types.JodaDateTimeType;
 import de.javanarior.vo.example.types.JodaLocalDateTimeType;
@@ -54,6 +56,7 @@ import de.javanarior.vo.types.ByteWrapper;
 import de.javanarior.vo.types.CharWrapper;
 import de.javanarior.vo.types.DateWrapper;
 import de.javanarior.vo.types.DoubleWrapper;
+import de.javanarior.vo.types.FileTimeWrapper;
 import de.javanarior.vo.types.IntWrapper;
 import de.javanarior.vo.types.JodaDateTimeWrapper;
 import de.javanarior.vo.types.JodaLocalDateTimeWrapper;
@@ -129,6 +132,7 @@ public class ByteCodeGeneratorTest {
             {CharType.class, Character.TYPE, CharWrapper.class , Character.valueOf('Z')},
             {DateType.class, Date.class, DateWrapper.class , new Date()},
             {DoubleType.class, Double.TYPE, DoubleWrapper.class , Double.valueOf(2.2)},
+            {FileTimeType.class, FileTime.class, FileTimeWrapper.class , FileTime.fromMillis(new DateTime().getMillis())},
             {IntType.class, Integer.TYPE, IntWrapper.class , Integer.valueOf(12)},
             {JodaDateTimeType.class, DateTime.class, JodaDateTimeWrapper.class , new DateTime()},
             {JodaLocalDateTimeType.class, LocalDateTime.class, JodaLocalDateTimeWrapper.class ,

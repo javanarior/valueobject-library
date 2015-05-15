@@ -5,12 +5,12 @@
     <parent>
         <groupId>de.javanarior</groupId>
         <artifactId>javanarior-oss-pom</artifactId>
-        <version>27</version>
+        <version>41</version>
     </parent>
 
     <groupId>de.javanarior.library</groupId>
     <artifactId>valueobject-library</artifactId>
-    <version>0.4.3-SNAPSHOT</version>
+    <version>0.4.4-SNAPSHOT</version>
 
 
 
