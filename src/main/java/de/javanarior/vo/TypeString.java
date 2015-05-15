@@ -70,7 +70,7 @@ public final class TypeString {
      * @param constraints
      *            - constraints which the {@code value} has to fulfill
      * @return value object or null object if {@code value} is {@code null}
-     * @see TypeString#create(Class)
+     * @see TypeString#nullValue(Class)
      */
     public static <V extends Value<V, String>> V createNullSafe(Class<V> type, String value,
                     Constraint<String>... constraints) {
@@ -80,23 +80,10 @@ public final class TypeString {
             throw new ValidationException(result);
         }
         if (value == null || "null".equals(value)) {
-            return create(type);
+            return nullValue(type);
         }
         Class<V> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(classObject, value);
-    }
-
-    /**
-     * Create a Null Object of {@code type}.
-     *
-     * @param <V>
-     *            - the value type
-     * @param type
-     *            - object type
-     * @return null object of {@code type}
-     */
-    public static <V extends Value<V, String>> V create(Class<V> type) {
-        return TypeNull.create(type, TECHNICAL_TYPE);
     }
 
     /**
@@ -128,7 +115,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object or null object if {@code value} is {@code null} or
      *         the String {@code "null"}
-     * @see TypeString#create(Class)
+     * @see TypeString#nullValue(Class)
      */
     public static <V extends Value<V, String>> V createNullSafe(Class<V> type, String value) {
         return createNullSafe(type, value, new NoOpConstraint<String>());
@@ -146,29 +133,12 @@ public final class TypeString {
      *            - value for the object
      * @return value object or {@code null} if {@code value} is {@code null}
      */
+    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, Object value) {
         if (value == null) {
             return null;
         }
         return create(type, value.toString());
-    }
-
-    /**
-     * Create value object with {@code type} and {@code value}. If {@code value}
-     * is {@code null}, a Null Object will be returned.
-     *
-     * @param <V>
-     *            - the value type
-     * @param type
-     *            - object type
-     * @param value
-     *            - value for the object
-     * @return value object or null object if {@code value} is {@code null}
-     * @see TypeString#create(Class)
-     */
-
-    public static <V extends Value<V, String>> V createNullSafe(Class<V> type, Object value) {
-        return createNullSafe(type, String.valueOf(value));
     }
 
     /**
@@ -182,6 +152,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, boolean value) {
         return create(type, String.valueOf(value));
     }
@@ -197,6 +168,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, byte value) {
         return create(type, String.valueOf(value));
     }
@@ -212,7 +184,12 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, char value) {
+        return create(type, String.valueOf(value));
+    }
+
+    public static <V extends Value<V, String>> V value(Class<V> type, char value) {
         return create(type, String.valueOf(value));
     }
 
@@ -227,6 +204,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, double value) {
         return create(type, String.valueOf(value));
     }
@@ -242,6 +220,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, float value) {
         return create(type, String.valueOf(value));
     }
@@ -257,6 +236,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, int value) {
         return create(type, String.valueOf(value));
     }
@@ -272,6 +252,7 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, long value) {
         return create(type, String.valueOf(value));
     }
@@ -287,21 +268,24 @@ public final class TypeString {
      *            - value for the object
      * @return value object
      */
+    @Deprecated
     public static <V extends Value<V, String>> V create(Class<V> type, short value) {
         return create(type, String.valueOf(value));
     }
 
     /**
-     * Create value object with {@code type} and {@code value}.
+     * Create a Null Object of {@code type}.
      *
      * @param <V>
      *            - the value type
      * @param type
      *            - object type
-     * @param value
-     *            - value for the object
-     * @return value object
+     * @return null object of {@code type}
      */
+    public static <V extends Value<V, String>> V nullValue(Class<V> type) {
+        return TypeNull.create(type, TECHNICAL_TYPE);
+    }
+
     private static <V extends Value<V, String>> V invokeConstructor(Class<V> objectClass, String value) {
         return Invoker.invokeConstructor(objectClass, String.class, value);
     }
