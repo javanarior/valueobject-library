@@ -29,7 +29,7 @@ public final class ValidatorFactory {
         /* Utility class */
     }
 
-    public static <T extends Comparable<?>> Validator<T> create(Constraint<T>... constraints) {
+    public static <T extends Comparable<T>> Validator<T> create(Constraint<T>[] constraints) {
         return new ConstraintValidator<T>(constraints);
     }
 

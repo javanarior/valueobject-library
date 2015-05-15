@@ -18,7 +18,7 @@ package de.javanarior.vo.validation.constraints;
 /**
  * Reports a error if the {@link Comparable} is null.
  */
-public class NotNullConstraint<T extends Comparable<?>> extends AbstractContraint<T> {
+public class NotNullConstraint<T extends Comparable<T>> extends AbstractContraint<T> {
 
     /**
      * Reports a error if the {@link Comparable} is null.

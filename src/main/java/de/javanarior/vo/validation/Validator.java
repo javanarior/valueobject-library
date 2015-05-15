@@ -19,7 +19,7 @@ package de.javanarior.vo.validation;
 /**
  * Validator for {@link Value} objects.
  */
-public interface Validator<T extends Comparable<?>> {
+public interface Validator<T extends Comparable<T>> {
 
     /**
      * @param object

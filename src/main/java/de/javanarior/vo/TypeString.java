@@ -21,6 +21,11 @@ import de.javanarior.vo.generator.TypeGenerator;
 import de.javanarior.vo.types.AbstractValue;
 import de.javanarior.vo.types.StringWrapper;
 import de.javanarior.vo.types.Value;
+import de.javanarior.vo.validation.ValidationException;
+import de.javanarior.vo.validation.Validator;
+import de.javanarior.vo.validation.ValidatorFactory;
+import de.javanarior.vo.validation.ValidatorResult;
+import de.javanarior.vo.validation.constraints.Constraint;
 
 /**
  * Factory to create String based Value Objects.
@@ -50,6 +55,21 @@ public final class TypeString {
     public static <V extends Value<V, String>> V create(Class<V> type, String value) {
         Class<V> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
         return invokeConstructor(classObject, assertNotNull(value));
+    }
+
+    @SafeVarargs
+    public static <V extends Value<V, String>> V value(Class<V> type, String value,
+                    Constraint<String>... constraints) {
+        Validator<String> validator = ValidatorFactory.create(constraints);
+        ValidatorResult result = validator.validate(value);
+        if (result.hasErrors()) {
+            throw new ValidationException(result);
+        }
+        if (value == null) {
+            return null;
+        }
+        Class<V> classObject = TypeGenerator.generate(type, TECHNICAL_TYPE, WRAPPER_CLASS);
+        return invokeConstructor(classObject, value);
     }
 
     /**

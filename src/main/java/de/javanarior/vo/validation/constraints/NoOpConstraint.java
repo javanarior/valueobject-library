@@ -18,7 +18,7 @@ package de.javanarior.vo.validation.constraints;
 /**
  * A {@link Constraint} which will always return {@link ConstraintCheckResult#SUCCESS}.
  */
-public class NoOpConstraint<T extends Comparable<?>> implements Constraint<T> {
+public class NoOpConstraint<T extends Comparable<T>> implements Constraint<T> {
 
     @Override
     public ConstraintCheckResult check(T toValidate) {

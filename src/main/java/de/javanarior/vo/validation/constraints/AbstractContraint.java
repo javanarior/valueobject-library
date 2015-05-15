@@ -18,7 +18,7 @@ package de.javanarior.vo.validation.constraints;
 /**
  * Base class for default and custom {@link Constraint}s.
  */
-public abstract class AbstractContraint<T extends Comparable<?>> implements Constraint<T> {
+public abstract class AbstractContraint<T extends Comparable<T>> implements Constraint<T> {
 
     private final String message;
 

@@ -23,7 +23,8 @@ package de.javanarior.vo.validation.constraints;
  * message, or exceptions if available, could be retrieved from the
  * {@linkplain ValidationException}.
  */
-public interface Constraint<T extends Comparable<?>> {
+public interface Constraint<T extends Comparable<T>> {
+//public interface Constraint<T extends Comparable<?>> {
 
     /**
      * Check the {@code toValidate}.

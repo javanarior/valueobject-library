@@ -36,7 +36,7 @@ public class ContraintTest {
         /* CHECKSTYLE:ON */
         /* @formatter:off */
         return new Object[][] {
-            {new NotNullConstraint<Comparable<?>>(), 1, null, new NotNullConstraint<Comparable<?>>(CUSTOME_MESSAGE)},
+            {new NotNullConstraint<Integer>(), 1, null, new NotNullConstraint<Integer>(CUSTOME_MESSAGE)},
             {new NotZeroInteger(), 1, 0, new NotZeroInteger(CUSTOME_MESSAGE)},
             {new PositiveInteger(), 1, -1, new PositiveInteger(CUSTOME_MESSAGE)},
             {new RangeInteger(3, 4), 3, 5, new RangeInteger(3, 4, CUSTOME_MESSAGE)},
@@ -48,22 +48,22 @@ public class ContraintTest {
     }
 
     @Test(dataProvider = "constraints")
-    public void testCheckSuccess(Constraint<Comparable<?>> constraint, Comparable<?> valueSuccess,
-                    Comparable<?> valueFailure, Constraint<Comparable<?>> customConstraint) {
+    public <T extends Comparable<T>> void testCheckSuccess(Constraint<T> constraint, T valueSuccess,
+                    T valueFailure, Constraint<T> customConstraint) {
         ConstraintCheckResult result = constraint.check(valueSuccess);
         assertThat(result.hasErrors(), is(false));
     }
 
     @Test(dataProvider = "constraints")
-    public void testCheckFailure(Constraint<Comparable<?>> constraint, Comparable<?> valueSuccess,
-                    Comparable<?> valueFailure, Constraint<Comparable<?>> customConstraint) {
+    public <T extends Comparable<T>> void testCheckFailure(Constraint<T> constraint, T valueSuccess,
+                    T valueFailure, Constraint<T> customConstraint) {
         ConstraintCheckResult result = constraint.check(valueFailure);
         assertThat(result.hasErrors(), is(true));
     }
 
     @Test(dataProvider = "constraints")
-    public void testCheckCustomerMessage(Constraint<Comparable<?>> constraint, Comparable<?> valueSuccess,
-                    Comparable<?> valueFailure, Constraint<Comparable<?>> customConstraint) {
+    public <T extends Comparable<T>> void testCheckCustomerMessage(Constraint<T> constraint, T valueSuccess,
+                    T valueFailure, Constraint<T> customConstraint) {
         ConstraintCheckResult result = customConstraint.check(valueFailure);
         assertThat(result.hasErrors(), is(true));
         assertThat(result.getMessage(), equalTo(CUSTOME_MESSAGE));

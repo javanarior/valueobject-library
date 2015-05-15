@@ -21,7 +21,7 @@ import de.javanarior.vo.validation.constraints.Constraint;
  * Default Validator for Value Objects.
  * This Validator uses {@link Constraint}s to validate values.
  */
-class ConstraintValidator<T extends Comparable<?>> implements Validator<T> {
+class ConstraintValidator<T extends Comparable<T>> implements Validator<T> {
 
     private Constraint<T>[] constraints;
 
