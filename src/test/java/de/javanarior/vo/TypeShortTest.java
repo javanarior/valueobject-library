@@ -24,30 +24,48 @@ import de.javanarior.vo.types.NullObject;
 @Test
 public class TypeShortTest {
 
-    public void testCreateShortPrimitive() {
-        ShortType value = TypeShort.create(ShortType.class, (short)2);
+    public void testCreate() {
+        ShortType value = TypeShort.create(ShortType.class, Short.valueOf("2"));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), Short.valueOf("2"));
+    }
+
+    public void testValue() {
+        ShortType value = TypeShort.value(ShortType.class, Short.valueOf("2"));
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), Short.valueOf("2"));
+    }
+
+    public void testValueNullSafe() {
+        ShortType value = TypeShort.valueNullSafe(ShortType.class, Short.valueOf("2"));
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), Short.valueOf("2"));
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testCreateShortNull() {
+    public void testCreateNull() {
         TypeShort.create(ShortType.class, (Short)null);
     }
 
-    public void testValueShortNull() {
+    public void testValueNull() {
         ShortType value = TypeShort.value(ShortType.class, (Short)null);
         Assert.assertNull(value);
     }
 
-    public void testValueNullSafeShortNull() {
+    public void testValueNullSafeNull() {
         ShortType value = TypeShort.valueNullSafe(ShortType.class, (Short)null);
         Assert.assertNotNull(value);
         Assert.assertTrue(value instanceof NullObject);
     }
 
-    public void testCreateShort() {
-        ShortType value = TypeShort.create(ShortType.class, Short.valueOf("2"));
+    public void testCreatePrimitiveShort() {
+        ShortType value = TypeShort.create(ShortType.class, (short)2);
+        Assert.assertNotNull(value);
+        Assert.assertEquals(value.getValue(), Short.valueOf("2"));
+    }
+
+    public void testValuePrimitiveShort() {
+        ShortType value = TypeShort.value(ShortType.class, (short)2);
         Assert.assertNotNull(value);
         Assert.assertEquals(value.getValue(), Short.valueOf("2"));
     }
