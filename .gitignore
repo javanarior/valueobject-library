@@ -3,5 +3,7 @@ test-output/
 .settings/
 .project
 .classpath
-/.checkstyle
-/.fbIncludeFilterFile
+.checkstyle
+.fbIncludeFilterFile
+*.iml
+.idea/
